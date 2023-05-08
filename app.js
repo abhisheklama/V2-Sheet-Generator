@@ -673,6 +673,26 @@ if (process.argv[2] == "-all") {
             // paymentFrequency -----------------------------------
             if (key == "paymentFrequency") {
               if (index == 0) {
+                let str = {
+                  _id: Ids.modifiers[key][v1],
+                  plans: [...planIds],
+                  title: "Payment Frequency Modifier",
+                  label: "Additional Surcharges",
+                  type: modifierCore.find((v) => v.title == "Payment frequency")
+                    ._id,
+                  assignmentType: "PER_PLAN",
+                  includedBenefits: [
+                    // benefitCore.find((v) => check(v.title, key))._id,
+                  ],
+                  isOptional: false,
+                  description: "",
+                  addonCost: {},
+                  premiumMod: "",
+                  conditions: [],
+                  hasOptions: true,
+                  // options: pricingArr,
+                };
+                newArr.push({ ...str });
                 return;
               }
 
