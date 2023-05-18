@@ -8,9 +8,9 @@ const {
 } = require("./Code/List");
 const generateCodeIndex = require("./Code/generateId");
 const Structures = require("./Code/structure");
-const planSheet = xlsx.readFile("./Input/Ecare/benefits.xlsx");
-const benefitSheet = xlsx.readFile("./Input/Ecare/userType.xlsx");
-const rate = xlsx.readFile("./Input/Ecare/rateSheet.xlsx");
+const planSheet = xlsx.readFile("./Input/FidelityUnited/benefits.xlsx");
+const benefitSheet = xlsx.readFile("./Input/FidelityUnited/userType.xlsx");
+const rate = xlsx.readFile("./Input/FidelityUnited/rateSheet.xlsx");
 const mongoose = require("mongoose");
 const { ObjectId } = require("mongodb");
 const conversion = 3.6725;
@@ -265,7 +265,6 @@ if (process.argv[2] == "-all") {
         ];
 
         for (const key in Ids.pricingTables) {
-          // console.log(key, DATA);
           let plan = Ids.pricingTables[key];
           let planValue = DATA.find((p) => p.PlanName === key)["Annual Limit"];
 
@@ -301,13 +300,12 @@ if (process.argv[2] == "-all") {
                 n.frequency == GlobalData.frequency[0]
               );
             });
-            // createFile("console", "table", pricing);
             let table = pricing.map((t) => {
               let str = {
                 fromAge: t.ageStart,
                 toAge: t.ageEnd,
                 gender: t.gender,
-                residency: DATA[0].residency,
+                // residency: DATA[0].residency,
                 network: t.network,
                 price: [
                   {
@@ -330,7 +328,6 @@ if (process.argv[2] == "-all") {
               planValue.toString().includes("USD")
                 ? true
                 : false;
-
             let clone = {
               _id: plan[v],
               plan: Ids.plans[key],
@@ -502,7 +499,7 @@ if (process.argv[2] == "-all") {
                     conditions: [
                       {
                         type: "DEDUCTIBLE_EQUALS_TO",
-                        value: [Ids.modifiers["deductible"][v[0]]],
+                        value: [v[0]],
                       },
                     ],
                   };
@@ -521,7 +518,7 @@ if (process.argv[2] == "-all") {
                     conditions: [
                       {
                         type: "DEDUCTIBLE_EQUALS_TO",
-                        value: [Ids.modifiers["deductible"][v[0]]],
+                        value: [v[0]],
                       },
                     ],
                   };
@@ -557,30 +554,30 @@ if (process.argv[2] == "-all") {
 
           // deductible -----------------------------------------
           if (key == "deductible") {
-            GlobalData["plans"].forEach((plan, pI) => {
-              let str = {
-                _id: Ids.modifiers[key],
-                plans: [Ids["plans"][plan]],
-                title: "coPays",
-                label: "coPays",
-                type: modifierCore.find((v) => v.title == "Deductible")._id,
-                assignmentType: "PER_PLAN",
-                includedBenefits: [],
-                isOptional: false,
-                description: "",
-                addonCost: {},
-                premiumMod: "",
-                conditions: [],
-                hasOptions: true,
-                options: [],
-              };
+              // let str = {
+              //   _id: Ids.modifiers[key],
+              //   plans: [Ids["plans"][plan]],
+              //   title: "coPays",
+              //   label: "coPays",
+              //   type: modifierCore.find((v) => v.title == "Deductible")._id,
+              //   assignmentType: "PER_PLAN",
+              //   includedBenefits: [],
+              //   isOptional: false,
+              //   description: "",
+              //   addonCost: {},
+              //   premiumMod: "",
+              //   conditions: [],
+              //   hasOptions: true,
+              //   options: [],
+              // };
 
               // console.log("in -- ", key);
+              let clonearray =[]
               GlobalData["coPays"].forEach((v1, index) => {
                 let [copay] = v1;
                 let count = 1;
                 let copayArr = [];
-                let clone = {
+                 clone = {
                   id: "option-" + (index + 1),
                   label: copay,
                   premiumMod: {
@@ -596,7 +593,7 @@ if (process.argv[2] == "-all") {
                       let pricing = rateSheet.filter((n) => {
                         // if (n.copay == "Nil") return false;
                         return (
-                          n.planName == plan &&
+                          n.planName == plan[0] &&
                           n.coverage == cc &&
                           n.copay == copay &&
                           n.frequency == fr
@@ -625,6 +622,10 @@ if (process.argv[2] == "-all") {
                               type: "CUSTOMER_NETWORK",
                               value: t.network,
                             },
+                            {
+                              type: "PLAN_EQUALS_TO",
+                              value: Ids.plans[plan[0]],
+                            },
                           ],
                           price: [
                             {
@@ -640,25 +641,26 @@ if (process.argv[2] == "-all") {
                     });
                   });
                 });
+                clonearray.push(clone);
               });
-              // let str = {
-              //   _id: Ids.modifiers[key][v1[0]],
-              //   plans: [...planIds],
-              //   title: v1[0],
-              //   label: v1[0],
-              //   type: modifierCore.find((v) => v.title == "Deductible")._id,
-              //   assignmentType: "PER_PLAN",
-              //   includedBenefits: [],
-              //   isOptional: false,
-              //   description: "",
-              //   addonCost: {},
-              //   premiumMod: "",
-              //   conditions: [],
-              //   hasOptions: true,
-              //   options: copayArr,
-              // };
+               str = {
+                _id: Ids.modifiers.deductible,
+                plans: [...planIds],
+                title: 'Deductible modifier',
+                label: 'Deductibles',
+                type: modifierCore.find((v) => v.title == "Deductible")._id,
+                assignmentType: "PER_PLAN",
+                includedBenefits: [],
+                isOptional: false,
+                description: "",
+                addonCost: {},
+                premiumMod: "",
+                conditions: [],
+                hasOptions: true,
+                options: clonearray,
+              };
               newArr.push({ ...str });
-            });
+
           }
           let name =
             key == "paymentFrequency"
@@ -844,6 +846,7 @@ if (process.argv[2] == "-all") {
                               type: "CUSTOMER_MIN_AGE",
                               value: t.ageStart,
                             },
+
                             {
                               type: "CUSTOMER_MAX_AGE",
                               value: t.ageEnd,
@@ -884,7 +887,7 @@ if (process.argv[2] == "-all") {
                           },
                           {
                             type: "DEDUCTIBLE_EQUALS_TO",
-                            value: [Ids.modifiers["deductible"][copay]],
+                            value: [copay],
                           },
                           {
                             type: "FREQUENCY_EQUALS_TO",
@@ -981,7 +984,7 @@ if (process.argv[2] == "-all") {
                           },
                           {
                             type: "DEDUCTIBLE_EQUALS_TO",
-                            value: [Ids.modifiers["deductible"][copay]],
+                            value: [copay],
                           },
                           {
                             type: "FREQUENCY_EQUALS_TO",

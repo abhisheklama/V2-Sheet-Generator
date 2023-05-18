@@ -60,7 +60,6 @@ const getList = (arr) => {
         check = true;
       }
       v.coverages && check && Global.coverages.push(obj);
-
       // Networks ------------------------------------------------------------------
       if (v.NetworkDetails) {
         let net = v.NetworkDetails.includes("/")
