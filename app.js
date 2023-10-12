@@ -1413,6 +1413,7 @@ const code = () => {
                         DATA[0].planCopay
                     );
                   }
+
                   if (!pricing[0].currency)
                     throw new Error("Currecny is not included in rateSheet", n);
                   let table = pricing.map((t) => {
