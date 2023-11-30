@@ -1,7 +1,24 @@
 const xlsx = require("xlsx");
 const fs = require("fs");
-const { getList, createFile, remove } = require("./Code/List");
+const {
+  getList,
+  createFile,
+  remove,
+  splittingFile,
+  generateShortCode,
+  extractAddon,
+} = require("./Code/List");
 const generateCodeIndex = require("./Code/generateId");
+const {
+  benefitCore,
+  enumData,
+  indexData,
+  UAE,
+  NE,
+  NE_Dubai,
+  AbuDhabi,
+  Dubai,
+} = require("./Code/constants");
 
 let resCount = process.argv.find((v) => v.includes("res"));
 if (!resCount) {
@@ -20,54 +37,21 @@ if (!folderName) {
 }
 folderName = folderName.split(":")[1];
 
+// splitFile input
+let splitFile = process.argv.find((v) => v.includes("splitFile"));
+splitFile = splitFile
+  ? splitFile.split(":")[1] == "true"
+    ? true
+    : false
+  : false;
+
+// rate in usd
+let rateUSD = process.argv.find((v) => v.includes("rate"));
+rateUSD = rateUSD ? (rateUSD.split(":")[1] == "USD" ? true : false) : false;
+
 let Arr = new Array(resCount).fill(null);
 
-const benefitCore = [
-  ["Claims Handling", "-core.benefitTypes.claimHandling-"],
-  ["Chronic Condition Cover", "-core.benefitTypes.chronicConditions-"],
-  [
-    "Pre-existing Condition Cover",
-    "-core.benefitTypes.preExistingCoverCondition-",
-  ],
-  ["Accommodation Type", "-core.benefitTypes.accomodation-"],
-  ["Diagnostics & Test", "-core.benefitTypes.diagnosticsAndTest-"],
-  ["Organ Transplant", "-core.benefitTypes.organTransplant-"],
-  ["Surgeries & Anesthesia", "-core.benefitTypes.surgeriesAndAnthesia-"],
-  ["Oncology", "-core.benefitTypes.oncology-"],
-  [
-    "In-patient (Hospitalization & Surgery)",
-    "-core.benefitTypes.inPatientHospitializationandsurgery-",
-  ],
-  ["Physiotherapy", "-core.benefitTypes.physiotherapy-"],
-  ["Out-patient Consultations", "-core.benefitTypes.outPatientConsultation-"],
-  ["Out-patient Specialists", "-core.benefitTypes.specialist-"],
-  ["Out-patient Medicines", "-core.benefitTypes.medicine-"],
-  ["Vaccination", "-core.benefitTypes.vaccination-"],
-  ["Scans & Diagnostic Tests", "-core.benefitTypes.tests-"],
-  ["Out-patient benefits", "-core.benefitTypes.outPatientBenefit-"],
-  [
-    "Maternity (Consultations, Scans and Delivery)",
-    "-core.benefitTypes.maternity-",
-  ],
-  ["Maternity Waiting Period", "-core.benefitTypes.maternityWaitingPeriod-"],
-  ["Complications of Pregnancy", "-core.benefitTypes.complicationOfPregnancy-"],
-  ["New Born Cover", "-core.benefitTypes.newBornCoverage-"],
-  ["Dental", "-core.benefitTypes.dental-"],
-  ["Dental Waiting Period", "-core.benefitTypes.dentalWaitingPeriod-"],
-  ["Optical Benefits", "-core.benefitTypes.optical-"],
-  ["Wellness & Health Screening", "-core.benefitTypes.wellness-"],
-  ["Emergency Evacuation", "-core.benefitTypes.emergencyEvacution-"],
-  ["Alternative Medicines", "-core.benefitTypes.alternativeMedicine-"],
-  ["Mental Health Benefit", "-core.benefitTypes.mentalHealth-"],
-  ["Member Web Portal", "-core.benefitTypes.memberWebPortal-"],
-  ["Mobile Application", "-core.benefitTypes.mobileApplication-"],
-  ["Virtual / Tele Doctor", "-core.benefitTypes.virtualTele-"],
-  ["Other Services", "-core.benefitTypes.otherServices-"],
-  ["Extended Evacuation", "-core.benefitTypes.extendedEvacuation-"],
-  ["Non Emergency Evacuation", "-core.benefitTypes.nonEmergency-"],
-];
-
-const code = () => {
+(function () {
   const replaceChar = (word) => {
     word = word.replace(" ", "");
     while (word.includes(" ")) {
@@ -174,51 +158,7 @@ const code = () => {
 
   // ----------------------- Index ---------------------------
   function createIndex() {
-    const data = `
-        const Provider = require('./provider/index');
-        const Plans = require('./plans/index');
-        const PricingTables = require('./PricingTable/index');
-        const Coverages = require('./coverage/index');
-        const Modifiers = require('./modifiers/index');
-        let data = [
-          // Provider data
-          {
-            model: "Provider",
-            modelPath: "models/provider-model.js",
-            documents: Provider,
-          },
-
-          // Plans
-          {
-            model: "Plan",
-            modelPath: "models/plan-model.js",
-            documents: Plans,
-          },
-
-          // Pricing Tables
-          {
-            model: "PricingTable",
-            modelPath: "models/pricing-table-model.js",
-            documents: PricingTables,
-          },
-
-          // Coverage information
-          {
-            model: "Coverage",
-            modelPath: "models/coverage-model.js",
-            documents: Coverages,
-          },
-
-          {
-            // Plan modifiers
-            model: "Modifier",
-            modelPath: "models/modifier-model.js",
-            documents: Modifiers,
-          },
-        ];
-
-        module.exports = data`;
-    fs.appendFile(`Output/index.js`, data, function (err) {
+    fs.appendFile(`Output/index.js`, indexData, function (err) {
       try {
         if (err) throw err;
         console.log(`index Created!`);
@@ -233,43 +173,7 @@ const code = () => {
   // ----------------------- Enum ---------------------------
   function createEnum() {
     try {
-      const data = `
-        let data = {
-             gender: {
-                female: "female",
-                male: "male",
-              },
-            currency: {
-                USD: "USD",
-                AED: "AED",
-              },
-           category: {
-                primary: "Primary",
-                primary_investor: "Primary - Investor",
-                dependent: "Dependent",
-                dependent_parent: "Dependent - Parent",
-                primary_lsb: "Primary (Low Salary Band)",
-                dependent_lsb: "Dependent (Low Salary Band)",
-              },
-            customer: {
-              min_age: "CUSTOMER_MIN_AGE",
-              max_age: "CUSTOMER_MAX_AGE",
-              gender: "CUSTOMER_GENDER",
-            },
-            conditions: {
-              modifier: "MODIFIER_INCLUDED",
-              coverage: "COVERAGE_EQUALS_TO",
-              plans: "PLAN_EQUALS_TO",
-              deductible: "DEDUCTIBLE_EQUALS_TO"
-            },
-            maritalStatus: {
-              single: "single",
-              married: "married"
-            }
-          };
-
-        module.exports = data`;
-      fs.appendFileSync(`Output/enum.js`, data);
+      fs.appendFileSync(`Output/enum.js`, enumData);
       console.log(`Enum Created!`);
     } catch (error) {
       console.log(`error: ${error.message}`);
@@ -316,36 +220,59 @@ const code = () => {
         title: provider,
         logo: "",
         colors: {},
+        ageCalculationMethod:
+          DATAs[0][0]["183_rule"] == "applied"
+            ? "-Enum.ageCalculationMethod.advanced-"
+            : "-Enum.ageCalculationMethod.standard-",
+        exchangeRates: [
+          {
+            from: "-Enum.currency.AED-",
+            to: "-Enum.currency.USD-",
+            rate: 0.272479564,
+            type: "-Enum.conversionRateType.benefit-",
+          },
+          {
+            from: "-Enum.currency.AED-",
+            to: "-Enum.currency.USD-",
+            rate: 0.272294078,
+            type: "-Enum.conversionRateType.premium-",
+          },
+          {
+            from: "-Enum.currency.USD-",
+            to: "-Enum.currency.AED-",
+            rate: 3.67,
+            type: "-Enum.conversionRateType.benefit-",
+          },
+          {
+            from: "-Enum.currency.USD-",
+            to: "-Enum.currency.AED-",
+            rate: 3.6725,
+            type: "-Enum.conversionRateType.premium-",
+          },
+        ],
       },
     ];
-    createFile("provider", "index", str, provider);
+    if (DATAs[0][0].conversionRate)
+      str[0].exchangeRates.push({
+        from: "-Enum.currency.AED-",
+        to: "-Enum.currency.USD-",
+        rate: parseFloat(DATAs[0][0].conversionRate),
+        type: "-Enum.conversionRateType.premium-",
+      });
+    else if (!rateUSD)
+      str[0].exchangeRates.push({
+        from: "-Enum.currency.AED-",
+        to: "-Enum.currency.USD-",
+        rate: 3.6725,
+        type: "-Enum.conversionRateType.premium-",
+      });
+    createFile("provider", "index", str, provider, false, true);
   }
   createProvider();
   // -------------------------------------------------------------
 
   // --------------------------------- Coverage File ---------------------------------------------------
   function coverage(store, DATA, id) {
-    let UAE = [
-      ["AE-DU", "AE-AZ", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-      [],
-    ];
-    let NE = [
-      ["AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-      ["AE-DU", "AE-AZ"],
-    ];
-    let Dubai = [
-      ["AE-DU"],
-      ["AE-AZ", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-    ];
-    let AbuDhabi = [
-      ["AE-AZ"],
-      ["AE-DU", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-    ];
-    let NE_Dubai = [
-      ["AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ", "AE-DU"],
-      ["AE-AZ"],
-    ];
-
     let coveredCountries = [
       "US",
       "AU",
@@ -557,7 +484,6 @@ const code = () => {
       "MA",
       "SO",
     ];
-
     let coverage_data = store.coverages.map((v) => {
       let clone = {
         _id: `-${provider}.coverages${id}.${v.coverageName[0]}-`,
@@ -749,6 +675,15 @@ const code = () => {
       for (const key in Id.pricingTables[plan[0]]) {
         tableIds.push(`-${provider}.pricingTables${n}.${plan[0]}.${key}-`);
       }
+      let have_NotIncludedBenefits = store.filters.notIncludedBenefits.find(
+        (v) => v.plan == plan[0]
+      );
+      if (have_NotIncludedBenefits) {
+        modifiersId = modifiersId.filter((id) => {
+          let benefit = id.split(".")[3]?.replace("-", "");
+          return !have_NotIncludedBenefits.benefits.includes(benefit);
+        });
+      }
       let clone = {
         _id: `-${provider}.plans${n}.${plan[0]}-`,
         provider: `-${provider}.providers-`,
@@ -772,35 +707,19 @@ const code = () => {
   // ----------------------------------Pricing Table -----------------------------------------------------
   function rateTable(store, Id, DATA, n, rateSheet) {
     try {
+      let splitted;
+      let short_coverageName;
       const conversion =
-        DATA[0].rateIn == "USD"
+        DATA[0].rateIn == "USD" || rateUSD
           ? 1
           : DATAs[0][0].conversionRate
           ? DATAs[0][0].conversionRate
           : 3.6725;
       let PricingTable = [];
-      let UAE = [
-        ["AE-DU", "AE-AZ", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-        [],
-      ];
-      let NE = [
-        ["AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-        ["AE-DU", "AE-AZ"],
-      ];
-      let Dubai = [
-        ["AE-DU"],
-        ["AE-AZ", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-      ];
-      let AbuDhabi = [
-        ["AE-AZ"],
-        ["AE-DU", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-      ];
-      let NE_Dubai = [
-        ["AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ", "AE-DU"],
-        ["AE-AZ"],
-      ];
+      let tableCount = 1;
       for (const key in Id.pricingTables) {
         let plan = Id.pricingTables[key];
+        addUp[1] = 1;
         let originalName = (z) => {
           return store.plans.find((v) => v[0] == z)[1];
         };
@@ -843,7 +762,7 @@ const code = () => {
             //   });
             //   throw new Error();
             // }
-            if (DATA[0].planCopay == "-Enum.maritalStatus.single-") {
+            if (DATA[0].planCopay == "single") {
               return (
                 n.planName == originalName(key) &&
                 n.coverage ==
@@ -863,10 +782,7 @@ const code = () => {
             );
           });
 
-          if (
-            pricing.length == 0 &&
-            DATA[0].planCopay != "-Enum.maritalStatus.single-"
-          )
+          if (pricing.length == 0 && DATA[0].planCopay != "single")
             throw new Error(
               store.coPays[0][0][0] +
                 " | " +
@@ -878,13 +794,9 @@ const code = () => {
                 store.frequency[0],
               `n - ${n}`
             );
-          if (
-            pricing.length == 0 &&
-            DATA[0].planCopay == "-Enum.maritalStatus.single-"
-          )
-            continue;
+          if (pricing.length == 0 && DATA[0].planCopay == "single") continue;
           let table;
-          if (store.filters.networkType == "-Enum.maritalStatus.single-") {
+          if (store.filters.networkType == "single") {
             table = pricing.map((t) => {
               let str = {
                 fromAge: t.ageStart,
@@ -892,22 +804,7 @@ const code = () => {
                 gender: `-Enum.gender.${t.gender.toLowerCase()}-`,
                 price: [
                   {
-                    value: t.maternity
-                      ? t.dental
-                        ? parseFloat(
-                            (
-                              parseFloat(t.dental / conversion) +
-                              parseFloat(t.maternity / conversion) +
-                              parseFloat(t.rates / conversion)
-                            ).toFixed(2)
-                          )
-                        : parseFloat(
-                            (
-                              parseFloat(t.maternity / conversion) +
-                              parseFloat(t.rates / conversion)
-                            ).toFixed(2)
-                          )
-                      : parseFloat((t.rates / conversion).toFixed(2)),
+                    value: parseFloat((t.rates / conversion).toFixed(2)),
                     currency: `-Enum.currency.${t.currency}-`,
                   },
                 ],
@@ -919,6 +816,7 @@ const code = () => {
                 str.maritalStatus = "-Enum.maritalStatus.single-";
               }
               if (t.category) str.category = `-Enum.category.${t.category}-`;
+              if (t.relation) str.relation = `-Enum.relation.${t.relation}-`;
               return { ...str };
             });
           } else {
@@ -927,27 +825,44 @@ const code = () => {
               else return [...acc, v.network];
             }, []);
             pricing = pricing.filter((v) => v.network == plan_network);
-            table = pricing.map((t) => {
-              let str = {
-                fromAge: t.ageStart,
-                toAge: t.ageEnd,
-                gender: `-Enum.gender.${t.gender.toLowerCase()}-`,
+            table = [
+              {
+                fromAge: pricing[0].ageStart,
+                toAge: pricing[pricing.length - 1].ageEnd,
+                gender: `-Enum.gender.male-`,
                 price: [
                   {
                     value: 0,
-                    currency: `-Enum.currency.${t.currency}-`,
+                    currency: `-Enum.currency.${pricing[0].currency}-`,
                   },
                 ],
-              };
-              if (t.married === 0) {
-                str.maritalStatus = "-Enum.maritalStatus.married-";
-              }
-              if (t.married === 1) {
-                str.maritalStatus = "-Enum.maritalStatus.single-";
-              }
-              if (t.category) str.category = `-Enum.category.${t.category}-`;
-              return { ...str };
-            });
+              },
+              {
+                fromAge: pricing[0].ageStart,
+                toAge: pricing[pricing.length - 1].ageEnd,
+                gender: `-Enum.gender.female-`,
+                price: [
+                  {
+                    value: 0,
+                    currency: `-Enum.currency.${pricing[0].currency}-`,
+                  },
+                ],
+              },
+            ];
+          }
+          if (splitFile && store.filters.networkType != "single") {
+            short_coverageName = generateShortCode(v);
+            if (!coveragesArr.includes(v)) {
+              coveragesArr.push(v);
+              comment += `// ${short_coverageName} - ${v} (coverage) \n`;
+            }
+            splitted = splittingFile(
+              table,
+              key,
+              "PricingTable",
+              short_coverageName
+            );
+            addUp[0] += `const ${key}_${short_coverageName} = require("./${key}/${key}_${short_coverageName}.js"); `;
           }
           let res = store.coverages.find((vv) => vv.coverageName == v);
           let check =
@@ -994,8 +909,11 @@ const code = () => {
                 ? NE_Dubai[1]
                 : AbuDhabi[1],
             coverage: [`-${provider}.coverages${n}.${v}-`],
-            baseAnnualPremium: [...table],
+            baseAnnualPremium: splitted
+              ? `-[...${key}_${short_coverageName}]-`
+              : [...table],
           };
+          addUp[1]++;
           PricingTable.push({ ...clone });
         }
       }
@@ -1004,6 +922,9 @@ const code = () => {
       console.log("error --> ", { msg: error.message, stack: error.stack });
     }
   }
+  let addUp = ["", 1];
+  let comment = "";
+  let coveragesArr = [];
   let pricingArr = Arr.reduce((acc, v, i) => {
     let data = rateTable(
       GlobalDatas[i],
@@ -1014,6 +935,7 @@ const code = () => {
     );
     return [...acc, ...data];
   }, []);
+
   createFile(
     "PricingTable",
     "index",
@@ -1021,16 +943,17 @@ const code = () => {
     provider,
     false,
     true,
-    GlobalDatas[0].filters.networkType != "-Enum.maritalStatus.single-"
-      ? "Prices are based on deductible so prices are list as 0"
-      : ""
+    GlobalDatas[0].filters.networkType != "single"
+      ? comment + "Prices are based on network so prices are list as 0"
+      : comment,
+    addUp[0]
   );
   // -----------------------------------------------------------------------------------------------------
 
   // -------------------------------- Modifiers file -----------------------------------------------------
   function modifiers(store, Id, DATA, n, rateSheet) {
     const conversion =
-      DATA[0].rateIn == "USD"
+      DATA[0].rateIn == "USD" || rateUSD
         ? 1
         : DATAs[0][0].conversionRate
         ? DATAs[0][0].conversionRate
@@ -1063,11 +986,19 @@ const code = () => {
         while (d[key]?.includes("\n")) d[key] = d[key].replace("\n", " ");
         let { PlanName } = d;
         if (!PlanName) return;
+        let have_NotIncludedBenefits = store.filters.notIncludedBenefits.find(
+          (v) => v.plan == remove(PlanName)[0]
+        );
+        if (
+          have_NotIncludedBenefits &&
+          have_NotIncludedBenefits.benefits.includes(remove(key)[0])
+        )
+          return;
         if (modifiers.length == 0)
           modifiers[key] = [{ plans: [PlanName], value: d[key] }];
         else if (modifiers[key]) {
-          if (modifiers[key][modifiers[key].length - 1].value == d[key]) {
-            let index = modifiers[key].findIndex((v) => v.value == d[key]);
+          let index = modifiers[key].findIndex((v) => v.value == d[key]);
+          if (index != -1) {
             modifiers[key][index].plans.push(PlanName);
           } else modifiers[key].push({ plans: [PlanName], value: d[key] });
         } else {
@@ -1085,7 +1016,6 @@ const code = () => {
       planIds.push(`-${provider}.plans${n}.${key}-`);
     }
     store.Modifiers.forEach((key) => {
-      // console.log("keys -- ", key);
       // benefits --------------------------------------------
       if (key == "benefits") {
         for (const key in modifiers) {
@@ -1099,11 +1029,22 @@ const code = () => {
             console.log("k ", n, key, Benefits);
           !benefitCore.find((v) => v[0] == key) &&
             console.log("core-", n, key, benefitCore);
+          let benefits_plans_ids = [...planIds];
+          if (store.filters.notIncludedBenefits.length > 0) {
+            let benefit_plans = modifiers[key].reduce((acc, v) => {
+              let plans = v.plans.map((p) => remove(p)[0]);
+              return [...acc, ...plans];
+            }, []);
+            benefits_plans_ids = benefits_plans_ids.filter((id) =>
+              benefit_plans.includes(id.split(".")[2].replace("-", ""))
+            );
+          }
+
           let str = {
             _id: `-${provider}.modifiers${n}.benefits.${
               Benefits.find((v) => v.benefits[1] == key).benefits[0]
             }-`,
-            plans: [...planIds],
+            plans: [...benefits_plans_ids],
             title: key,
             label: key,
             type: "-core.modifierTypes.benefit-",
@@ -1155,6 +1096,7 @@ const code = () => {
                       },
                     ],
                   };
+                  str.hasOptions = true;
                   str.options.push(cc);
                   count++;
                 });
@@ -1192,6 +1134,7 @@ const code = () => {
                       },
                     ],
                   };
+                  str.hasOptions = true;
                   str.options.push(cc);
                   count++;
                 });
@@ -1214,12 +1157,14 @@ const code = () => {
                     },
                   ],
                 };
+                str.hasOptions = true;
                 str.options.push(cc);
                 count++;
               }
             });
           } else if (modifiers[key][0].value.toString().includes("$copay")) {
             str.options = [];
+            str.hasOptions = true;
             let count = 1;
             if (DATA[0].$copay) {
               let $copay = DATA.reduce((acc, v) => {
@@ -1247,17 +1192,27 @@ const code = () => {
             } else
               store.coPays.forEach((v) => {
                 let [copay, scope] = v;
-                if (!scope.includes("all") && scope.includes(m.plans)) return;
+                let conditions = [];
+                conditions.push({
+                  type: "-Enum.conditions.deductible-",
+                  value: [copay[0]],
+                });
+                if (!scope.includes("all")) {
+                  let con = {
+                    type: "-Enum.conditions.plans-",
+                    value: [],
+                  };
+                  store.plans.forEach((m) => {
+                    if (!scope.includes(m[1])) return;
+                    con.value.push(`-${provider}.plans${n}.${m[0]}-`);
+                  });
+                  conditions.push(con);
+                }
                 let cc = {
                   id: "option-" + count,
                   label: copay[0],
                   description: copay[0],
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: [copay[0]],
-                    },
-                  ],
+                  conditions: [...conditions],
                 };
                 str.options.push(cc);
                 count++;
@@ -1265,6 +1220,167 @@ const code = () => {
           }
           newArr.push(str);
         }
+        // Addons --------------------------------------------
+        store.filters.addons.map(
+          ({
+            benefitName,
+            label,
+            rateSheetLabel,
+            type,
+            flag,
+            description,
+            conditions,
+          }) => {
+            let USD_Enum = "-Enum.currency.USD-";
+            let benefit = newArr.find((b) => b.title == benefitName);
+            if (!benefit) throw new Error(`not found ${benefit}`);
+            if (flag.includes("-t") || flag.includes("-n")) {
+              benefit.isOptional = true;
+              benefit.hasOptions = true;
+            }
+            if (!flag.includes("-n")) {
+              // adds addon by default
+              if (!flag.includes("-p")) {
+                if (type == "fixed") {
+                  benefit.addonCost = {
+                    type: "fixed",
+                    price: [
+                      {
+                        currency: USD_Enum,
+                        value: rateSheet[0][rateSheetLabel],
+                      },
+                    ],
+                  };
+                } else {
+                  let conditionalPrices = extractAddon(
+                    rateSheet,
+                    rateSheetLabel
+                  );
+                  benefit.addonCost = {
+                    type: "conditional-fixed",
+                    conditionalPrices,
+                  };
+                }
+              } else {
+                benefit.options.forEach((op) => {
+                  if (type == "fixed") {
+                    op.addonCost = {
+                      type: "fixed",
+                      price: [
+                        {
+                          currency: USD_Enum,
+                          value: "enter rate",
+                        },
+                      ],
+                    };
+                  } else {
+                    let plansForFilter = op.conditions.value.map((p) => {
+                      let PlanName = p.split(".")[2];
+                      return store.plans.find((s) => s[0] == PlanName)[1];
+                    });
+                    let rates = rateSheet.filter((r) =>
+                      plansForFilter.includes(r.planName)
+                    );
+                    let conditionalPrices = extractAddon(rates, rateSheetLabel);
+                    op.addonCost = {
+                      type: "conditional-fixed",
+                      conditionalPrices,
+                    };
+                  }
+                });
+              }
+            } else if (flag.includes("-n")) {
+              if (conditions.includes(",")) conditions = conditions.split(",");
+              let addonCost = {};
+              if (type == "fixed" && !flag.includes("-p")) {
+                addonCost = {
+                  type: "fixed",
+                  price: [
+                    { currency: USD_Enum, value: rateSheet[0][rateSheetLabel] },
+                  ],
+                };
+              } else {
+                let rates = rateSheet;
+                if (flag.includes("-p"))
+                  rates = rates.filter((v) =>
+                    v.planName == conditions.length > 1
+                      ? conditions[0]
+                      : conditions
+                  );
+                if (type == "fixed") {
+                  addonCost = {
+                    type: "fixed",
+                    price: [
+                      {
+                        currency: USD_Enum,
+                        value: rates[0][rateSheetLabel],
+                      },
+                    ],
+                  };
+                } else {
+                  addonCost = {
+                    type: "conditional-fixed",
+                    conditionalPrices: [
+                      {
+                        currency: USD_Enum,
+                        value: extractAddon(rates, rateSheetLabel),
+                      },
+                    ],
+                  };
+                }
+              }
+              let option = {
+                id: "option-" + (benefit.options.length + 1),
+                label,
+                description,
+                addonCost,
+              };
+              if (flag.includes("-wa")) delete option.addonCost;
+              if (flag.includes("-p")) {
+                let plans = [];
+                if (Array.isArray(conditions) && conditions.length > 1)
+                  plans = conditions.map((v) => {
+                    return `-${provider}.plans${n}.${remove(v)[0]}-`;
+                  });
+                else
+                  plans = [`-${provider}.plans${n}.${remove(conditions)[0]}-`];
+                option.conditions = [
+                  {
+                    type: "-Enum.conditions.plans-",
+                    value: plans,
+                  },
+                ];
+              }
+              benefit.options.push(option);
+            }
+          }
+        );
+
+        // bundle benefits --------------------------------------------
+        store.filters.bundleBenefits.map((v) => {
+          let benefit = newArr.find((b) => b.title == v);
+          if (!benefit) throw new Error(`not found ${benefit}`);
+          benefit.dependentModifiers = [
+            ...store.filters.bundleBenefits.reduce((acc, item) => {
+              if (item == v) return acc;
+              return [
+                ...acc,
+                `-${provider}.modifiers${n}.benefits.${
+                  Benefits.find((v) => v.benefits[1] == item).benefits[0]
+                }-`,
+              ];
+            }, []),
+          ];
+        });
+
+        // Dependent benefits --------------------------------------------
+        store.filters.dependentBenefits.map(({ core, dependent }) => {
+          let benefit = newArr.find((b) => b.title == dependent);
+          if (!benefit) throw new Error(`not found ${benefit}`);
+          benefit.dependsOn = `-${provider}.modifiers${n}.benefits.${
+            Benefits.find((v) => v.benefits[1] == core).benefits[0]
+          }-`;
+        });
       }
       if (key == "discount") {
         let str = {
@@ -1272,7 +1388,7 @@ const code = () => {
           plans: [...planIds],
           title: key,
           label: key,
-          type: `-core.modifierTypes.discount,-`,
+          type: `-core.modifierTypes.discount-`,
           assignmentType: "PER_PLAN",
           includedBenefits: [],
           isOptional: false,
@@ -1288,7 +1404,7 @@ const code = () => {
             id: `${discount}-discount`,
             label: `${discount} Discount`,
             premiumMod: {
-              type: "percentage",
+              type: "percentage", 
               price: [{ value: -Number(discount.replace("%", "")) }],
             },
             description: `${discount} Discount`,
@@ -1299,15 +1415,20 @@ const code = () => {
               },
             ],
           };
+
+          console.log("str >> ", str);
           newArr.push(str);
         });
       }
       // deductible -----------------------------------------
       if (key == "deductible") {
+        let splitted;
         let clonearray = [];
         let count = 1;
+        let fileName;
         store["pricingTables"].forEach((plan) => {
           let [planName, coverage] = plan;
+          addUp2[1] = 1;
           store.Networks.forEach((net) => {
             let bool = DATA.find((v) => {
               if (v.PlanName == planName[1]) {
@@ -1318,13 +1439,31 @@ const code = () => {
               return false;
             });
             if (!bool) return;
+            if (splitFile && !included.includes(net[1])) {
+              included.push(net[1]);
+              comment2 += `// ${generateShortCode(net[1])} - ${
+                net[1]
+              } (network) \n`;
+            }
             coverage.forEach((cc) => {
               let c_id = `-${provider}.coverages${n}.${cc[0]}-`;
+              if (splitFile && !included.includes(cc[1])) {
+                included.push(cc[1]);
+                comment2 += `// ${generateShortCode(cc[1])} - ${
+                  cc[1]
+                } (coverage) \n`;
+              }
               store["coPays"].forEach((v1, index) => {
                 let [copays, scope] = v1;
                 let [copay] = copays;
                 if (!scope.includes("all") && scope.includes(planName[1]))
                   return;
+                if (splitFile && !included.includes(copay)) {
+                  included.push(copay);
+                  comment2 += `// ${generateShortCode(
+                    copay
+                  )} - ${copay} (copay) \n`;
+                }
                 let copayArr = [];
                 clone = {
                   id: "option-" + count,
@@ -1434,48 +1573,63 @@ const code = () => {
                       ],
                       price: [
                         {
-                          value: t.maternity
-                            ? t.dental
-                              ? parseFloat(
-                                  (
-                                    parseFloat(t.dental / conversion) +
-                                    parseFloat(t.maternity / conversion) +
-                                    parseFloat(t.rates / conversion)
-                                  ).toFixed(2)
-                                )
-                              : parseFloat(
-                                  (
-                                    parseFloat(t.maternity / conversion) +
-                                    parseFloat(t.rates / conversion)
-                                  ).toFixed(2)
-                                )
-                            : parseFloat((t.rates / conversion).toFixed(2)),
+                          value: parseFloat((t.rates / conversion).toFixed(2)),
                           currency: `-Enum.currency.${t.currency}-`,
                         },
                       ],
                     };
                     if (t.married === 0) {
                       str.conditions.push({
-                        type: "CUSTOMER_MARITAL_STATUS",
+                        type: "-Enum.customer.maritalStatus-",
                         value: "-Enum.maritalStatus.married-",
                       });
                     }
                     if (t.married === 1) {
                       str.conditions.push({
-                        type: "CUSTOMER_MARITAL_STATUS",
+                        type: "-Enum.customer.maritalStatus-",
                         value: "-Enum.maritalStatus.single-",
                       });
                     }
                     if (t.category)
-                      str.category = `-Enum.category.${t.category}-`;
+                      str.conditions.push({
+                        type: "-Enum.customer.category-",
+                        value: `-Enum.category.${t.category}-`,
+                      });
+                    if (t.relation)
+                      str.conditions.push({
+                        type: "-Enum.customer.relation-",
+                        value: `-Enum.relation.${t.relation}-`,
+                      });
 
                     return { ...str };
                   });
-                  clone.premiumMod.conditionalPrices = table;
+                  if (splitFile) {
+                    // console.log("length >>", table.length);
+                    fileName = `${plan[0][0]}_${generateShortCode(
+                      cc[0]
+                    )}_${generateShortCode(net[0])}_${generateShortCode(
+                      copay
+                    )}`;
+                    splitted = splittingFile(
+                      table,
+                      plan[0][0],
+                      "modifiers",
+                      fileName
+                        .split("_")
+                        .filter((v, i) => i !== 0)
+                        .join("_")
+                    );
+
+                    addUp2[0] += `const ${fileName} = require("./${plan[0][0]}/${fileName}.js"); `;
+                  }
+                  clone.premiumMod.conditionalPrices = splitted
+                    ? `-[...${fileName}]-`
+                    : [...table];
                 });
                 if (clone.premiumMod.conditionalPrices.length == 0) return;
                 clonearray.push(clone);
                 count++;
+                addUp2[1]++;
               });
             });
           });
@@ -1536,6 +1690,7 @@ const code = () => {
               let n_check = DATA.find((dd) => dd.PlanName == pp[1])[
                 "Network Details"
               ];
+
               let nn = store.Networks.find((n) => n[1] == n_check)[0];
               return nn == ff;
             });
@@ -1554,7 +1709,7 @@ const code = () => {
               description: "",
               addonCost: {},
               premiumMod: "",
-              conditions: [{ type: "-Enum.conditions.plans-", value: p_ }],
+              conditions: [],
               hasOptions: true,
               options: [
                 {
@@ -1654,10 +1809,7 @@ const code = () => {
                     n.network == net[1]
                   );
                 });
-                if (
-                  DATA[0].planCopay == "-Enum.maritalStatus.single-" &&
-                  pricing.length == 0
-                )
+                if (DATA[0].planCopay == "single" && pricing.length == 0)
                   return;
                 if (pricing.length == 0) {
                   throw new Error(
@@ -1696,22 +1848,7 @@ const code = () => {
                     ],
                     price: [
                       {
-                        value: t.maternity
-                          ? t.dental
-                            ? parseFloat(
-                                (
-                                  parseFloat(t.dental / conversion) +
-                                  parseFloat(t.maternity / conversion) +
-                                  parseFloat(t.rates / conversion)
-                                ).toFixed(2)
-                              )
-                            : parseFloat(
-                                (
-                                  parseFloat(t.maternity / conversion) +
-                                  parseFloat(t.rates / conversion)
-                                ).toFixed(2)
-                              )
-                          : parseFloat((t.rates / conversion).toFixed(2)),
+                        value: parseFloat((t.rates / conversion).toFixed(2)),
                         currency: `-Enum.currency.${t.currency}-`,
                       },
                     ],
@@ -1826,7 +1963,7 @@ const code = () => {
           }
           if (DATA[0]["Monthly Surcharge"] != "N/A") {
             let monthly = {
-              id: "Monthly-Surcharge-surcharge",
+              id: "monthly-payment-surcharge",
               title: "Monthly Surcharge payment",
               label: "Monthly Surcharge",
               description: "Monthly Surcharge payment frequency",
@@ -2054,6 +2191,9 @@ const code = () => {
     // }
     return newArr;
   }
+  let comment2 = "// ";
+  let addUp2 = ["", 1];
+  let included = [];
   let modifierArr = Arr.reduce((acc, v, i) => {
     let data = modifiers(
       GlobalDatas[i],
@@ -2064,8 +2204,15 @@ const code = () => {
     );
     return [...acc, ...data];
   }, []);
-  createFile("modifiers", "index", modifierArr, provider, true, true);
+  createFile(
+    "modifiers",
+    "index",
+    modifierArr,
+    provider,
+    true,
+    true,
+    comment2,
+    addUp2[0]
+  );
   // ----------------------------------------------------------------------
-};
-
-code();
+})();

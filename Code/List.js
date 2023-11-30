@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { maxArrLength } = require("./constants");
 
 const remove = (str, n) => {
   !str && console.log("n --> ", n, str);
@@ -50,7 +51,14 @@ const getList = (arr) => {
       startDate: arr[0].startDate,
       endDate: arr[0].endDate,
       residency: arr[0].residency,
-      filters: { networkType: "", frequency: "" },
+      filters: {
+        networkType: "",
+        frequency: "",
+        notIncludedBenefits: [],
+        addons: [],
+        bundleBenefits: [],
+        dependentBenefits: [],
+      },
     };
 
     if (arr[0].NetworkDetails.includes("/"))
@@ -145,6 +153,77 @@ const getList = (arr) => {
       Global.pricingTables.push([plan, area]);
     });
 
+    // Not included benefits -----------------------------------
+    arr.forEach((benefits) => {
+      for (let key in benefits) {
+        if (
+          benefits[key] &&
+          (benefits[key] == "N/A" ||
+            benefits[key].toString().toLowerCase() == "not available")
+        ) {
+          let index = Global.filters.notIncludedBenefits.findIndex(
+            (v) => v.plan == remove(benefits["PlanName"])[0]
+          );
+          if (index == -1) {
+            Global.filters.notIncludedBenefits.push({
+              plan: remove(benefits["PlanName"])[0],
+              benefits: [remove(key)[0]],
+            });
+          } else {
+            Global.filters.notIncludedBenefits[index].benefits.push(
+              remove(key)[0]
+            );
+          }
+        }
+      }
+    });
+
+    // Addon Premiums -----------------------------------
+    arr[0].addons &&
+      arr.forEach(({ addons }) => {
+        if (!addons) return;
+        let values = addons.split(" & ");
+        let struc = {
+          benefitName: true,
+          label: true,
+          rateSheetLabel: true,
+          type: true,
+          flag: "",
+          description: "",
+          conditions: "",
+        };
+        values.forEach((value) => {
+          let [field, fieldValue] = value.split(":");
+          if (
+            field != "description" &&
+            field != "flag" &&
+            field != "conditions" &&
+            (!struc[field] || !(fieldValue && fieldValue.trim()))
+          )
+            throw new Error("Incorrect Addon feildName " + field);
+          field = field.trim();
+          fieldValue = fieldValue.trim();
+          struc[field] = fieldValue;
+        });
+        Global.filters.addons.push(struc);
+      });
+
+    // bundle benefits -----------------------------------
+    arr[0]["bundle benefits"] &&
+      arr.forEach((v) => {
+        if (v["bundle benefits"]) return;
+        let values = v["bundle benefits"].split("/");
+        Global.filters.bundleBenefits.push(...values);
+      });
+
+    // Dependent benefits -----------------------------------
+    arr[0]["dependent benefits"] &&
+      arr.forEach((v) => {
+        if (v["dependent benefits"]) return;
+        let [core, dependent] = v["dependent benefits"].split(" - ");
+        Global.filters.dependentBenefits.push({ core, dependent });
+      });
+
     return Global;
   } catch (error) {
     console.log({ err: error.message, stack: error.stack });
@@ -211,7 +290,8 @@ const createFile = (
   provider,
   core = false,
   Enum = false,
-  comment = false
+  comment = false,
+  addUp = false
 ) => {
   try {
     data = JSON.stringify(data);
@@ -219,42 +299,118 @@ const createFile = (
     data = data.replace(/-"/g, "");
     data = data.replace(/\n/g, "");
 
-    if (!fs.existsSync(`Output/${folder}`)) fs.mkdirSync(`Output/${folder}`);
-    fs.appendFileSync(
-      `Output/${folder}/${fileName}.js`,
-      `const ${provider} = require("../core-index.js")
+    let str = `${addUp ? addUp : ""}
+      const ${provider} = require("../core-index.js")
       ${Enum ? "const Enum = require('../../enum.js')" : ""}
     ${core ? 'const core = require("../../core");' : ""}
     ${comment ? `// ${comment}` : ""}
     let ${folder} = ${data} ;
-    module.exports = ${folder} ;`
-    );
+    module.exports = ${folder} ;`;
+
+    if (!fs.existsSync(`Output/${folder}`)) fs.mkdirSync(`Output/${folder}`);
+    fs.appendFileSync(`Output/${folder}/${fileName}.js`, str);
     console.log(`${folder}/${fileName} Created!`);
   } catch (error) {
     console.log(`error: ${error.message}`);
   }
 };
 
-const ageRange = (arr) => {
-  let range = [];
+const splittingFile = (arr, key, folder, num) => {
+  if (!fs.existsSync(`Output/${folder}`)) fs.mkdirSync(`Output/${folder}`);
+  if (!fs.existsSync(`Output/${folder}/${key}`))
+    fs.mkdirSync(`Output/${folder}/${key}`);
+  // let count = Math.ceil(arr.length / maxArrLength);
+  // for (let i = 1; i <= count; i++) {
+  let count;
+  let data = `
+    let table = ${JSON.stringify(arr)};
+    module.exports = table;
+    `;
+  data = data.replace(/"-/g, "");
+  data = data.replace(/-"/g, "");
+  fs.appendFileSync(`Output/${folder}/${key}/${key}_${num}.js`, data);
+  // }
+  return count || 1;
+};
 
-  arr.forEach((v, index) => {
-    if (range.length === 0) {
-      range.push([0, null, v.rate]);
+const generateShortCode = (str) => {
+  if (str.includes("nil")) return "Nil";
+  if (str.includes("10")) return "10";
+  if (str.includes("20")) return "20";
+  let shortStr = "";
+  for (let i = 0; i < str.length; i++) {
+    let code = str[i].charCodeAt(0);
+    if (code >= 65 && code <= 90) shortStr += str[i];
+  }
+  return shortStr;
+};
+
+const groupingCollection = (arr, col) => {
+  // [ageStart,ageEnd,rates]
+  let range = [[arr[0].ageStart, arr[0].ageStart, arr[0][col]]];
+
+  arr.forEach((v, i) => {
+    if (i == 0) return;
+    let currentItem = range[range.length - 1]; // current item of ranage Arr
+    if (currentItem[2] == v[col]) {
+      if (i == arr.length - 1) currentItem[1] = v.ageEnd;
+      return;
     }
-    if (v.rate != range[range.length - 1][2]) {
-      range[range.length - 1].splice(1, 1, index - 1);
-      range.push([v.age, null, v.rate]);
-    }
-    if (index == arr.length - 1) {
-      range[range.length - 1].splice(1, 1, index);
-    }
+    currentItem[1] = v.ageStart - 1;
+    range.push([v.ageStart, v.ageEnd, v[col]]);
   });
 
   return range;
 };
 
-module.exports = { getList, createFile, remove };
+const extractAddon = (arr, addon, search = "") => {
+  const Enum = {
+    network: "-Enum.conditions.modifier-",
+    coverage: "-Enum.conditions.coverage-",
+    planName: "-Enum.conditions.plans-",
+    gender: "-Enum.customer.gender-",
+    ageStart: "-Enum.customer.min_age-",
+    ageEnd: "-Enum.customer.max_age-",
+    curreny: "-Enum.currency.USD-",
+  };
+  let includedRates = [];
+  arr = arr.filter((v) => v[addon]);
+  let rates = arr.reduce((acc, v) => {
+    if (v[addon] && !includedRates.includes(v[addon])) {
+      includedRates.push(v[addon]);
+      return [...acc, v];
+    }
+    return acc;
+  }, []);
+  if (rates.length == 0) throw new Error("Addon not found");
+  let fields = [];
+  let sheetLabels = Object.keys(Enum);
+  if (arr.find((v) => v.married)) {
+    Enum.married = "-Enum.customer.maritalStatus-";
+  }
+  for (let key in sheetLabels) {
+    if (rates[0][key] != rates[1][key]) fields.push(key);
+  }
+  return rates.map((v) => {
+    let conditions = fields.map((f) => {
+      return { type: Enum[f], value: v[f] };
+    });
+    return {
+      conditions,
+      price: [{ value: v[addon], currency: Enum.curreny }],
+    };
+  });
+};
+
+module.exports = {
+  getList,
+  createFile,
+  remove,
+  splittingFile,
+  generateShortCode,
+  groupingCollection,
+  extractAddon,
+};
 
 // const resOne = () => {
 //   const planSheet = xlsx.readFile(`./Input/${folderName}/benefits.xlsx`);
