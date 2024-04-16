@@ -34,6 +34,7 @@ const remove = (str, n) => {
 };
 
 const getList = (arr) => {
+  console.log('arr >> ', arr);
   try {
     let Global = {
       plans: [],
@@ -62,6 +63,7 @@ const getList = (arr) => {
         bundleBenefits: [],
         dependentBenefits: [],
       },
+      annualLimit: [],
     };
 
     if (arr[0].networkType == "custom") Global.filters.networkType = "custom";
@@ -71,6 +73,9 @@ const getList = (arr) => {
 
     arr.forEach((v) => {
       if (v.filters == "frequency") Global.filters.frequency = "custom";
+    });
+    arr.forEach((v) => {
+      if (v.filters == "annualLimit") Global.filters.annualLimit = "custom";
     });
 
     arr.forEach((v) => {

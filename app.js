@@ -245,7 +245,7 @@ let Arr = new Array(resCount).fill(null);
           {
             from: "-Enum.currency.USD-",
             to: "-Enum.currency.AED-",
-            rate: 3.6725,
+            rate: 36.69,
             type: "-Enum.conversionRateType.premium-",
           },
         ],
@@ -257,7 +257,7 @@ let Arr = new Array(resCount).fill(null);
     //   str[0].exchangeRates.push({
     //     from: "-Enum.currency.USD-",
     //     to: "-Enum.currency.AED-",
-    //     rate: 3.6725,
+    //     rate: 36.69,
     //     type: "-Enum.conversionRateType.premium-",
     //   });
     createFile("provider", "index", str, provider, false, true);
@@ -734,7 +734,7 @@ let Arr = new Array(resCount).fill(null);
           ? 1
           : DATAs[0][0].conversionRate
           ? DATAs[0][0].conversionRate
-          : 3.6725;
+          : 36.69;
       let PricingTable = [];
       let tableCount = 1;
       for (const key in Id.pricingTables) {
@@ -783,6 +783,9 @@ let Arr = new Array(resCount).fill(null);
             //   });
             //   throw new Error();
             // }
+
+            // console.log('store.coverages >> ', store.coverages);
+            // console.log('store.frequency >> ', store.frequency);
             if (DATA[0].planCopay == "single") {
               return (
                 n.planName == originalName(key) &&
@@ -982,7 +985,7 @@ let Arr = new Array(resCount).fill(null);
         ? 1
         : DATAs[0][0].conversionRate
         ? DATAs[0][0].conversionRate
-        : 3.6725;
+        : 36.69;
     let benefitsKeys = DATA[0];
     let modifiers = {};
     for (let key in benefitsKeys) {
@@ -1245,6 +1248,7 @@ let Arr = new Array(resCount).fill(null);
           }
           newArr.push(str);
         }
+
         // Addons --------------------------------------------
         store.filters.addons.map((addon) => {
           if (addon == "Repat") {
@@ -1313,7 +1317,7 @@ let Arr = new Array(resCount).fill(null);
             id: `${discount}-discount`,
             label: `${discount} Discount`,
             premiumMod: {
-              type: "percentage", 
+              type: "percentage",
               price: [{ value: -Number(discount.replace("%", "")) }],
             },
             description: `${discount} Discount`,
@@ -1325,7 +1329,6 @@ let Arr = new Array(resCount).fill(null);
             ],
           };
 
-          console.log("str >> ", str);
           newArr.push(str);
         });
       }
@@ -1644,8 +1647,6 @@ let Arr = new Array(resCount).fill(null);
                         n.frequency == fr &&
                         n.network == net[1]
                       );
-
-
                     });
                     // console.log(
                     //   "copay, plan --> ",
@@ -1664,7 +1665,6 @@ let Arr = new Array(resCount).fill(null);
                     //     net[1]
                     // );
 
-                    console.log('pricing >> ', pricing);
                     if (DATA[0].planCopay == "single" && pricing.length == 0)
                       return;
                     if (pricing.length == 0) {
@@ -1799,6 +1799,7 @@ let Arr = new Array(resCount).fill(null);
         };
         newArr.push({ ...str });
       }
+
       if (key == "network") {
         if (
           store.filters.networkType == "multiple" ||
@@ -1835,6 +1836,8 @@ let Arr = new Array(resCount).fill(null);
               let n_check = DATA.find((dd) => dd.PlanName == pp[1])[
                 "Network Details"
               ];
+
+              // console.log('store >> ', store);
 
               let nn = store.Networks.find((n) => n[1] == n_check)[0];
               return nn == ff;
