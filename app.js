@@ -822,7 +822,7 @@ let Arr = new Array(resCount).fill(null);
               let str = {
                 fromAge: t.ageStart,
                 toAge: t.ageEnd,
-                gender: `-Enum.gender.${t.gender.toLowerCase()}-`,
+                gender: `-Enum.gender.${t.gender?.toLowerCase()}-`,
                 price: [
                   {
                     value: parseFloat(t.rates / conversion),
@@ -1262,6 +1262,13 @@ let Arr = new Array(resCount).fill(null);
             return;
           }
           let i_ = newArr.findIndex((v) => v.label == addon);
+          if (i_ == -1) {
+            console.log(
+              "benefit labels",
+              newArr.map((v) => v.label)
+            );
+            throw new Error(`${addon} not found on benefit list`);
+          }
           fetchAddons(newArr[i_], addon, folderName, provider, n, conversion);
         });
 
@@ -1913,6 +1920,9 @@ let Arr = new Array(resCount).fill(null);
                     ],
                   };
                   let pricing = rateSheet.filter((n) => {
+                    if (n.copay == "0.1") n.copay = "10%";
+                    if (n.copay == "0.2") n.copay = "20%";
+
                     // if (n.planName == "Limited") {
                     //   console.log(
                     //     n.planName == plan[0][1],
@@ -1987,7 +1997,7 @@ let Arr = new Array(resCount).fill(null);
                       ],
                       price: [
                         {
-                          value: parseFloat(t.rates / conversion),
+                          value: parseFloat(t.rates / conversion) * 12,
                           currency: `-Enum.currency.${t.currency}-`,
                         },
                       ],
