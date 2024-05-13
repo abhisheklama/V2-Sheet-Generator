@@ -182,9 +182,11 @@ const getList = (arr) => {
       }
     });
 
+
     // Addon Premiums -----------------------------------
     arr[0].addons &&
       arr.forEach(({ addons }) => {
+        // console.log('addons >> ', addons);
         if (!addons) return;
         // let values = addons.split(" & ");
         // let struc = {
@@ -383,6 +385,7 @@ const fetchAddons = (
   num,
   conversion
 ) => {
+  console.log('addonName >> ', addonName);
   let info = readFile(
     folderName,
     "addon",
@@ -401,6 +404,8 @@ const fetchAddons = (
   //   (addonName.includes(" ") ? addonName.split(" ")[0] : addonName) + "_rates",
   //   addonRates
   // );
+
+  console.log('addonRates.length >> ', addonRates.length);
   if (info.find((v) => v.default.toLowerCase == "true")) {
   } else {
     let Addons = [];

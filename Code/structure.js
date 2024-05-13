@@ -114,6 +114,7 @@ function check(v1, v2) {
     ["Pre-existing & Chronic Conditions (PEC)", "Chronic Condition Cover"],
     ["Routine Delivery", "Maternity (Consultations, Scans and Delivery)"],
     ["Out-patient General Practioner", "Out-patient Consultations"],
+    ["Annual Limit", "Annual Limit"],
     [
       "In-patient (Hospitalization & Surgery)",
       "In-patient (Hospitalization & Surgery)",

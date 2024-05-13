@@ -1,0 +1,586 @@
+planName,network,coverage,ageStart,ageEnd,rates,copay,gender,frequency,currency,term2,dentalAddon,,,,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,0,4,23968,"TBH 20,000 deductible",,Annually,THB,,,,29960,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,5,18,7596,"TBH 20,000 deductible",,Annually,THB,,,,9495,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,19,25,6887.2,"TBH 20,000 deductible",,Annually,THB,,,,8609,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,26,30,8102.4,"TBH 20,000 deductible",,Annually,THB,,,,10128,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,31,35,9115.2,"TBH 20,000 deductible",,Annually,THB,,,,11394,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,36,40,10127.2,"TBH 20,000 deductible",,Annually,THB,,,,12659,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,41,45,11140,"TBH 20,000 deductible",,Annually,THB,,,,13925,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,46,50,12659.2,"TBH 20,000 deductible",,Annually,THB,,,,15824,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,51,55,13672,"TBH 20,000 deductible",,Annually,THB,,,,17090,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,56,60,15696.8,"TBH 20,000 deductible",,Annually,THB,,,,19621,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,61,65,18735.2,"TBH 20,000 deductible",,Annually,THB,,,,23419,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,66,70,25824,"TBH 20,000 deductible",,Annually,THB,,,,32280,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,71,75,38482.4,"TBH 20,000 deductible",,Annually,THB,,,,48103,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,0,4,23968,"TBH 40,000 deductible",,Annually,THB,,,,29960,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,5,18,7596,"TBH 40,000 deductible",,Annually,THB,,,,9495,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,19,25,6887.2,"TBH 40,000 deductible",,Annually,THB,,,,8609,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,26,30,8102.4,"TBH 40,000 deductible",,Annually,THB,,,,10128,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,31,35,9115.2,"TBH 40,000 deductible",,Annually,THB,,,,11394,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,36,40,10127.2,"TBH 40,000 deductible",,Annually,THB,,,,12659,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,41,45,11140,"TBH 40,000 deductible",,Annually,THB,,,,13925,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,46,50,12659.2,"TBH 40,000 deductible",,Annually,THB,,,,15824,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,51,55,13672,"TBH 40,000 deductible",,Annually,THB,,,,17090,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,56,60,15696.8,"TBH 40,000 deductible",,Annually,THB,,,,19621,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,61,65,18735.2,"TBH 40,000 deductible",,Annually,THB,,,,23419,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,66,70,25824,"TBH 40,000 deductible",,Annually,THB,,,,32280,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,71,75,38482.4,"TBH 40,000 deductible",,Annually,THB,,,,48103,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,0,4,23968,"TBH 100,000 deductible",,Annually,THB,,,,29960,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,5,18,7596,"TBH 100,000 deductible",,Annually,THB,,,,9495,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,19,25,6887.2,"TBH 100,000 deductible",,Annually,THB,,,,8609,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,26,30,8102.4,"TBH 100,000 deductible",,Annually,THB,,,,10128,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,31,35,9115.2,"TBH 100,000 deductible",,Annually,THB,,,,11394,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,36,40,10127.2,"TBH 100,000 deductible",,Annually,THB,,,,12659,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,41,45,11140,"TBH 100,000 deductible",,Annually,THB,,,,13925,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,46,50,12659.2,"TBH 100,000 deductible",,Annually,THB,,,,15824,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,51,55,13672,"TBH 100,000 deductible",,Annually,THB,,,,17090,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,56,60,15696.8,"TBH 100,000 deductible",,Annually,THB,,,,19621,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,61,65,18735.2,"TBH 100,000 deductible",,Annually,THB,,,,23419,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,66,70,25824,"TBH 100,000 deductible",,Annually,THB,,,,32280,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,71,75,38482.4,"TBH 100,000 deductible",,Annually,THB,,,,48103,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,0,4,23968,"TBH 200,000 deductible",,Annually,THB,,,,29960,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,5,18,7596,"TBH 200,000 deductible",,Annually,THB,,,,9495,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,19,25,6887.2,"TBH 200,000 deductible",,Annually,THB,,,,8609,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,26,30,8102.4,"TBH 200,000 deductible",,Annually,THB,,,,10128,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,31,35,9115.2,"TBH 200,000 deductible",,Annually,THB,,,,11394,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,36,40,10127.2,"TBH 200,000 deductible",,Annually,THB,,,,12659,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,41,45,11140,"TBH 200,000 deductible",,Annually,THB,,,,13925,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,46,50,12659.2,"TBH 200,000 deductible",,Annually,THB,,,,15824,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,51,55,13672,"TBH 200,000 deductible",,Annually,THB,,,,17090,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,56,60,15696.8,"TBH 200,000 deductible",,Annually,THB,,,,19621,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,61,65,18735.2,"TBH 200,000 deductible",,Annually,THB,,,,23419,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,66,70,25824,"TBH 200,000 deductible",,Annually,THB,,,,32280,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,71,75,38482.4,"TBH 200,000 deductible",,Annually,THB,,,,48103,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,0,4,23968,"TBH 300,000 deductible",,Annually,THB,,,,29960,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,5,18,7596,"TBH 300,000 deductible",,Annually,THB,,,,9495,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,19,25,6887.2,"TBH 300,000 deductible",,Annually,THB,,,,8609,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,26,30,8102.4,"TBH 300,000 deductible",,Annually,THB,,,,10128,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,31,35,9115.2,"TBH 300,000 deductible",,Annually,THB,,,,11394,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,36,40,10127.2,"TBH 300,000 deductible",,Annually,THB,,,,12659,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,41,45,11140,"TBH 300,000 deductible",,Annually,THB,,,,13925,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,46,50,12659.2,"TBH 300,000 deductible",,Annually,THB,,,,15824,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,51,55,13672,"TBH 300,000 deductible",,Annually,THB,,,,17090,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,56,60,15696.8,"TBH 300,000 deductible",,Annually,THB,,,,19621,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,61,65,18735.2,"TBH 300,000 deductible",,Annually,THB,,,,23419,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,66,70,25824,"TBH 300,000 deductible",,Annually,THB,,,,32280,THB,,,,
+Standard,Pacific Cross Network,Worldwide Excluding USA,71,75,38482.4,"TBH 300,000 deductible",,Annually,THB,,,,48103,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,29960,"TBH 20,000 deductible",,Annually,THB,,,,37450,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,10468.8,"TBH 20,000 deductible",,Annually,THB,,,,13086,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,9492,"TBH 20,000 deductible",,Annually,THB,,,,11865,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,11166.4,"TBH 20,000 deductible",,Annually,THB,,,,13958,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,12562.4,"TBH 20,000 deductible",,Annually,THB,,,,15703,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,13958.4,"TBH 20,000 deductible",,Annually,THB,,,,17448,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,15354.4,"TBH 20,000 deductible",,Annually,THB,,,,19193,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,1744.8,"TBH 20,000 deductible",,Annually,THB,,,,2181,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,18843.2,"TBH 20,000 deductible",,Annually,THB,,,,23554,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,21634.4,"TBH 20,000 deductible",,Annually,THB,,,,27043,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,25822.4,"TBH 20,000 deductible",,Annually,THB,,,,32278,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,35592.8,"TBH 20,000 deductible",,Annually,THB,,,,44491,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,53039.2,"TBH 20,000 deductible",,Annually,THB,,,,66299,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,29960,"TBH 40,000 deductible",,Annually,THB,,,,37450,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,10468.8,"TBH 40,000 deductible",,Annually,THB,,,,13086,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,9492,"TBH 40,000 deductible",,Annually,THB,,,,11865,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,11166.4,"TBH 40,000 deductible",,Annually,THB,,,,13958,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,12562.4,"TBH 40,000 deductible",,Annually,THB,,,,15703,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,13958.4,"TBH 40,000 deductible",,Annually,THB,,,,17448,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,15354.4,"TBH 40,000 deductible",,Annually,THB,,,,19193,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,1744.8,"TBH 40,000 deductible",,Annually,THB,,,,2181,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,18843.2,"TBH 40,000 deductible",,Annually,THB,,,,23554,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,21634.4,"TBH 40,000 deductible",,Annually,THB,,,,27043,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,25822.4,"TBH 40,000 deductible",,Annually,THB,,,,32278,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,35592.8,"TBH 40,000 deductible",,Annually,THB,,,,44491,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,53039.2,"TBH 40,000 deductible",,Annually,THB,,,,66299,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,29960,"TBH 100,000 deductible",,Annually,THB,,,,37450,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,10468.8,"TBH 100,000 deductible",,Annually,THB,,,,13086,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,9492,"TBH 100,000 deductible",,Annually,THB,,,,11865,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,11166.4,"TBH 100,000 deductible",,Annually,THB,,,,13958,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,12562.4,"TBH 100,000 deductible",,Annually,THB,,,,15703,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,13958.4,"TBH 100,000 deductible",,Annually,THB,,,,17448,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,15354.4,"TBH 100,000 deductible",,Annually,THB,,,,19193,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,1744.8,"TBH 100,000 deductible",,Annually,THB,,,,2181,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,18843.2,"TBH 100,000 deductible",,Annually,THB,,,,23554,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,21634.4,"TBH 100,000 deductible",,Annually,THB,,,,27043,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,25822.4,"TBH 100,000 deductible",,Annually,THB,,,,32278,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,35592.8,"TBH 100,000 deductible",,Annually,THB,,,,44491,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,53039.2,"TBH 100,000 deductible",,Annually,THB,,,,66299,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,29960,"TBH 200,000 deductible",,Annually,THB,,,,37450,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,10468.8,"TBH 200,000 deductible",,Annually,THB,,,,13086,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,9492,"TBH 200,000 deductible",,Annually,THB,,,,11865,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,11166.4,"TBH 200,000 deductible",,Annually,THB,,,,13958,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,12562.4,"TBH 200,000 deductible",,Annually,THB,,,,15703,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,13958.4,"TBH 200,000 deductible",,Annually,THB,,,,17448,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,15354.4,"TBH 200,000 deductible",,Annually,THB,,,,19193,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,1744.8,"TBH 200,000 deductible",,Annually,THB,,,,2181,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,18843.2,"TBH 200,000 deductible",,Annually,THB,,,,23554,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,21634.4,"TBH 200,000 deductible",,Annually,THB,,,,27043,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,25822.4,"TBH 200,000 deductible",,Annually,THB,,,,32278,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,35592.8,"TBH 200,000 deductible",,Annually,THB,,,,44491,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,53039.2,"TBH 200,000 deductible",,Annually,THB,,,,66299,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,29960,"TBH 300,000 deductible",,Annually,THB,,,,37450,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,10468.8,"TBH 300,000 deductible",,Annually,THB,,,,13086,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,9492,"TBH 300,000 deductible",,Annually,THB,,,,11865,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,11166.4,"TBH 300,000 deductible",,Annually,THB,,,,13958,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,12562.4,"TBH 300,000 deductible",,Annually,THB,,,,15703,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,13958.4,"TBH 300,000 deductible",,Annually,THB,,,,17448,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,15354.4,"TBH 300,000 deductible",,Annually,THB,,,,19193,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,1744.8,"TBH 300,000 deductible",,Annually,THB,,,,2181,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,18843.2,"TBH 300,000 deductible",,Annually,THB,,,,23554,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,21634.4,"TBH 300,000 deductible",,Annually,THB,,,,27043,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,25822.4,"TBH 300,000 deductible",,Annually,THB,,,,32278,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,35592.8,"TBH 300,000 deductible",,Annually,THB,,,,44491,THB,,,,
+Standard Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,53039.2,"TBH 300,000 deductible",,Annually,THB,,,,66299,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,0,4,36808,"TBH 20,000 deductible",,Annually,THB,,,,46010,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,5,18,13090.4,"TBH 20,000 deductible",,Annually,THB,,,,16363,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,19,25,11868.8,"TBH 20,000 deductible",,Annually,THB,,,,14836,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,26,30,13962.4,"TBH 20,000 deductible",,Annually,THB,,,,17453,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,31,35,15707.2,"TBH 20,000 deductible",,Annually,THB,,,,19634,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,36,40,17452.8,"TBH 20,000 deductible",,Annually,THB,,,,21816,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,41,45,19197.6,"TBH 20,000 deductible",,Annually,THB,,,,23997,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,46,50,21816,"TBH 20,000 deductible",,Annually,THB,,,,27270,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,51,55,23560.8,"TBH 20,000 deductible",,Annually,THB,,,,29451,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,56,60,27051.2,"TBH 20,000 deductible",,Annually,THB,,,,33814,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,61,65,32287.2,"TBH 20,000 deductible",,Annually,THB,,,,40359,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,66,70,44503.2,"TBH 20,000 deductible",,Annually,THB,,,,55629,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,71,75,66317.6,"TBH 20,000 deductible",,Annually,THB,,,,82897,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,0,4,36808,"TBH 40,000 deductible",,Annually,THB,,,,46010,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,5,18,13090.4,"TBH 40,000 deductible",,Annually,THB,,,,16363,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,19,25,11868.8,"TBH 40,000 deductible",,Annually,THB,,,,14836,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,26,30,13962.4,"TBH 40,000 deductible",,Annually,THB,,,,17453,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,31,35,15707.2,"TBH 40,000 deductible",,Annually,THB,,,,19634,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,36,40,17452.8,"TBH 40,000 deductible",,Annually,THB,,,,21816,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,41,45,19197.6,"TBH 40,000 deductible",,Annually,THB,,,,23997,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,46,50,21816,"TBH 40,000 deductible",,Annually,THB,,,,27270,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,51,55,23560.8,"TBH 40,000 deductible",,Annually,THB,,,,29451,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,56,60,27051.2,"TBH 40,000 deductible",,Annually,THB,,,,33814,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,61,65,32287.2,"TBH 40,000 deductible",,Annually,THB,,,,40359,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,66,70,44503.2,"TBH 40,000 deductible",,Annually,THB,,,,55629,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,71,75,66317.6,"TBH 40,000 deductible",,Annually,THB,,,,82897,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,0,4,36808,"TBH 100,000 deductible",,Annually,THB,,,,46010,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,5,18,13090.4,"TBH 100,000 deductible",,Annually,THB,,,,16363,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,19,25,11868.8,"TBH 100,000 deductible",,Annually,THB,,,,14836,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,26,30,13962.4,"TBH 100,000 deductible",,Annually,THB,,,,17453,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,31,35,15707.2,"TBH 100,000 deductible",,Annually,THB,,,,19634,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,36,40,17452.8,"TBH 100,000 deductible",,Annually,THB,,,,21816,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,41,45,19197.6,"TBH 100,000 deductible",,Annually,THB,,,,23997,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,46,50,21816,"TBH 100,000 deductible",,Annually,THB,,,,27270,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,51,55,23560.8,"TBH 100,000 deductible",,Annually,THB,,,,29451,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,56,60,27051.2,"TBH 100,000 deductible",,Annually,THB,,,,33814,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,61,65,32287.2,"TBH 100,000 deductible",,Annually,THB,,,,40359,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,66,70,44503.2,"TBH 100,000 deductible",,Annually,THB,,,,55629,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,71,75,66317.6,"TBH 100,000 deductible",,Annually,THB,,,,82897,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,0,4,36808,"TBH 200,000 deductible",,Annually,THB,,,,46010,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,5,18,13090.4,"TBH 200,000 deductible",,Annually,THB,,,,16363,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,19,25,11868.8,"TBH 200,000 deductible",,Annually,THB,,,,14836,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,26,30,13962.4,"TBH 200,000 deductible",,Annually,THB,,,,17453,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,31,35,15707.2,"TBH 200,000 deductible",,Annually,THB,,,,19634,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,36,40,17452.8,"TBH 200,000 deductible",,Annually,THB,,,,21816,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,41,45,19197.6,"TBH 200,000 deductible",,Annually,THB,,,,23997,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,46,50,21816,"TBH 200,000 deductible",,Annually,THB,,,,27270,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,51,55,23560.8,"TBH 200,000 deductible",,Annually,THB,,,,29451,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,56,60,27051.2,"TBH 200,000 deductible",,Annually,THB,,,,33814,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,61,65,32287.2,"TBH 200,000 deductible",,Annually,THB,,,,40359,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,66,70,44503.2,"TBH 200,000 deductible",,Annually,THB,,,,55629,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,71,75,66317.6,"TBH 200,000 deductible",,Annually,THB,,,,82897,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,0,4,36808,"TBH 300,000 deductible",,Annually,THB,,,,46010,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,5,18,13090.4,"TBH 300,000 deductible",,Annually,THB,,,,16363,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,19,25,11868.8,"TBH 300,000 deductible",,Annually,THB,,,,14836,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,26,30,13962.4,"TBH 300,000 deductible",,Annually,THB,,,,17453,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,31,35,15707.2,"TBH 300,000 deductible",,Annually,THB,,,,19634,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,36,40,17452.8,"TBH 300,000 deductible",,Annually,THB,,,,21816,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,41,45,19197.6,"TBH 300,000 deductible",,Annually,THB,,,,23997,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,46,50,21816,"TBH 300,000 deductible",,Annually,THB,,,,27270,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,51,55,23560.8,"TBH 300,000 deductible",,Annually,THB,,,,29451,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,56,60,27051.2,"TBH 300,000 deductible",,Annually,THB,,,,33814,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,61,65,32287.2,"TBH 300,000 deductible",,Annually,THB,,,,40359,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,66,70,44503.2,"TBH 300,000 deductible",,Annually,THB,,,,55629,THB,,,,
+Standard Extra,Pacific Cross Network,Worldwide Excluding USA,71,75,66317.6,"TBH 300,000 deductible",,Annually,THB,,,,82897,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,0,4,29136.8,"TBH 20,000 deductible",,Annually,THB,,,,36421,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,5,18,16809.6,"TBH 20,000 deductible",,Annually,THB,1273.6,5987.2,,21012,THB,1592,1353.2,7484,6361.4
+Premier,Pacific Cross Network,Worldwide Excluding USA,19,25,15241.6,"TBH 20,000 deductible",,Annually,THB,1273.6,5987.2,,19052,THB,1592,1353.2,7484,6361.4
+Premier,Pacific Cross Network,Worldwide Excluding USA,26,30,17930.4,"TBH 20,000 deductible",,Annually,THB,1698.4,6448.8,,22413,THB,2123,1804.55,8061,6851.85
+Premier,Pacific Cross Network,Worldwide Excluding USA,31,35,20171.2,"TBH 20,000 deductible",,Annually,THB,1698.4,6448.8,,25214,THB,2123,1804.55,8061,6851.85
+Premier,Pacific Cross Network,Worldwide Excluding USA,36,40,22412.8,"TBH 20,000 deductible",,Annually,THB,1698.4,6907.2,,28016,THB,2123,1804.55,8634,7338.9
+Premier,Pacific Cross Network,Worldwide Excluding USA,41,45,24654.4,"TBH 20,000 deductible",,Annually,THB,1698.4,6907.2,,30818,THB,2123,1804.55,8634,7338.9
+Premier,Pacific Cross Network,Worldwide Excluding USA,46,50,28016,"TBH 20,000 deductible",,Annually,THB,1909.6,7368,,35020,THB,2387,2028.95,9210,7828.5
+Premier,Pacific Cross Network,Worldwide Excluding USA,51,55,30256.8,"TBH 20,000 deductible",,Annually,THB,1909.6,7828.8,,37821,THB,2387,2028.95,9786,8318.1
+Premier,Pacific Cross Network,Worldwide Excluding USA,56,60,34740,"TBH 20,000 deductible",,Annually,THB,2120.8,8519.2,,43425,THB,2651,2253.35,10649,9051.65
+Premier,Pacific Cross Network,Worldwide Excluding USA,61,65,41463.2,"TBH 20,000 deductible",,Annually,THB,2544.8,9209.6,,51829,THB,3181,2703.85,11512,9785.2
+Premier,Pacific Cross Network,Worldwide Excluding USA,66,70,57151.2,"TBH 20,000 deductible",,Annually,THB,,,,71439,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,71,75,85166.4,"TBH 20,000 deductible",,Annually,THB,,,,106458,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,0,4,29136.8,"TBH 40,000 deductible",,Annually,THB,,,,36421,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,5,18,16809.6,"TBH 40,000 deductible",,Annually,THB,1273.6,5987.2,,21012,THB,1592,1194,7484,5613
+Premier,Pacific Cross Network,Worldwide Excluding USA,19,25,15241.6,"TBH 40,000 deductible",,Annually,THB,1273.6,5987.2,,19052,THB,1592,1194,7484,5613
+Premier,Pacific Cross Network,Worldwide Excluding USA,26,30,17930.4,"TBH 40,000 deductible",,Annually,THB,1698.4,6448.8,,22413,THB,2123,1592.25,8061,6045.75
+Premier,Pacific Cross Network,Worldwide Excluding USA,31,35,20171.2,"TBH 40,000 deductible",,Annually,THB,1698.4,6448.8,,25214,THB,2123,1592.25,8061,6045.75
+Premier,Pacific Cross Network,Worldwide Excluding USA,36,40,22412.8,"TBH 40,000 deductible",,Annually,THB,1698.4,6907.2,,28016,THB,2123,1592.25,8634,6475.5
+Premier,Pacific Cross Network,Worldwide Excluding USA,41,45,24654.4,"TBH 40,000 deductible",,Annually,THB,1698.4,6907.2,,30818,THB,2123,1592.25,8634,6475.5
+Premier,Pacific Cross Network,Worldwide Excluding USA,46,50,28016,"TBH 40,000 deductible",,Annually,THB,1909.6,7368,,35020,THB,2387,1790.25,9210,6907.5
+Premier,Pacific Cross Network,Worldwide Excluding USA,51,55,30256.8,"TBH 40,000 deductible",,Annually,THB,1909.6,7828.8,,37821,THB,2387,1790.25,9786,7339.5
+Premier,Pacific Cross Network,Worldwide Excluding USA,56,60,34740,"TBH 40,000 deductible",,Annually,THB,2120.8,8519.2,,43425,THB,2651,1988.25,10649,7986.75
+Premier,Pacific Cross Network,Worldwide Excluding USA,61,65,41463.2,"TBH 40,000 deductible",,Annually,THB,2544.8,9209.6,,51829,THB,3181,2385.75,11512,8634
+Premier,Pacific Cross Network,Worldwide Excluding USA,66,70,57151.2,"TBH 40,000 deductible",,Annually,THB,,,,71439,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,71,75,85166.4,"TBH 40,000 deductible",,Annually,THB,,,,106458,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,0,4,29136.8,"TBH 100,000 deductible",,Annually,THB,,,,36421,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,5,18,16809.6,"TBH 100,000 deductible",,Annually,THB,1273.6,5987.2,,21012,THB,1592,1074.6,7484,5051.7
+Premier,Pacific Cross Network,Worldwide Excluding USA,19,25,15241.6,"TBH 100,000 deductible",,Annually,THB,1273.6,5987.2,,19052,THB,1592,1074.6,7484,5051.7
+Premier,Pacific Cross Network,Worldwide Excluding USA,26,30,17930.4,"TBH 100,000 deductible",,Annually,THB,1698.4,6448.8,,22413,THB,2123,1433.025,8061,5441.175
+Premier,Pacific Cross Network,Worldwide Excluding USA,31,35,20171.2,"TBH 100,000 deductible",,Annually,THB,1698.4,6448.8,,25214,THB,2123,1433.025,8061,5441.175
+Premier,Pacific Cross Network,Worldwide Excluding USA,36,40,22412.8,"TBH 100,000 deductible",,Annually,THB,1698.4,6907.2,,28016,THB,2123,1433.025,8634,5827.95
+Premier,Pacific Cross Network,Worldwide Excluding USA,41,45,24654.4,"TBH 100,000 deductible",,Annually,THB,1698.4,6907.2,,30818,THB,2123,1433.025,8634,5827.95
+Premier,Pacific Cross Network,Worldwide Excluding USA,46,50,28016,"TBH 100,000 deductible",,Annually,THB,1909.6,7368,,35020,THB,2387,1611.225,9210,6216.75
+Premier,Pacific Cross Network,Worldwide Excluding USA,51,55,30256.8,"TBH 100,000 deductible",,Annually,THB,1909.6,7828.8,,37821,THB,2387,1611.225,9786,6605.55
+Premier,Pacific Cross Network,Worldwide Excluding USA,56,60,34740,"TBH 100,000 deductible",,Annually,THB,2120.8,8519.2,,43425,THB,2651,1789.425,10649,7188.075
+Premier,Pacific Cross Network,Worldwide Excluding USA,61,65,41463.2,"TBH 100,000 deductible",,Annually,THB,2544.8,9209.6,,51829,THB,3181,2147.175,11512,7770.6
+Premier,Pacific Cross Network,Worldwide Excluding USA,66,70,57151.2,"TBH 100,000 deductible",,Annually,THB,,,,71439,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,71,75,85166.4,"TBH 100,000 deductible",,Annually,THB,,,,106458,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,0,4,29136.8,"TBH 200,000 deductible",,Annually,THB,,,,36421,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,5,18,16809.6,"TBH 200,000 deductible",,Annually,THB,1273.6,5987.2,,21012,THB,1592,955.2,7484,4490.4
+Premier,Pacific Cross Network,Worldwide Excluding USA,19,25,15241.6,"TBH 200,000 deductible",,Annually,THB,1273.6,5987.2,,19052,THB,1592,955.2,7484,4490.4
+Premier,Pacific Cross Network,Worldwide Excluding USA,26,30,17930.4,"TBH 200,000 deductible",,Annually,THB,1698.4,6448.8,,22413,THB,2123,1273.8,8061,4836.6
+Premier,Pacific Cross Network,Worldwide Excluding USA,31,35,20171.2,"TBH 200,000 deductible",,Annually,THB,1698.4,6448.8,,25214,THB,2123,1273.8,8061,4836.6
+Premier,Pacific Cross Network,Worldwide Excluding USA,36,40,22412.8,"TBH 200,000 deductible",,Annually,THB,1698.4,6907.2,,28016,THB,2123,1273.8,8634,5180.4
+Premier,Pacific Cross Network,Worldwide Excluding USA,41,45,24654.4,"TBH 200,000 deductible",,Annually,THB,1698.4,6907.2,,30818,THB,2123,1273.8,8634,5180.4
+Premier,Pacific Cross Network,Worldwide Excluding USA,46,50,28016,"TBH 200,000 deductible",,Annually,THB,1909.6,7368,,35020,THB,2387,1432.2,9210,5526
+Premier,Pacific Cross Network,Worldwide Excluding USA,51,55,30256.8,"TBH 200,000 deductible",,Annually,THB,1909.6,7828.8,,37821,THB,2387,1432.2,9786,5871.6
+Premier,Pacific Cross Network,Worldwide Excluding USA,56,60,34740,"TBH 200,000 deductible",,Annually,THB,2120.8,8519.2,,43425,THB,2651,1590.6,10649,6389.4
+Premier,Pacific Cross Network,Worldwide Excluding USA,61,65,41463.2,"TBH 200,000 deductible",,Annually,THB,2544.8,9209.6,,51829,THB,3181,1908.6,11512,6907.2
+Premier,Pacific Cross Network,Worldwide Excluding USA,66,70,57151.2,"TBH 200,000 deductible",,Annually,THB,,,,71439,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,71,75,85166.4,"TBH 200,000 deductible",,Annually,THB,,,,106458,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,0,4,29136.8,"TBH 300,000 deductible",,Annually,THB,,,,36421,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,5,18,16809.6,"TBH 300,000 deductible",,Annually,THB,1273.6,5987.2,,21012,THB,1592,796,7484,3742
+Premier,Pacific Cross Network,Worldwide Excluding USA,19,25,15241.6,"TBH 300,000 deductible",,Annually,THB,1273.6,5987.2,,19052,THB,1592,796,7484,3742
+Premier,Pacific Cross Network,Worldwide Excluding USA,26,30,17930.4,"TBH 300,000 deductible",,Annually,THB,1698.4,6448.8,,22413,THB,2123,1061.5,8061,4030.5
+Premier,Pacific Cross Network,Worldwide Excluding USA,31,35,20171.2,"TBH 300,000 deductible",,Annually,THB,1698.4,6448.8,,25214,THB,2123,1061.5,8061,4030.5
+Premier,Pacific Cross Network,Worldwide Excluding USA,36,40,22412.8,"TBH 300,000 deductible",,Annually,THB,1698.4,6907.2,,28016,THB,2123,1061.5,8634,4317
+Premier,Pacific Cross Network,Worldwide Excluding USA,41,45,24654.4,"TBH 300,000 deductible",,Annually,THB,1698.4,6907.2,,30818,THB,2123,1061.5,8634,4317
+Premier,Pacific Cross Network,Worldwide Excluding USA,46,50,28016,"TBH 300,000 deductible",,Annually,THB,1909.6,7368,,35020,THB,2387,1193.5,9210,4605
+Premier,Pacific Cross Network,Worldwide Excluding USA,51,55,30256.8,"TBH 300,000 deductible",,Annually,THB,1909.6,7828.8,,37821,THB,2387,1193.5,9786,4893
+Premier,Pacific Cross Network,Worldwide Excluding USA,56,60,34740,"TBH 300,000 deductible",,Annually,THB,2120.8,8519.2,,43425,THB,2651,1325.5,10649,5324.5
+Premier,Pacific Cross Network,Worldwide Excluding USA,61,65,41463.2,"TBH 300,000 deductible",,Annually,THB,2544.8,9209.6,,51829,THB,3181,1590.5,11512,5756
+Premier,Pacific Cross Network,Worldwide Excluding USA,66,70,57151.2,"TBH 300,000 deductible",,Annually,THB,,,,71439,THB,,,,
+Premier,Pacific Cross Network,Worldwide Excluding USA,71,75,85166.4,"TBH 300,000 deductible",,Annually,THB,,,,106458,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,42254.4,"TBH 20,000 deductible",,Annually,THB,,,,52818,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,24376.8,"TBH 20,000 deductible",,Annually,THB,1273.6,5987.2,,30471,THB,1592,1353.2,7484,6361.4
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,22101.6,"TBH 20,000 deductible",,Annually,THB,1273.6,5987.2,,27627,THB,1592,1353.2,7484,6361.4
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,26003.2,"TBH 20,000 deductible",,Annually,THB,1698.4,6448.8,,32504,THB,2123,1804.55,8061,6851.85
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,29252.8,"TBH 20,000 deductible",,Annually,THB,1698.4,6448.8,,36566,THB,2123,1804.55,8061,6851.85
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,32503.2,"TBH 20,000 deductible",,Annually,THB,1698.4,6907.2,,40629,THB,2123,1804.55,8634,7338.9
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,35752.8,"TBH 20,000 deductible",,Annually,THB,1698.4,6907.2,,44691,THB,2123,1804.55,8634,7338.9
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,40628,"TBH 20,000 deductible",,Annually,THB,1909.6,7368,,50785,THB,2387,2028.95,9210,7828.5
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,43878.4,"TBH 20,000 deductible",,Annually,THB,1909.6,7828.8,,54848,THB,2387,2028.95,9786,8318.1
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,50378.4,"TBH 20,000 deductible",,Annually,THB,2120.8,8519.2,,62973,THB,2651,2253.35,10649,9051.65
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,60129.6,"TBH 20,000 deductible",,Annually,THB,2544.8,9209.6,,75162,THB,3181,2703.85,11512,9785.2
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,82881.6,"TBH 20,000 deductible",,Annually,THB,,,,103602,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,123508,"TBH 20,000 deductible",,Annually,THB,,,,154385,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,42254.4,"TBH 40,000 deductible",,Annually,THB,,,,52818,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,24376.8,"TBH 40,000 deductible",,Annually,THB,1273.6,5987.2,,30471,THB,1592,1194,7484,5613
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,22101.6,"TBH 40,000 deductible",,Annually,THB,1273.6,5987.2,,27627,THB,1592,1194,7484,5613
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,26003.2,"TBH 40,000 deductible",,Annually,THB,1698.4,6448.8,,32504,THB,2123,1592.25,8061,6045.75
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,29252.8,"TBH 40,000 deductible",,Annually,THB,1698.4,6448.8,,36566,THB,2123,1592.25,8061,6045.75
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,32503.2,"TBH 40,000 deductible",,Annually,THB,1698.4,6907.2,,40629,THB,2123,1592.25,8634,6475.5
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,35752.8,"TBH 40,000 deductible",,Annually,THB,1698.4,6907.2,,44691,THB,2123,1592.25,8634,6475.5
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,40628,"TBH 40,000 deductible",,Annually,THB,1909.6,7368,,50785,THB,2387,1790.25,9210,6907.5
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,43878.4,"TBH 40,000 deductible",,Annually,THB,1909.6,7828.8,,54848,THB,2387,1790.25,9786,7339.5
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,50378.4,"TBH 40,000 deductible",,Annually,THB,2120.8,8519.2,,62973,THB,2651,1988.25,10649,7986.75
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,60129.6,"TBH 40,000 deductible",,Annually,THB,2544.8,9209.6,,75162,THB,3181,2385.75,11512,8634
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,82881.6,"TBH 40,000 deductible",,Annually,THB,,,,103602,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,123508,"TBH 40,000 deductible",,Annually,THB,,,,154385,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,42254.4,"TBH 100,000 deductible",,Annually,THB,,,,52818,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,24376.8,"TBH 100,000 deductible",,Annually,THB,1273.6,5987.2,,30471,THB,1592,1074.6,7484,5051.7
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,22101.6,"TBH 100,000 deductible",,Annually,THB,1273.6,5987.2,,27627,THB,1592,1074.6,7484,5051.7
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,26003.2,"TBH 100,000 deductible",,Annually,THB,1698.4,6448.8,,32504,THB,2123,1433.025,8061,5441.175
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,29252.8,"TBH 100,000 deductible",,Annually,THB,1698.4,6448.8,,36566,THB,2123,1433.025,8061,5441.175
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,32503.2,"TBH 100,000 deductible",,Annually,THB,1698.4,6907.2,,40629,THB,2123,1433.025,8634,5827.95
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,35752.8,"TBH 100,000 deductible",,Annually,THB,1698.4,6907.2,,44691,THB,2123,1433.025,8634,5827.95
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,40628,"TBH 100,000 deductible",,Annually,THB,1909.6,7368,,50785,THB,2387,1611.225,9210,6216.75
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,43878.4,"TBH 100,000 deductible",,Annually,THB,1909.6,7828.8,,54848,THB,2387,1611.225,9786,6605.55
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,50378.4,"TBH 100,000 deductible",,Annually,THB,2120.8,8519.2,,62973,THB,2651,1789.425,10649,7188.075
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,60129.6,"TBH 100,000 deductible",,Annually,THB,2544.8,9209.6,,75162,THB,3181,2147.175,11512,7770.6
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,82881.6,"TBH 100,000 deductible",,Annually,THB,,,,103602,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,123508,"TBH 100,000 deductible",,Annually,THB,,,,154385,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,42254.4,"TBH 200,000 deductible",,Annually,THB,,,,52818,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,24376.8,"TBH 200,000 deductible",,Annually,THB,1273.6,5987.2,,30471,THB,1592,955.2,7484,4490.4
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,22101.6,"TBH 200,000 deductible",,Annually,THB,1273.6,5987.2,,27627,THB,1592,955.2,7484,4490.4
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,26003.2,"TBH 200,000 deductible",,Annually,THB,1698.4,6448.8,,32504,THB,2123,1273.8,8061,4836.6
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,29252.8,"TBH 200,000 deductible",,Annually,THB,1698.4,6448.8,,36566,THB,2123,1273.8,8061,4836.6
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,32503.2,"TBH 200,000 deductible",,Annually,THB,1698.4,6907.2,,40629,THB,2123,1273.8,8634,5180.4
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,35752.8,"TBH 200,000 deductible",,Annually,THB,1698.4,6907.2,,44691,THB,2123,1273.8,8634,5180.4
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,40628,"TBH 200,000 deductible",,Annually,THB,1909.6,7368,,50785,THB,2387,1432.2,9210,5526
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,43878.4,"TBH 200,000 deductible",,Annually,THB,1909.6,7828.8,,54848,THB,2387,1432.2,9786,5871.6
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,50378.4,"TBH 200,000 deductible",,Annually,THB,2120.8,8519.2,,62973,THB,2651,1590.6,10649,6389.4
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,60129.6,"TBH 200,000 deductible",,Annually,THB,2544.8,9209.6,,75162,THB,3181,1908.6,11512,6907.2
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,82881.6,"TBH 200,000 deductible",,Annually,THB,,,,103602,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,123508,"TBH 200,000 deductible",,Annually,THB,,,,154385,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,42254.4,"TBH 300,000 deductible",,Annually,THB,,,,52818,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,24376.8,"TBH 300,000 deductible",,Annually,THB,1273.6,5987.2,,30471,THB,1592,796,7484,3742
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,22101.6,"TBH 300,000 deductible",,Annually,THB,1273.6,5987.2,,27627,THB,1592,796,7484,3742
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,26003.2,"TBH 300,000 deductible",,Annually,THB,1698.4,6448.8,,32504,THB,2123,1061.5,8061,4030.5
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,29252.8,"TBH 300,000 deductible",,Annually,THB,1698.4,6448.8,,36566,THB,2123,1061.5,8061,4030.5
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,32503.2,"TBH 300,000 deductible",,Annually,THB,1698.4,6907.2,,40629,THB,2123,1061.5,8634,4317
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,35752.8,"TBH 300,000 deductible",,Annually,THB,1698.4,6907.2,,44691,THB,2123,1061.5,8634,4317
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,40628,"TBH 300,000 deductible",,Annually,THB,1909.6,7368,,50785,THB,2387,1193.5,9210,4605
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,43878.4,"TBH 300,000 deductible",,Annually,THB,1909.6,7828.8,,54848,THB,2387,1193.5,9786,4893
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,50378.4,"TBH 300,000 deductible",,Annually,THB,2120.8,8519.2,,62973,THB,2651,1325.5,10649,5324.5
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,60129.6,"TBH 300,000 deductible",,Annually,THB,2544.8,9209.6,,75162,THB,3181,1590.5,11512,5756
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,82881.6,"TBH 300,000 deductible",,Annually,THB,,,,103602,THB,,,,
+Premier Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,123508,"TBH 300,000 deductible",,Annually,THB,,,,154385,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,0,4,4906.4,"TBH 20,000 deductible",,Annually,THB,,,,6133,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,5,18,28306.4,"TBH 20,000 deductible",,Annually,THB,2547.2,10478.4,,35383,THB,3184,2706.4,13098,11133.3
+Maxima,No Network Restriction,Worldwide Excluding USA,19,25,25664,"TBH 20,000 deductible",,Annually,THB,2547.2,10478.4,,32080,THB,3184,2706.4,13098,11133.3
+Maxima,No Network Restriction,Worldwide Excluding USA,26,30,30193.6,"TBH 20,000 deductible",,Annually,THB,3396,11284.8,,37742,THB,4245,3608.25,14106,11990.1
+Maxima,No Network Restriction,Worldwide Excluding USA,31,35,3396.8,"TBH 20,000 deductible",,Annually,THB,3396,11284.8,,4246,THB,4245,3608.25,14106,11990.1
+Maxima,No Network Restriction,Worldwide Excluding USA,36,40,37742.4,"TBH 20,000 deductible",,Annually,THB,3396,12087.2,,47178,THB,4245,3608.25,15109,12842.65
+Maxima,No Network Restriction,Worldwide Excluding USA,41,45,41515.2,"TBH 20,000 deductible",,Annually,THB,3396,12087.2,,51894,THB,4245,3608.25,15109,12842.65
+Maxima,No Network Restriction,Worldwide Excluding USA,46,50,47177.6,"TBH 20,000 deductible",,Annually,THB,3818.4,12894.4,,58972,THB,4773,4057.05,16118,13700.3
+Maxima,No Network Restriction,Worldwide Excluding USA,51,55,50952,"TBH 20,000 deductible",,Annually,THB,3818.4,13700.8,,63690,THB,4773,4057.05,17126,14557.1
+Maxima,No Network Restriction,Worldwide Excluding USA,56,60,58469.6,"TBH 20,000 deductible",,Annually,THB,4240.8,14908.8,,73087,THB,5301,4505.85,18636,15840.6
+Maxima,No Network Restriction,Worldwide Excluding USA,61,65,69821.6,"TBH 20,000 deductible",,Annually,THB,5090.4,16116.8,,87277,THB,6363,5408.55,20146,17124.1
+Maxima,No Network Restriction,Worldwide Excluding USA,66,70,96241.6,"TBH 20,000 deductible",,Annually,THB,,,,120302,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,71,75,143416.8,"TBH 20,000 deductible",,Annually,THB,,,,179271,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,0,4,4906.4,"TBH 40,000 deductible",,Annually,THB,,,,6133,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,5,18,28306.4,"TBH 40,000 deductible",,Annually,THB,2547.2,10478.4,,35383,THB,3184,2388,13098,9823.5
+Maxima,No Network Restriction,Worldwide Excluding USA,19,25,25664,"TBH 40,000 deductible",,Annually,THB,2547.2,10478.4,,32080,THB,3184,2388,13098,9823.5
+Maxima,No Network Restriction,Worldwide Excluding USA,26,30,30193.6,"TBH 40,000 deductible",,Annually,THB,3396,11284.8,,37742,THB,4245,3183.75,14106,10579.5
+Maxima,No Network Restriction,Worldwide Excluding USA,31,35,3396.8,"TBH 40,000 deductible",,Annually,THB,3396,11284.8,,4246,THB,4245,3183.75,14106,10579.5
+Maxima,No Network Restriction,Worldwide Excluding USA,36,40,37742.4,"TBH 40,000 deductible",,Annually,THB,3396,12087.2,,47178,THB,4245,3183.75,15109,11331.75
+Maxima,No Network Restriction,Worldwide Excluding USA,41,45,41515.2,"TBH 40,000 deductible",,Annually,THB,3396,12087.2,,51894,THB,4245,3183.75,15109,11331.75
+Maxima,No Network Restriction,Worldwide Excluding USA,46,50,47177.6,"TBH 40,000 deductible",,Annually,THB,3818.4,12894.4,,58972,THB,4773,3579.75,16118,12088.5
+Maxima,No Network Restriction,Worldwide Excluding USA,51,55,50952,"TBH 40,000 deductible",,Annually,THB,3818.4,13700.8,,63690,THB,4773,3579.75,17126,12844.5
+Maxima,No Network Restriction,Worldwide Excluding USA,56,60,58469.6,"TBH 40,000 deductible",,Annually,THB,4240.8,14908.8,,73087,THB,5301,3975.75,18636,13977
+Maxima,No Network Restriction,Worldwide Excluding USA,61,65,69821.6,"TBH 40,000 deductible",,Annually,THB,5090.4,16116.8,,87277,THB,6363,4772.25,20146,15109.5
+Maxima,No Network Restriction,Worldwide Excluding USA,66,70,96241.6,"TBH 40,000 deductible",,Annually,THB,,,,120302,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,71,75,143416.8,"TBH 40,000 deductible",,Annually,THB,,,,179271,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,0,4,4906.4,"TBH 100,000 deductible",,Annually,THB,,,,6133,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,5,18,28306.4,"TBH 100,000 deductible",,Annually,THB,2547.2,10478.4,,35383,THB,3184,2149.2,13098,8841.15
+Maxima,No Network Restriction,Worldwide Excluding USA,19,25,25664,"TBH 100,000 deductible",,Annually,THB,2547.2,10478.4,,32080,THB,3184,2149.2,13098,8841.15
+Maxima,No Network Restriction,Worldwide Excluding USA,26,30,30193.6,"TBH 100,000 deductible",,Annually,THB,3396,11284.8,,37742,THB,4245,2865.375,14106,9521.55
+Maxima,No Network Restriction,Worldwide Excluding USA,31,35,3396.8,"TBH 100,000 deductible",,Annually,THB,3396,11284.8,,4246,THB,4245,2865.375,14106,9521.55
+Maxima,No Network Restriction,Worldwide Excluding USA,36,40,37742.4,"TBH 100,000 deductible",,Annually,THB,3396,12087.2,,47178,THB,4245,2865.375,15109,10198.575
+Maxima,No Network Restriction,Worldwide Excluding USA,41,45,41515.2,"TBH 100,000 deductible",,Annually,THB,3396,12087.2,,51894,THB,4245,2865.375,15109,10198.575
+Maxima,No Network Restriction,Worldwide Excluding USA,46,50,47177.6,"TBH 100,000 deductible",,Annually,THB,3818.4,12894.4,,58972,THB,4773,3221.775,16118,10879.65
+Maxima,No Network Restriction,Worldwide Excluding USA,51,55,50952,"TBH 100,000 deductible",,Annually,THB,3818.4,13700.8,,63690,THB,4773,3221.775,17126,11560.05
+Maxima,No Network Restriction,Worldwide Excluding USA,56,60,58469.6,"TBH 100,000 deductible",,Annually,THB,4240.8,14908.8,,73087,THB,5301,3578.175,18636,12579.3
+Maxima,No Network Restriction,Worldwide Excluding USA,61,65,69821.6,"TBH 100,000 deductible",,Annually,THB,5090.4,16116.8,,87277,THB,6363,4295.025,20146,13598.55
+Maxima,No Network Restriction,Worldwide Excluding USA,66,70,96241.6,"TBH 100,000 deductible",,Annually,THB,,,,120302,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,71,75,143416.8,"TBH 100,000 deductible",,Annually,THB,,,,179271,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,0,4,4906.4,"TBH 200,000 deductible",,Annually,THB,,,,6133,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,5,18,28306.4,"TBH 200,000 deductible",,Annually,THB,2547.2,10478.4,,35383,THB,3184,1910.4,13098,7858.8
+Maxima,No Network Restriction,Worldwide Excluding USA,19,25,25664,"TBH 200,000 deductible",,Annually,THB,2547.2,10478.4,,32080,THB,3184,1910.4,13098,7858.8
+Maxima,No Network Restriction,Worldwide Excluding USA,26,30,30193.6,"TBH 200,000 deductible",,Annually,THB,3396,11284.8,,37742,THB,4245,2547,14106,8463.6
+Maxima,No Network Restriction,Worldwide Excluding USA,31,35,3396.8,"TBH 200,000 deductible",,Annually,THB,3396,11284.8,,4246,THB,4245,2547,14106,8463.6
+Maxima,No Network Restriction,Worldwide Excluding USA,36,40,37742.4,"TBH 200,000 deductible",,Annually,THB,3396,12087.2,,47178,THB,4245,2547,15109,9065.4
+Maxima,No Network Restriction,Worldwide Excluding USA,41,45,41515.2,"TBH 200,000 deductible",,Annually,THB,3396,12087.2,,51894,THB,4245,2547,15109,9065.4
+Maxima,No Network Restriction,Worldwide Excluding USA,46,50,47177.6,"TBH 200,000 deductible",,Annually,THB,3818.4,12894.4,,58972,THB,4773,2863.8,16118,9670.8
+Maxima,No Network Restriction,Worldwide Excluding USA,51,55,50952,"TBH 200,000 deductible",,Annually,THB,3818.4,13700.8,,63690,THB,4773,2863.8,17126,10275.6
+Maxima,No Network Restriction,Worldwide Excluding USA,56,60,58469.6,"TBH 200,000 deductible",,Annually,THB,4240.8,14908.8,,73087,THB,5301,3180.6,18636,11181.6
+Maxima,No Network Restriction,Worldwide Excluding USA,61,65,69821.6,"TBH 200,000 deductible",,Annually,THB,5090.4,16116.8,,87277,THB,6363,3817.8,20146,12087.6
+Maxima,No Network Restriction,Worldwide Excluding USA,66,70,96241.6,"TBH 200,000 deductible",,Annually,THB,,,,120302,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,71,75,143416.8,"TBH 200,000 deductible",,Annually,THB,,,,179271,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,0,4,4906.4,"TBH 300,000 deductible",,Annually,THB,,,,6133,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,5,18,28306.4,"TBH 300,000 deductible",,Annually,THB,2547.2,10478.4,,35383,THB,3184,1592,13098,6549
+Maxima,No Network Restriction,Worldwide Excluding USA,19,25,25664,"TBH 300,000 deductible",,Annually,THB,2547.2,10478.4,,32080,THB,3184,1592,13098,6549
+Maxima,No Network Restriction,Worldwide Excluding USA,26,30,30193.6,"TBH 300,000 deductible",,Annually,THB,3396,11284.8,,37742,THB,4245,2122.5,14106,7053
+Maxima,No Network Restriction,Worldwide Excluding USA,31,35,3396.8,"TBH 300,000 deductible",,Annually,THB,3396,11284.8,,4246,THB,4245,2122.5,14106,7053
+Maxima,No Network Restriction,Worldwide Excluding USA,36,40,37742.4,"TBH 300,000 deductible",,Annually,THB,3396,12087.2,,47178,THB,4245,2122.5,15109,7554.5
+Maxima,No Network Restriction,Worldwide Excluding USA,41,45,41515.2,"TBH 300,000 deductible",,Annually,THB,3396,12087.2,,51894,THB,4245,2122.5,15109,7554.5
+Maxima,No Network Restriction,Worldwide Excluding USA,46,50,47177.6,"TBH 300,000 deductible",,Annually,THB,3818.4,12894.4,,58972,THB,4773,2386.5,16118,8059
+Maxima,No Network Restriction,Worldwide Excluding USA,51,55,50952,"TBH 300,000 deductible",,Annually,THB,3818.4,13700.8,,63690,THB,4773,2386.5,17126,8563
+Maxima,No Network Restriction,Worldwide Excluding USA,56,60,58469.6,"TBH 300,000 deductible",,Annually,THB,4240.8,14908.8,,73087,THB,5301,2650.5,18636,9318
+Maxima,No Network Restriction,Worldwide Excluding USA,61,65,69821.6,"TBH 300,000 deductible",,Annually,THB,5090.4,16116.8,,87277,THB,6363,3181.5,20146,10073
+Maxima,No Network Restriction,Worldwide Excluding USA,66,70,96241.6,"TBH 300,000 deductible",,Annually,THB,,,,120302,THB,,,,
+Maxima,No Network Restriction,Worldwide Excluding USA,71,75,143416.8,"TBH 300,000 deductible",,Annually,THB,,,,179271,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,54841.6,"TBH 20,000 deductible",,Annually,THB,,,,68552,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,31640,"TBH 20,000 deductible",,Annually,THB,,10478.4,,39550,THB,,,13098,11133.3
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,28687.2,"TBH 20,000 deductible",,Annually,THB,,10478.4,,35859,THB,,,13098,11133.3
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,33748.8,"TBH 20,000 deductible",,Annually,THB,,11284.8,,42186,THB,,,14106,11990.1
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,37967.2,"TBH 20,000 deductible",,Annually,THB,,11284.8,,47459,THB,,,14106,11990.1
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,42185.6,"TBH 20,000 deductible",,Annually,THB,,12087.2,,52732,THB,,,15109,12842.65
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,46404,"TBH 20,000 deductible",,Annually,THB,,12087.2,,58005,THB,,,15109,12842.65
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,52732.8,"TBH 20,000 deductible",,Annually,THB,,12894.4,,65916,THB,,,16118,13700.3
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,56951.2,"TBH 20,000 deductible",,Annually,THB,,13700.8,,71189,THB,,,17126,14557.1
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,65388,"TBH 20,000 deductible",,Annually,THB,,14908.8,,81735,THB,,,18636,15840.6
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,78044,"TBH 20,000 deductible",,Annually,THB,,16116.8,,97555,THB,,,20146,17124.1
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,107573.6,"TBH 20,000 deductible",,Annually,THB,,,,134467,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,160305.6,"TBH 20,000 deductible",,Annually,THB,,,,200382,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,54841.6,"TBH 40,000 deductible",,Annually,THB,,,,68552,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,31640,"TBH 40,000 deductible",,Annually,THB,,10478.4,,39550,THB,,,13098,9823.5
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,28687.2,"TBH 40,000 deductible",,Annually,THB,,10478.4,,35859,THB,,,13098,9823.5
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,33748.8,"TBH 40,000 deductible",,Annually,THB,,11284.8,,42186,THB,,,14106,10579.5
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,37967.2,"TBH 40,000 deductible",,Annually,THB,,11284.8,,47459,THB,,,14106,10579.5
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,42185.6,"TBH 40,000 deductible",,Annually,THB,,12087.2,,52732,THB,,,15109,11331.75
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,46404,"TBH 40,000 deductible",,Annually,THB,,12087.2,,58005,THB,,,15109,11331.75
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,52732.8,"TBH 40,000 deductible",,Annually,THB,,12894.4,,65916,THB,,,16118,12088.5
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,56951.2,"TBH 40,000 deductible",,Annually,THB,,13700.8,,71189,THB,,,17126,12844.5
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,65388,"TBH 40,000 deductible",,Annually,THB,,14908.8,,81735,THB,,,18636,13977
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,78044,"TBH 40,000 deductible",,Annually,THB,,16116.8,,97555,THB,,,20146,15109.5
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,107573.6,"TBH 40,000 deductible",,Annually,THB,,,,134467,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,160305.6,"TBH 40,000 deductible",,Annually,THB,,,,200382,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,54841.6,"TBH 100,000 deductible",,Annually,THB,,,,68552,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,31640,"TBH 100,000 deductible",,Annually,THB,,10478.4,,39550,THB,,,13098,8841.15
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,28687.2,"TBH 100,000 deductible",,Annually,THB,,10478.4,,35859,THB,,,13098,8841.15
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,33748.8,"TBH 100,000 deductible",,Annually,THB,,11284.8,,42186,THB,,,14106,9521.55
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,37967.2,"TBH 100,000 deductible",,Annually,THB,,11284.8,,47459,THB,,,14106,9521.55
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,42185.6,"TBH 100,000 deductible",,Annually,THB,,12087.2,,52732,THB,,,15109,10198.575
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,46404,"TBH 100,000 deductible",,Annually,THB,,12087.2,,58005,THB,,,15109,10198.575
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,52732.8,"TBH 100,000 deductible",,Annually,THB,,12894.4,,65916,THB,,,16118,10879.65
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,56951.2,"TBH 100,000 deductible",,Annually,THB,,13700.8,,71189,THB,,,17126,11560.05
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,65388,"TBH 100,000 deductible",,Annually,THB,,14908.8,,81735,THB,,,18636,12579.3
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,78044,"TBH 100,000 deductible",,Annually,THB,,16116.8,,97555,THB,,,20146,13598.55
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,107573.6,"TBH 100,000 deductible",,Annually,THB,,,,134467,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,160305.6,"TBH 100,000 deductible",,Annually,THB,,,,200382,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,54841.6,"TBH 200,000 deductible",,Annually,THB,,,,68552,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,31640,"TBH 200,000 deductible",,Annually,THB,,10478.4,,39550,THB,,,13098,7858.8
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,28687.2,"TBH 200,000 deductible",,Annually,THB,,10478.4,,35859,THB,,,13098,7858.8
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,33748.8,"TBH 200,000 deductible",,Annually,THB,,11284.8,,42186,THB,,,14106,8463.6
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,37967.2,"TBH 200,000 deductible",,Annually,THB,,11284.8,,47459,THB,,,14106,8463.6
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,42185.6,"TBH 200,000 deductible",,Annually,THB,,12087.2,,52732,THB,,,15109,9065.4
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,46404,"TBH 200,000 deductible",,Annually,THB,,12087.2,,58005,THB,,,15109,9065.4
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,52732.8,"TBH 200,000 deductible",,Annually,THB,,12894.4,,65916,THB,,,16118,9670.8
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,56951.2,"TBH 200,000 deductible",,Annually,THB,,13700.8,,71189,THB,,,17126,10275.6
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,65388,"TBH 200,000 deductible",,Annually,THB,,14908.8,,81735,THB,,,18636,11181.6
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,78044,"TBH 200,000 deductible",,Annually,THB,,16116.8,,97555,THB,,,20146,12087.6
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,107573.6,"TBH 200,000 deductible",,Annually,THB,,,,134467,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,160305.6,"TBH 200,000 deductible",,Annually,THB,,,,200382,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,0,4,54841.6,"TBH 300,000 deductible",,Annually,THB,,,,68552,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,5,18,31640,"TBH 300,000 deductible",,Annually,THB,,10478.4,,39550,THB,,,13098,6549
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,19,25,28687.2,"TBH 300,000 deductible",,Annually,THB,,10478.4,,35859,THB,,,13098,6549
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,26,30,33748.8,"TBH 300,000 deductible",,Annually,THB,,11284.8,,42186,THB,,,14106,7053
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,31,35,37967.2,"TBH 300,000 deductible",,Annually,THB,,11284.8,,47459,THB,,,14106,7053
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,36,40,42185.6,"TBH 300,000 deductible",,Annually,THB,,12087.2,,52732,THB,,,15109,7554.5
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,41,45,46404,"TBH 300,000 deductible",,Annually,THB,,12087.2,,58005,THB,,,15109,7554.5
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,46,50,52732.8,"TBH 300,000 deductible",,Annually,THB,,12894.4,,65916,THB,,,16118,8059
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,51,55,56951.2,"TBH 300,000 deductible",,Annually,THB,,13700.8,,71189,THB,,,17126,8563
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,56,60,65388,"TBH 300,000 deductible",,Annually,THB,,14908.8,,81735,THB,,,18636,9318
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,61,65,78044,"TBH 300,000 deductible",,Annually,THB,,16116.8,,97555,THB,,,20146,10073
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,66,70,107573.6,"TBH 300,000 deductible",,Annually,THB,,,,134467,THB,,,,
+Maxima Plus,Pacific Cross Network,Worldwide Excluding USA,71,75,160305.6,"TBH 300,000 deductible",,Annually,THB,,,,200382,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,0,4,62645.6,"TBH 20,000 deductible",,Annually,THB,,,,78307,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,5,18,36142.4,"TBH 20,000 deductible",,Annually,THB,,,,45178,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,19,25,30200,"TBH 20,000 deductible",,Annually,THB,,,,37750,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,26,30,38552,"TBH 20,000 deductible",,Annually,THB,,,,48190,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,31,35,43370.4,"TBH 20,000 deductible",,Annually,THB,,,,54213,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,36,40,48189.6,"TBH 20,000 deductible",,Annually,THB,,,,60237,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,41,45,53007.2,"TBH 20,000 deductible",,Annually,THB,,,,66259,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,46,50,60236,"TBH 20,000 deductible",,Annually,THB,,,,75295,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,51,55,65054.4,"TBH 20,000 deductible",,Annually,THB,,,,81318,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,56,60,74692.8,"TBH 20,000 deductible",,Annually,THB,,,,93366,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,61,65,89149.6,"TBH 20,000 deductible",,Annually,THB,,,,111437,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,66,70,122880,"TBH 20,000 deductible",,Annually,THB,,,,153600,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,71,75,183116,"TBH 20,000 deductible",,Annually,THB,,,,228895,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,0,4,62645.6,"TBH 40,000 deductible",,Annually,THB,,,,78307,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,5,18,36142.4,"TBH 40,000 deductible",,Annually,THB,,,,45178,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,19,25,30200,"TBH 40,000 deductible",,Annually,THB,,,,37750,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,26,30,38552,"TBH 40,000 deductible",,Annually,THB,,,,48190,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,31,35,43370.4,"TBH 40,000 deductible",,Annually,THB,,,,54213,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,36,40,48189.6,"TBH 40,000 deductible",,Annually,THB,,,,60237,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,41,45,53007.2,"TBH 40,000 deductible",,Annually,THB,,,,66259,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,46,50,60236,"TBH 40,000 deductible",,Annually,THB,,,,75295,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,51,55,65054.4,"TBH 40,000 deductible",,Annually,THB,,,,81318,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,56,60,74692.8,"TBH 40,000 deductible",,Annually,THB,,,,93366,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,61,65,89149.6,"TBH 40,000 deductible",,Annually,THB,,,,111437,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,66,70,122880,"TBH 40,000 deductible",,Annually,THB,,,,153600,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,71,75,183116,"TBH 40,000 deductible",,Annually,THB,,,,228895,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,0,4,62645.6,"TBH 100,000 deductible",,Annually,THB,,,,78307,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,5,18,36142.4,"TBH 100,000 deductible",,Annually,THB,,,,45178,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,19,25,30200,"TBH 100,000 deductible",,Annually,THB,,,,37750,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,26,30,38552,"TBH 100,000 deductible",,Annually,THB,,,,48190,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,31,35,43370.4,"TBH 100,000 deductible",,Annually,THB,,,,54213,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,36,40,48189.6,"TBH 100,000 deductible",,Annually,THB,,,,60237,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,41,45,53007.2,"TBH 100,000 deductible",,Annually,THB,,,,66259,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,46,50,60236,"TBH 100,000 deductible",,Annually,THB,,,,75295,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,51,55,65054.4,"TBH 100,000 deductible",,Annually,THB,,,,81318,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,56,60,74692.8,"TBH 100,000 deductible",,Annually,THB,,,,93366,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,61,65,89149.6,"TBH 100,000 deductible",,Annually,THB,,,,111437,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,66,70,122880,"TBH 100,000 deductible",,Annually,THB,,,,153600,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,71,75,183116,"TBH 100,000 deductible",,Annually,THB,,,,228895,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,0,4,62645.6,"TBH 200,000 deductible",,Annually,THB,,,,78307,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,5,18,36142.4,"TBH 200,000 deductible",,Annually,THB,,,,45178,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,19,25,30200,"TBH 200,000 deductible",,Annually,THB,,,,37750,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,26,30,38552,"TBH 200,000 deductible",,Annually,THB,,,,48190,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,31,35,43370.4,"TBH 200,000 deductible",,Annually,THB,,,,54213,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,36,40,48189.6,"TBH 200,000 deductible",,Annually,THB,,,,60237,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,41,45,53007.2,"TBH 200,000 deductible",,Annually,THB,,,,66259,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,46,50,60236,"TBH 200,000 deductible",,Annually,THB,,,,75295,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,51,55,65054.4,"TBH 200,000 deductible",,Annually,THB,,,,81318,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,56,60,74692.8,"TBH 200,000 deductible",,Annually,THB,,,,93366,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,61,65,89149.6,"TBH 200,000 deductible",,Annually,THB,,,,111437,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,66,70,122880,"TBH 200,000 deductible",,Annually,THB,,,,153600,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,71,75,183116,"TBH 200,000 deductible",,Annually,THB,,,,228895,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,0,4,62645.6,"TBH 300,000 deductible",,Annually,THB,,,,78307,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,5,18,36142.4,"TBH 300,000 deductible",,Annually,THB,,,,45178,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,19,25,30200,"TBH 300,000 deductible",,Annually,THB,,,,37750,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,26,30,38552,"TBH 300,000 deductible",,Annually,THB,,,,48190,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,31,35,43370.4,"TBH 300,000 deductible",,Annually,THB,,,,54213,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,36,40,48189.6,"TBH 300,000 deductible",,Annually,THB,,,,60237,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,41,45,53007.2,"TBH 300,000 deductible",,Annually,THB,,,,66259,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,46,50,60236,"TBH 300,000 deductible",,Annually,THB,,,,75295,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,51,55,65054.4,"TBH 300,000 deductible",,Annually,THB,,,,81318,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,56,60,74692.8,"TBH 300,000 deductible",,Annually,THB,,,,93366,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,61,65,89149.6,"TBH 300,000 deductible",,Annually,THB,,,,111437,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,66,70,122880,"TBH 300,000 deductible",,Annually,THB,,,,153600,THB,,,,
+Ultima,No Network Restriction,Worldwide Excluding USA,71,75,183116,"TBH 300,000 deductible",,Annually,THB,,,,228895,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,0,4,75272.8,"TBH 20,000 deductible",,Annually,THB,,,,94091,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,5,18,43426.4,"TBH 20,000 deductible",,Annually,THB,,,,54283,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,19,25,39372.8,"TBH 20,000 deductible",,Annually,THB,,,,49216,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,26,30,46321.6,"TBH 20,000 deductible",,Annually,THB,,,,57902,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,31,35,52112,"TBH 20,000 deductible",,Annually,THB,,,,65140,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,36,40,57900.8,"TBH 20,000 deductible",,Annually,THB,,,,72376,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,41,45,63691.2,"TBH 20,000 deductible",,Annually,THB,,,,79614,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,46,50,72376.8,"TBH 20,000 deductible",,Annually,THB,,,,90471,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,51,55,78167.2,"TBH 20,000 deductible",,Annually,THB,,,,97709,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,56,60,89747.2,"TBH 20,000 deductible",,Annually,THB,,,,112184,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,61,65,107116.8,"TBH 20,000 deductible",,Annually,THB,,,,133896,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,66,70,147648,"TBH 20,000 deductible",,Annually,THB,,,,184560,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,71,75,220024.8,"TBH 20,000 deductible",,Annually,THB,,,,275031,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,0,4,75272.8,"TBH 40,000 deductible",,Annually,THB,,,,94091,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,5,18,43426.4,"TBH 40,000 deductible",,Annually,THB,,,,54283,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,19,25,39372.8,"TBH 40,000 deductible",,Annually,THB,,,,49216,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,26,30,46321.6,"TBH 40,000 deductible",,Annually,THB,,,,57902,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,31,35,52112,"TBH 40,000 deductible",,Annually,THB,,,,65140,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,36,40,57900.8,"TBH 40,000 deductible",,Annually,THB,,,,72376,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,41,45,63691.2,"TBH 40,000 deductible",,Annually,THB,,,,79614,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,46,50,72376.8,"TBH 40,000 deductible",,Annually,THB,,,,90471,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,51,55,78167.2,"TBH 40,000 deductible",,Annually,THB,,,,97709,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,56,60,89747.2,"TBH 40,000 deductible",,Annually,THB,,,,112184,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,61,65,107116.8,"TBH 40,000 deductible",,Annually,THB,,,,133896,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,66,70,147648,"TBH 40,000 deductible",,Annually,THB,,,,184560,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,71,75,220024.8,"TBH 40,000 deductible",,Annually,THB,,,,275031,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,0,4,75272.8,"TBH 100,000 deductible",,Annually,THB,,,,94091,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,5,18,43426.4,"TBH 100,000 deductible",,Annually,THB,,,,54283,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,19,25,39372.8,"TBH 100,000 deductible",,Annually,THB,,,,49216,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,26,30,46321.6,"TBH 100,000 deductible",,Annually,THB,,,,57902,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,31,35,52112,"TBH 100,000 deductible",,Annually,THB,,,,65140,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,36,40,57900.8,"TBH 100,000 deductible",,Annually,THB,,,,72376,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,41,45,63691.2,"TBH 100,000 deductible",,Annually,THB,,,,79614,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,46,50,72376.8,"TBH 100,000 deductible",,Annually,THB,,,,90471,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,51,55,78167.2,"TBH 100,000 deductible",,Annually,THB,,,,97709,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,56,60,89747.2,"TBH 100,000 deductible",,Annually,THB,,,,112184,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,61,65,107116.8,"TBH 100,000 deductible",,Annually,THB,,,,133896,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,66,70,147648,"TBH 100,000 deductible",,Annually,THB,,,,184560,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,71,75,220024.8,"TBH 100,000 deductible",,Annually,THB,,,,275031,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,0,4,75272.8,"TBH 200,000 deductible",,Annually,THB,,,,94091,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,5,18,43426.4,"TBH 200,000 deductible",,Annually,THB,,,,54283,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,19,25,39372.8,"TBH 200,000 deductible",,Annually,THB,,,,49216,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,26,30,46321.6,"TBH 200,000 deductible",,Annually,THB,,,,57902,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,31,35,52112,"TBH 200,000 deductible",,Annually,THB,,,,65140,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,36,40,57900.8,"TBH 200,000 deductible",,Annually,THB,,,,72376,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,41,45,63691.2,"TBH 200,000 deductible",,Annually,THB,,,,79614,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,46,50,72376.8,"TBH 200,000 deductible",,Annually,THB,,,,90471,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,51,55,78167.2,"TBH 200,000 deductible",,Annually,THB,,,,97709,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,56,60,89747.2,"TBH 200,000 deductible",,Annually,THB,,,,112184,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,61,65,107116.8,"TBH 200,000 deductible",,Annually,THB,,,,133896,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,66,70,147648,"TBH 200,000 deductible",,Annually,THB,,,,184560,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,71,75,220024.8,"TBH 200,000 deductible",,Annually,THB,,,,275031,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,0,4,75272.8,"TBH 300,000 deductible",,Annually,THB,,,,94091,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,5,18,43426.4,"TBH 300,000 deductible",,Annually,THB,,,,54283,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,19,25,39372.8,"TBH 300,000 deductible",,Annually,THB,,,,49216,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,26,30,46321.6,"TBH 300,000 deductible",,Annually,THB,,,,57902,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,31,35,52112,"TBH 300,000 deductible",,Annually,THB,,,,65140,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,36,40,57900.8,"TBH 300,000 deductible",,Annually,THB,,,,72376,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,41,45,63691.2,"TBH 300,000 deductible",,Annually,THB,,,,79614,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,46,50,72376.8,"TBH 300,000 deductible",,Annually,THB,,,,90471,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,51,55,78167.2,"TBH 300,000 deductible",,Annually,THB,,,,97709,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,56,60,89747.2,"TBH 300,000 deductible",,Annually,THB,,,,112184,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,61,65,107116.8,"TBH 300,000 deductible",,Annually,THB,,,,133896,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,66,70,147648,"TBH 300,000 deductible",,Annually,THB,,,,184560,THB,,,,
+Ultima Plus,No Network Restriction,Worldwide Excluding USA,71,75,220024.8,"TBH 300,000 deductible",,Annually,THB,,,,275031,THB,,,,

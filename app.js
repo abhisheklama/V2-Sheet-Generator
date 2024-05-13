@@ -245,7 +245,7 @@ let Arr = new Array(resCount).fill(null);
           {
             from: "-Enum.currency.USD-",
             to: "-Enum.currency.AED-",
-            rate: 36.69,
+            rate: 3.6725,
             type: "-Enum.conversionRateType.premium-",
           },
         ],
@@ -257,7 +257,7 @@ let Arr = new Array(resCount).fill(null);
     //   str[0].exchangeRates.push({
     //     from: "-Enum.currency.USD-",
     //     to: "-Enum.currency.AED-",
-    //     rate: 36.69,
+    //     rate: 3.6725,
     //     type: "-Enum.conversionRateType.premium-",
     //   });
     createFile("provider", "index", str, provider, false, true);
@@ -734,7 +734,7 @@ let Arr = new Array(resCount).fill(null);
           ? 1
           : DATAs[0][0].conversionRate
           ? DATAs[0][0].conversionRate
-          : 36.69;
+          : 3.6725;
       let PricingTable = [];
       let tableCount = 1;
       for (const key in Id.pricingTables) {
@@ -818,6 +818,7 @@ let Arr = new Array(resCount).fill(null);
                 store.frequency[0],
               `n - ${n}`
             );
+          // console.log(">>", pricing.length, key);
           if (pricing.length == 0 && DATA[0].planCopay == "single") continue;
           let table;
           if (store.filters.networkType == "single") {
@@ -941,6 +942,9 @@ let Arr = new Array(resCount).fill(null);
           PricingTable.push({ ...clone });
         }
       }
+
+      // PricingTable.map(d => console.log(d.plan))
+      store.plans.map((d) => console.log(d));
       if (PricingTable.length < store.plans.length)
         throw new Error(
           `Plan mising in pricingTable, PricingTable.length - ${PricingTable.length}, store.plans.length - ${store.plans.length}  ${n}`
@@ -985,7 +989,7 @@ let Arr = new Array(resCount).fill(null);
         ? 1
         : DATAs[0][0].conversionRate
         ? DATAs[0][0].conversionRate
-        : 36.69;
+        : 3.6725;
     let benefitsKeys = DATA[0];
     let modifiers = {};
     for (let key in benefitsKeys) {
@@ -1068,6 +1072,8 @@ let Arr = new Array(resCount).fill(null);
             );
           }
 
+          // console.log('Benefits >> ', Benefits);
+
           let str = {
             _id: `-${provider}.modifiers${n}.benefits.${
               Benefits.find((v) => v.benefits[1] == key).benefits[0]
@@ -1085,6 +1091,8 @@ let Arr = new Array(resCount).fill(null);
             conditions: [],
             hasOptions: true,
           };
+
+          // console.log('str >> ', str);
           // throw new Error();
           str.description =
             modifiers[key].length > 1
@@ -1249,8 +1257,13 @@ let Arr = new Array(resCount).fill(null);
           newArr.push(str);
         }
 
+        // console.log('newArr >> ', newArr);
+
+        // console.log('store >> ', store);
+
         // Addons --------------------------------------------
         store.filters.addons.map((addon) => {
+          console.log("in addon");
           if (addon == "Repat") {
             let repat = { ...newArr[0] };
             repat._id = `-${provider}.modifiers${n}.benefits.extendedEvacuation-`;

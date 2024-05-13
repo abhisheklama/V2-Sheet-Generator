@@ -45,6 +45,7 @@ const benefitCore = [
   ["New Born Cover", "-core.benefitTypes.newBornCoverage-"],
   ["Dental", "-core.benefitTypes.dental-"],
   ["Dental Waiting Period", "-core.benefitTypes.dentalWaitingPeriod-"],
+  ["Annual Limit", "-core.benefitTypes.annualLimit-"],
   ["Optical Benefits", "-core.benefitTypes.optical-"],
   ["Wellness & Health Screening", "-core.benefitTypes.wellness-"],
   ["Emergency Evacuation", "-core.benefitTypes.emergencyEvacution-"],
