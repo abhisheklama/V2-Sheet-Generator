@@ -566,8 +566,8 @@ let Arr = new Array(resCount).fill(null);
           "Out-patient (Consultations, Lab & Diagnostics, Pharmacy, Physiotherapy)",
         includedBenefits: [
           {
-            userType: "-Enum.userType.All-",
-            benefitTypes: ["-core.benefitTypes.physiotherapy-"],
+            userType: "-Enum.userType.Starter-",
+            benefitTypes: ["-core.benefitTypes.outPatientBenefit-"],
           },
           {
             userType: "-Enum.userType.Pro-",
@@ -580,8 +580,8 @@ let Arr = new Array(resCount).fill(null);
             ],
           },
           {
-            userType: "-Enum.userType.Starter-",
-            benefitTypes: ["-core.benefitTypes.outPatientBenefit-"],
+            userType: "-Enum.userType.All-",
+            benefitTypes: ["-core.benefitTypes.physiotherapy-"],
           },
         ],
       },
