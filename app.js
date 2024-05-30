@@ -944,7 +944,7 @@ let Arr = new Array(resCount).fill(null);
       }
 
       // PricingTable.map(d => console.log(d.plan))
-      store.plans.map((d) => console.log(d));
+      // store.plans.map((d) => console.log(d));
       if (PricingTable.length < store.plans.length)
         throw new Error(
           `Plan mising in pricingTable, PricingTable.length - ${PricingTable.length}, store.plans.length - ${store.plans.length}  ${n}`
