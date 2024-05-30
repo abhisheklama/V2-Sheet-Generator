@@ -253,6 +253,26 @@ const singleChild = {
       },
     ],
   },
+  _primary: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+    ],
+  },
+  _dependent: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.dependent-",
+        count: "==1",
+      },
+    ],
+  },
   _below_3: {
     type: "-Enum.customer.relation-",
     value: "-Enum.relation.Child-",
