@@ -30,9 +30,9 @@ const benefitCore = [
     "-core.benefitTypes.inPatientHospitializationandsurgery-",
   ],
   ["Physiotherapy", "-core.benefitTypes.physiotherapy-"],
-  ["Out-patient_Consultations", "-core.benefitTypes.outPatientConsultation-"],
-  ["Out-patient_Specialists", "-core.benefitTypes.specialist-"],
-  ["Out-patient_Medicines", "-core.benefitTypes.medicine-"],
+  ["Out-patient-Consultations", "-core.benefitTypes.outPatientConsultation-"],
+  ["Out-patient-Specialists", "-core.benefitTypes.specialist-"],
+  ["Out-patient-Medicines", "-core.benefitTypes.medicine-"],
   ["Vaccination", "-core.benefitTypes.vaccination-"],
   ["Scans", "-core.benefitTypes.tests-"],
   ["Out-patient benefits", "-core.benefitTypes.outPatientBenefit-"],
@@ -59,6 +59,7 @@ const benefitCore = [
   ["Dental 1", "-core.benefitTypes.dental-"],
   ["Dental Waiting Period 1", "-core.benefitTypes.dentalWaitingPeriod-"],
   ["-Medical Evacuation-", "-core.benefitTypes.medicalEvacution-"],
+  ["Repatriation-Benefit", "-core.benefitTypes.repatriation-"],
 ];
 
 const indexData = `
@@ -169,6 +170,7 @@ const enumData = `
     plans: "PLAN_EQUALS_TO",
     deductible: "DEDUCTIBLE_EQUALS_TO",
     code: "CODE_EQUALS_TO",
+    deductibleOP: "DEDUCTIBLE_OP_EQUALS_TO",
   },
   maritalStatus: {
     single: "single",
