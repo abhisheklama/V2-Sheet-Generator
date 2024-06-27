@@ -37,9 +37,14 @@ const generateCodeIndex = (data, benefits, DATA, n = false) => {
         let obj = {};
         data["Modifiers"].forEach((v) => {
           if (v == "deductible") {
-            obj[v] = `-generateMongoIdFromString('${data.Provider} ${
-              n ? n : ""
-            } ${v}')-`;
+            obj[v] = {
+              IP: `-generateMongoIdFromString('${data.Provider} ${
+                n ? n : ""
+              } ${v} IP')-`,
+              OP: `-generateMongoIdFromString('${data.Provider} ${
+                n ? n : ""
+              } ${v} OP')-`,
+            };
           }
           if (v == "benefits") {
             let b = {};
@@ -105,8 +110,8 @@ const generateCodeIndex = (data, benefits, DATA, n = false) => {
       ] = `-generateMongoIdFromString('Healthy Connect Module')-`;
     if (data.filters.addons.includes("Repat"))
       struc.modifiers.benefits[
-        "extendedEvacuation"
-      ] = `-generateMongoIdFromString('${data.Provider} Extended Evacuation ${n}')-`;
+        "repatriationBenefits"
+      ] = `-generateMongoIdFromString('${data.Provider} Repatriation ${n}')-`;
     return struc;
   } catch (error) {
     console.log({ err: error.message, stack: error.stack });

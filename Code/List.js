@@ -1,6 +1,6 @@
 const fs = require("fs");
 const xlsx = require("xlsx");
-const { maxArrLength, singleChild } = require("./constants");
+const { maxArrLength, singleChild, Zones } = require("./constants");
 
 const remove = (str, n) => {
   !str && console.log("n --> ", n, str);
@@ -213,18 +213,19 @@ const getList = (arr) => {
       });
 
     // bundle benefits -----------------------------------
-    arr[0]["bundle benefits"] &&
+    // console.log(">>>>>", arr[0]);
+    arr[0]["bundlebenefits"] &&
       arr.forEach((v) => {
-        if (v["bundle benefits"]) return;
-        let values = v["bundle benefits"].split("/");
+        if (!v["bundlebenefits"]) return;
+        let values = v["bundlebenefits"].split("/");
         Global.filters.bundleBenefits.push(...values);
       });
 
     // Dependent benefits -----------------------------------
-    arr[0]["dependent benefits"] &&
+    arr[0]["dependentbenefits"] &&
       arr.forEach((v) => {
-        if (v["dependent benefits"]) return;
-        let [core, dependent] = v["dependent benefits"].split(" - ");
+        if (!v["dependentbenefits"]) return;
+        let [core, dependent] = v["dependentbenefits"].split(" - ");
         Global.filters.dependentBenefits.push({ core, dependent });
       });
 
@@ -321,7 +322,14 @@ const createFile = (
 
 const readFile = (folderName, filename, n = 0, loc = "./Input") => {
   const Sheet = xlsx.readFileSync(`${loc}/${folderName}/${filename}.xlsx`);
-  if (typeof n == "string") n = Sheet.SheetNames.indexOf(n);
+  if (typeof n == "string") {
+    let sheetname = n;
+    n = Sheet.SheetNames.indexOf(sheetname);
+    if (n == -1) {
+      n = Sheet.SheetNames.findIndex((v) => sheetname.includes(v));
+      // console.log(">>", `-${sheetname}-`, n);
+    }
+  }
   // console.log("Sheet.SheetNames --> ", Sheet.SheetNames, typeof n);
   return xlsx.utils.sheet_to_json(Sheet.Sheets[Sheet.SheetNames[n]]);
 };
@@ -383,13 +391,9 @@ const fetchAddons = (
   num,
   conversion
 ) => {
-  let info = readFile(
-    folderName,
-    "addon",
-    `${addonName.includes(" ") ? addonName.split(" ")[0] : addonName}-info`
-  );
-  let addonRates = info[0].sheetName
-    ? readFile(folderName, "addon", info[0].sheetName)
+  let info = readFile(folderName, "addons", addonName);
+  let addonRates = info[0]?.sheetName
+    ? readFile(folderName, `addons${num}`, info[0].sheetName)
     : [];
   // createFile(
   //   "Addons",
@@ -401,8 +405,9 @@ const fetchAddons = (
   //   (addonName.includes(" ") ? addonName.split(" ")[0] : addonName) + "_rates",
   //   addonRates
   // );
-  if (info.find((v) => v.default.toLowerCase == "true")) {
+  if (info.find((v) => v.default?.toLowerCase == "true")) {
   } else {
+    num = num ? parseInt(num) + 1 : 1;
     let Addons = [];
     info.forEach((v, i) => {
       let obj = {
@@ -411,13 +416,19 @@ const fetchAddons = (
         description: v.description,
       };
       if (v.plan) {
-        let p_ = benefit.plans.find(
-          (p) => p.split(".")[2].replace("-", "") == remove(v.plan)[0]
+        let p_ = benefit.plans.filter((p) =>
+          v.plan.includes(",")
+            ? v.plan
+                .split(",")
+                .map((v) => remove(v)[0])
+                .includes(p.split(".")[2].replace("-", ""))
+            : p.split(".")[2].replace("-", "") == remove(v.plan)[0]
         );
+        // console.log(">>", benefit.plans, p_, v.plan);
         obj.conditions = [
           {
             type: "-Enum.conditions.plans-",
-            value: [p_],
+            value: [...p_],
           },
         ];
       }
@@ -429,6 +440,7 @@ const fetchAddons = (
         married: "-Enum.customer.maritalStatus-",
         network: "-Enum.conditions.modifier-",
         coverages: "-Enum.conditions.coverage-",
+        coverage: "-Enum.conditions.coverage-",
         frequency: "-Enum.conditions.modifier-",
         copay: "-Enum.conditions.deductible-",
       };
@@ -458,7 +470,11 @@ const fetchAddons = (
                   if (rate[col] == 0)
                     con.value = "-Enum.maritalStatus.married-";
                   else con.value = "-Enum.maritalStatus.single-";
-                } else if (col == "planName" || col == "coverages")
+                } else if (
+                  col == "planName" ||
+                  col == "coverages" ||
+                  col == "coverage"
+                )
                   con.value = `-${provider}.${
                     col == "planName" ? "plans" : "coverages"
                   }${num}.${remove(rate[col])[0]}-`;
@@ -480,6 +496,46 @@ const fetchAddons = (
       Addons.push(obj);
     });
     benefit.options = Addons;
+    benefit.isOptional = true;
+    benefit.hasOptions = true;
+    if (
+      [
+        "Maternity (Consultations, Scans and Delivery)",
+        "Dental",
+        "Out-patient benefits",
+      ].includes(benefit.label.trim())
+    );
+    benefit.assignmentType = "PER_CUSTOMER";
+
+    if (benefit.label == "Out-patient Consultations") {
+      benefit.title = "Out-patient Addon";
+    }
+    if (benefit.label == "Maternity (Consultations, Scans and Delivery)") {
+      benefit.conditions = [
+        ...benefit.conditions,
+        { type: "-Enum.customer.min_age-", value: 19 },
+        { type: "-Enum.customer.max_age-", value: 46 },
+        {
+          type: "-Enum.customer.maritalStatus-",
+          value: "-Enum.maritalStatus.married-",
+        },
+        { type: "-Enum.customer.gender-", value: "-Enum.gender.female-" },
+      ];
+      benefit.options = benefit.options.map((opt) => {
+        opt.conditions = [
+          ...opt.conditions,
+          { type: "-Enum.customer.min_age-", value: 19 },
+          { type: "-Enum.customer.max_age-", value: 46 },
+          {
+            type: "-Enum.customer.maritalStatus-",
+            value: "-Enum.maritalStatus.married-",
+          },
+          { type: "-Enum.customer.gender-", value: "-Enum.gender.female-" },
+        ];
+        return opt;
+      });
+    }
+
     return benefit;
   }
 };
@@ -523,6 +579,11 @@ const extractAddon = (arr, addon, search = "") => {
   });
 };
 
+const getResidency = (zone) => {
+  let codes = Zones.find((v) => v[0] == zone);
+  return [codes[1], []];
+};
+
 module.exports = {
   getList,
   createFile,
@@ -533,4 +594,5 @@ module.exports = {
   extractAddon,
   readFile,
   fetchAddons,
+  getResidency,
 };
