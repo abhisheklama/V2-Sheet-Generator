@@ -1322,6 +1322,7 @@ let Arr = new Array(resCount).fill(null);
           premiumMod: "",
           conditions: [],
           hasOptions: true,
+          options: [],
         };
         store[key].forEach((v1) => {
           let [discount, numCustomer] = v1;
@@ -1342,6 +1343,52 @@ let Arr = new Array(resCount).fill(null);
           };
           newArr.push(str);
         });
+        let IPDiscount = [
+          "USD 610-2.5",
+          "USD 1,015-5",
+          "USD 2,025-10",
+          "USD 4,050-17.5",
+          "USD 8,100-25",
+          "USD 13,500-30",
+          "USD 610-5/n",
+          "USD 1,015-10/n",
+          "USD 2,025-20/n",
+          "USD 4,050-35/n",
+          "USD 8,100-50/n",
+          "USD 13,500-60/n",
+        ];
+
+        IPDiscount.forEach((v1, i) => {
+          let [desc, percentage] = v1.split("-");
+          let m;
+          if (percentage.includes("/")) {
+            m = true;
+            percentage = percentage.split("/")[0];
+          }
+          let opt = {
+            id: `${desc}-discount-${i + 1}`,
+            label: `${desc} Copay Discount`,
+            premiumMod: {
+              type: "percentage",
+              price: [{ value: -Number(percentage) }],
+            },
+            description: `${desc} Discount`,
+            conditions: [
+              {
+                type: "-Enum.conditions.deductible-",
+                value: [desc],
+              },
+            ],
+          };
+          if (!m) {
+            opt.conditions.push({
+              type: "-Enum.conditions.modifier-",
+              value: ["Bloom", "Bloom Plus"],
+            });
+          }
+          str.options.push(opt);
+        });
+        newArr.push(str);
       }
       // deductible -----------------------------------------
       if (key == "deductible") {
@@ -1349,19 +1396,19 @@ let Arr = new Array(resCount).fill(null);
           [
             "IP Co/pay",
             [
-              "Nil-0",
-              "USD 610-2.5",
-              "USD 1,015-5",
-              "USD 2,025-10",
-              "USD 4,050-17.5",
-              "USD 8,100-25",
-              "USD 13,500-30",
-              "USD 610-5/n",
-              "USD 1,015-10/n",
-              "USD 2,025-20/n",
-              "USD 4,050-35/n",
-              "USD 8,100-50/n",
-              "USD 13,500-60/n",
+              "Nil",
+              "USD 610",
+              "USD 1,015",
+              "USD 2,025",
+              "USD 4,050",
+              "USD 8,100",
+              "USD 13,500",
+              // "USD 610-5/n",
+              // "USD 1,015-10/n",
+              // "USD 2,025-20/n",
+              // "USD 4,050-35/n",
+              // "USD 8,100-50/n",
+              // "USD 13,500-60/n",
             ],
           ],
           [
@@ -1391,7 +1438,7 @@ let Arr = new Array(resCount).fill(null);
             conditions: [],
             hasOptions: true,
             options: copays.map((v, i) => {
-              let value = v.split("-")[1];
+              let value = v.includes("-") ? v.split("-")[1] : v;
               let con_m = "";
               if (value.includes("/")) {
                 con_m = value.split("/")[1];
@@ -1399,28 +1446,30 @@ let Arr = new Array(resCount).fill(null);
               }
               let opt = {
                 id: `${copayType.split(" ")[0].toLowerCase()}-option-${i + 1}`,
-                label: v.split("-")[0],
-                premiumMod: {
+                label: v.includes("-") ? v.split("-")[0] : v,
+              };
+              if (v.includes("-")) {
+                opt.premiumMod = {
                   type: "percentage",
                   price: [{ value: -parseFloat(value) }],
-                },
-              };
-              if (con_m == "m") {
-                opt.conditions = [
-                  {
-                    type: "-Enum.conditions.maternity-",
-                    value: ["option-2", "option-3"],
-                  },
-                ];
+                };
               }
-              if (con_m == "n") {
-                opt.conditions = [
-                  {
-                    type: "-Enum.conditions.maternity-",
-                    value: ["option-1"],
-                  },
-                ];
-              }
+              // if (con_m == "m") {
+              //   opt.conditions = [
+              //     {
+              //       type: "-Enum.conditions.maternity-",
+              //       value: ["option-2", "option-3"],
+              //     },
+              //   ];
+              // }
+              // if (con_m == "n") {
+              //   opt.conditions = [
+              //     {
+              //       type: "-Enum.conditions.maternity-",
+              //       value: ["option-1"],
+              //     },
+              //   ];
+              // }
 
               return opt;
             }),

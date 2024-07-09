@@ -65,7 +65,9 @@ const generateCodeIndex = (data, benefits, DATA, n = false) => {
                   n ? n : ""
                 } ${v.discounts}')-`;
             });
-            obj[v] = b;
+            obj[v] = `-generateMongoIdFromString('${data.Provider} ${
+              n ? n : ""
+            } discounts')-`;
             return;
           }
           if (v == "network") {

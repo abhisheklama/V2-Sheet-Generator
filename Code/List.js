@@ -411,7 +411,10 @@ const fetchAddons = (
     let Addons = [];
     info.forEach((v, i) => {
       let obj = {
-        id: "option-" + (i + 1),
+        id:
+          benefit.label == "Maternity (Consultations, Scans and Delivery)"
+            ? v.label
+            : "option-" + (i + 1),
         label: v.label,
         description: v.description,
       };
