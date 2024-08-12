@@ -28,7 +28,7 @@ let codes = [
   ];
 
   const files = [
-    "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/addon.xlsx",
+    "/home/support/Desktop/saleslabb/V2-Sheet-Generator (Main)/Input/Cigna_Global_Health/cignaScript/inputRates/addon.xlsx",
   ];
 
   const xlsx = require("xlsx")
@@ -57,7 +57,7 @@ let codes = [
         })
         xlsx.writeFile(
           wb,
-          `/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/addons/addon${i}.xlsx`
+          `/home/support/Desktop/saleslabb/V2-Sheet-Generator (Main)/Input/Cigna_Global_Health/cignaScript/output/addons/addon${i}.xlsx`
         );
     })
     
