@@ -546,8 +546,8 @@ let Arr = new Array(resCount).fill(null);
           "Out-patient (Consultations, Lab & Diagnostics, Pharmacy, Physiotherapy)",
         includedBenefits: [
           {
-            userType: "-Enum.userType.All-",
-            benefitTypes: ["-core.benefitTypes.physiotherapy-"],
+            userType: "-Enum.userType.Starter-",
+            benefitTypes: ["-core.benefitTypes.outPatientBenefit-"],
           },
           {
             userType: "-Enum.userType.Pro-",
@@ -560,8 +560,8 @@ let Arr = new Array(resCount).fill(null);
             ],
           },
           {
-            userType: "-Enum.userType.Starter-",
-            benefitTypes: ["-core.benefitTypes.outPatientBenefit-"],
+            userType: "-Enum.userType.All-",
+            benefitTypes: ["-core.benefitTypes.physiotherapy-"],
           },
         ],
       },
@@ -650,7 +650,7 @@ let Arr = new Array(resCount).fill(null);
       // console.log("plan", plan);
       let tableIds = [];
       let plan_modifiersIds = [...modifiersId].filter(
-        (v) => !v.includes("deductible")
+        (v) => !v.includes("deductible") || !v.includes("discount")
       );
       if (plan[0] == "Care") {
         plan_modifiersIds = plan_modifiersIds.filter(
@@ -659,10 +659,12 @@ let Arr = new Array(resCount).fill(null);
             !v.includes("ComplicationsOfPregnancy")
         );
       }
-      plan_modifiersIds.push(
-        `-allianz_care.modifiers${n}.deductible.IP-`,
-        `-allianz_care.modifiers${n}.deductible.OP-`
-      );
+      // plan_modifiersIds.push(
+      //   `-allianz_care.modifiers${n}.deductible.IP-`,
+      //   `-allianz_care.modifiers${n}.deductible.OP-`,
+      //   `-allianz_care.modifiers${n}.discount.IP-`,
+      //   `-allianz_care.modifiers${n}.discount.OP-`
+      // );
       for (const key in Id.pricingTables[plan[0]]) {
         tableIds.push(`-${provider}.pricingTables${n}.${plan[0]}.${key}-`);
       }
@@ -1308,8 +1310,8 @@ let Arr = new Array(resCount).fill(null);
         });
       }
       if (key == "discount") {
-        let str = {
-          _id: `-${provider}.modifiers${n}.discount-`,
+        let str1 = {
+          _id: `-${provider}.modifiers${n}.discount.IP-`,
           plans: [...planIds],
           title: key,
           label: key,
@@ -1326,7 +1328,7 @@ let Arr = new Array(resCount).fill(null);
         };
         store[key].forEach((v1) => {
           let [discount, numCustomer] = v1;
-          str.options = {
+          str1.options = {
             id: `${discount}-discount`,
             label: `${discount} Discount`,
             premiumMod: {
@@ -1341,7 +1343,7 @@ let Arr = new Array(resCount).fill(null);
               },
             ],
           };
-          newArr.push(str);
+          newArr.push(str1);
         });
         let IPDiscount = [
           "USD 610-2.5",
@@ -1386,9 +1388,81 @@ let Arr = new Array(resCount).fill(null);
               value: ["Bloom", "Bloom Plus"],
             });
           }
-          str.options.push(opt);
+          str1.options.push(opt);
         });
-        newArr.push(str);
+        newArr.push(str1);
+        let str2 = {
+          _id: `-${provider}.modifiers${n}.discount.OP-`,
+          plans: [...planIds],
+          title: key,
+          label: key,
+          type: `-core.modifierTypes.discount-`,
+          assignmentType: "PER_PLAN",
+          includedBenefits: [],
+          isOptional: false,
+          description: "",
+          addonCost: {},
+          premiumMod: "",
+          conditions: [],
+          hasOptions: true,
+          options: [],
+        };
+        store[key].forEach((v1) => {
+          let [discount, numCustomer] = v1;
+          str2.options = {
+            id: `${discount}-discount`,
+            label: `${discount} Discount`,
+            premiumMod: {
+              type: "percentage",
+              price: [{ value: -Number(discount.replace("%", "")) }],
+            },
+            description: `${discount} Discount`,
+            conditions: [
+              {
+                type: "NUM_CUSTOMERS",
+                value: Number(numCustomer),
+              },
+            ],
+          };
+          newArr.push(str2);
+        });
+        let OPDiscount = [
+          "0%-0/n",
+          "10% up to max USD 2,000-12/n",
+          "20% up to max USD 4,000-24/n",
+        ];
+
+        OPDiscount.forEach((v1, i) => {
+          let [desc, percentage] = v1.split("-");
+          let m;
+          if (percentage.includes("/")) {
+            m = true;
+            percentage = percentage.split("/")[0];
+          }
+          let opt = {
+            id: `${desc}-discount-${i + 1}`,
+            label: `${desc} Copay Discount`,
+            premiumMod: {
+              type: "percentage",
+              price: [{ value: -Number(percentage) }],
+            },
+            description: `${desc} Discount`,
+            conditions: [
+              {
+                type: "-Enum.conditions.deductible-",
+                value: [desc],
+              },
+            ],
+          };
+          if (!m) {
+            opt.conditions.push({
+              type: "-Enum.conditions.modifier-",
+              value: ["Bloom", "Bloom Plus"],
+            });
+          }
+          str2.options.push(opt);
+        });
+        newArr.push(str2);
       }
       // deductible -----------------------------------------
       if (key == "deductible") {
@@ -1413,11 +1487,7 @@ let Arr = new Array(resCount).fill(null);
           ],
           [
             "OP Co/pay",
-            [
-              "0%-0",
-              "10% up to max USD 2,000-12",
-              "20% up to max USD 4,000-24",
-            ],
+            ["0%", "10% up to max USD 2,000", "20% up to max USD 4,000"],
           ],
         ].forEach(([copayType, copays]) => {
           str = {
