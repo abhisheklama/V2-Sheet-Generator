@@ -673,6 +673,8 @@ const countryCodes = [
   },
 ];
 
+const aprilROWIncludedCountries = ["AL", "DZ", "AO", "AI", "AG", "AM", "AW", "BS", "BH", "BD", "BB", "BJ", "BM", "BO", "BW", "IO", "BF", "BI", "KH", "CM", "KY", "TD", "CL", "DM", "DO", "DO", "EG", "SV", "GQ", "GQ", "FK", "GA", "GM", "GE", "GI", "GD", "GG", "GN", "GW", "GW", "GY", "HN", "IN", "ID", "IQ", "IM", "IL", "JM", "JE", "JO", "KZ", "KE", "KW", "LB", "LR", "LY", "MG", "MW", "MV", "ML", "MU", "MN", "MS", "MA", "MZ", "NC", "NZ", "NE", "NG", "NG", "OM", "PK", "PG", "PY", "PE", "PH", "QA", "LC", "VC", "SM", "SA", "SN", "CS", "CS", "SG", "SO", "ZA", "GS", "LK", "SR", "TW", "TZ", "TH", "TG", "TO", "TR", "UG", "GB", "VU", "YE", "ZW", "AT", "BE", "BG", "HR", "CZ", "DK", "EE", "FI", "FR", "GF", "PF", "DE", "GR", "GP", "HU", "IS", "IT", "LV", "LI", "LT", "LU", "MT", "MQ", "MC", "NL", "AN", "NO", "PL", "PT", "RE", "RO", "SK", "SI", "ES", "SE"]
+
 let resCount = process.argv.find((v) => v.includes("res"));
 if (!resCount) {
   console.log("residency count not found!!");
@@ -1173,8 +1175,8 @@ let Arr = new Array(resCount).fill(null);
         //     ? NE_Dubai[1]
         //     : AbuDhabi[1],
 
-        includedResidence: countryCodes.find(codes => codes.code == DATA[0].residency.trim())?.alphaCodes,
-        excludedResidence: countryCodes.filter(codes => codes.code != DATA[0].residency.trim())?.alphaCodes,
+        includedResidence: aprilROWIncludedCountries,
+        excludedResidence: [],
         coveredCountries,
         notes: "",
       };
@@ -1608,20 +1610,20 @@ let Arr = new Array(resCount).fill(null);
             //     ? NE_Dubai[1]
             //     : AbuDhabi[1],
 
-            includedResidence: countryCodes.find(codes => codes.code == DATA[0].residency.trim())?.alphaCodes,
-            excludedResidence: countryCodes.filter(codes => codes.code != DATA[0].residency.trim())?.alphaCodes,
+            includedResidence: aprilROWIncludedCountries,
+            excludedResidence: [],
             coverage: [`-${provider}.coverages${n}.${v}-`],
             baseAnnualPremium: [
               {
                 fromAge: 0,
-                toAge: 82,
-                gender: `-Enum.gender.male-`,
+                toAge: 70,
+                // gender: `-Enum.gender.male-`,
                 price: [{ value: 0, currency: `-Enum.currency.USD-` }],
               },
               {
                 fromAge: 0,
                 toAge: 82,
-                gender: `-Enum.gender.female-`,
+                // gender: `-Enum.gender.female-`,
                 price: [{ value: 0, currency: `-Enum.currency.USD-` }],
               },
             ]
@@ -3655,5 +3657,5 @@ let Arr = new Array(resCount).fill(null);
 
     return [...acc, `-...${residencyName}-`];
   }, []);
-  createFile("RateTable", "index", rateArr, provider, false, true, false, false, residenciesRequire);
+  // createFile("RateTable", "index", rateArr, provider, false, true, false, false, residenciesRequire);
 })();
