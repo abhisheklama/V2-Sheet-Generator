@@ -1502,7 +1502,7 @@ let Arr = new Array(resCount).fill(null);
               let str = {
                 fromAge: t.ageStart,
                 toAge: t.ageEnd,
-                gender: `-Enum.gender.${t.gender.toLowerCase()}-`,
+                // gender: `-Enum.gender.${t.gender.toLowerCase()}-`,
                 price: [
                   {
                     value: parseFloat(t.rates / conversion),
@@ -1762,6 +1762,23 @@ let Arr = new Array(resCount).fill(null);
               benefit_plans.includes(id.split(".")[2].replace("-", ""))
             );
           }
+
+          const notBenefits = [
+            "Deductible",
+            "residency",
+            "startDate",
+            "frequency",
+            "companyName",
+            "copayIP",
+            "copayOP",
+            "coverages",
+            "copay",
+            "planCopay"
+          ]
+
+          console.log("key ", key)
+
+          if(notBenefits.includes(key)) continue;
 
           let str = {
             _id: `-${provider}.modifiers${n}.benefits.${
@@ -2875,7 +2892,109 @@ let Arr = new Array(resCount).fill(null);
                         value: [`-${provider}.plans${n}.${planName[0]}-`],
                       },
                     ],
+                    premiumMod: {
+                      type: "conditional-override",
+                      conditionalPrices: [],
+                    },
                   };
+                  let pricing = rateSheet.filter((n) => {
+                    // if (n.planName == "Limited") {
+                    //   console.log(
+                    //     n.planName == plan[0][1],
+                    //     n.coverage == cc[1],
+                    //     n.frequency == fr,
+                    //     n.network,
+                    //     " | ",
+                    //     net[1]
+                    //   );
+                    // }
+                    // if (DATA[0].planCopay == "-Enum.maritalStatus.single-")
+                    //   return (
+                    //     n.planName == plan[0][1] &&
+                    //     n.coverage == cc[1] &&
+                    //     n.frequency == fr &&
+                    //     n.network == net[1]
+                    //   );
+                    // let n_check;
+                    // if (n.network != net[1]) {
+                    //   n_check = DATA.find((dd) => dd.PlanName == plan[0][1])[
+                    //     "Network Details"
+                    //   ];
+                    //   n_check = n_check.includes("/")
+                    //     ? n_check.split("/")
+                    //     : [n_check];
+                    //   n_check = n_check.includes(net[1]);
+                    // } else n_check = true;
+                    return (
+                      n.planName == plan[0][1] &&
+                      n.coverage == cc[1] &&
+                      n.copay == copay &&
+                      // n.frequency == fr &&
+                      n.network == net[1]
+                    );
+                  });
+                  if (DATA[0].planCopay == "single" && pricing.length == 0)
+                    return;
+                  if (pricing.length == 0) {
+                    throw new Error(
+                      n +
+                        " | '" +
+                        plan[0][1] +
+                        "' | '" +
+                        cc[1] +
+                        "' | '" +
+                        copay +
+                        "' | '" +
+                        fr +
+                        "' | '" +
+                        net[1] +
+                        "' | '" +
+                        DATA[0].planCopay
+                    );
+                  }
+                  if (!pricing[0].currency)
+                    throw new Error("Currecny is not included in rateSheet", n);
+                  let table = pricing.map((t) => {
+                    let str = {
+                      conditions: [
+                        {
+                          type: "-Enum.customer.min_age-",
+                          value: t.ageStart,
+                        },
+                        {
+                          type: "-Enum.customer.max_age-",
+                          value: t.ageEnd,
+                        },
+                        {
+                          type: "-Enum.customer.gender-",
+                          value: `-Enum.gender.${t.gender}-`,
+                        },
+                      ],
+                      price: [
+                        {
+                          value: parseFloat(t.rates / conversion),
+                          currency: `-Enum.currency.${t.currency}-`,
+                        },
+                      ],
+                    };
+                    if (t.married === 0) {
+                      str.conditions.push({
+                        type: "CUSTOMER_MARITAL_STATUS",
+                        value: "-Enum.maritalStatus.married-",
+                      });
+                    }
+                    if (t.married === 1) {
+                      str.conditions.push({
+                        type: "CUSTOMER_MARITAL_STATUS",
+                        value: "-Enum.maritalStatus.single-",
+                      });
+                    }
+                    if (t.category)
+                      str.category = `-Enum.category.${t.category}-`;
+
+                    return { ...str };
+                  });
+                  clone.premiumMod.conditionalPrices = table;
                   clonearray.push(clone);
                   count++;
                   addUp2[1]++;
