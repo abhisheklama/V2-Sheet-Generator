@@ -1589,18 +1589,24 @@ let Arr = new Array(resCount).fill(null);
             ],
           ],
         ].forEach(([copayType, copays]) => {
-          // let usd_count = copays.reduce(
-          //   (acc, v) => (v.includes("USD") ? acc + 1 : acc),
-          //   0
-          // );
-          // let altCurrencyOptions = new Array(usd_count).fill(0).map((v, i) => {
-          //   ["USD", "GBP", "EUR", "CHF"].map((currency, j) => ({
-          //     id: `${copayType.split(" ")[0].toLowerCase()}-option-${
-          //       i + 1 + j * usd_count
-          //     }`,
-          //     currency,
-          //   }));
-          // });
+          let usd_count = copays.reduce(
+            (acc, v) => (v.includes("USD") ? acc + 1 : acc),
+            0
+          );
+          // console.log("usd_count ", usd_count)
+          let altCurrencyOptions = []
+          new Array(usd_count).fill(0).map((v, i) => {
+            const currencies = ["USD", "GBP", "EUR", "CHF"];
+            currencies.map((currency, j) => {
+              altCurrencyOptions.push({
+                id: `${copayType.split(" ")[0].toLowerCase()}-option-${
+                  (i + 1 + j * usd_count) + 1
+                }`,
+                currency,
+              })
+            });
+          });
+
           str = {
             _id: `-${provider}.modifiers${n}.deductible.${
               copayType.split(" ")[0]
@@ -1648,23 +1654,37 @@ let Arr = new Array(resCount).fill(null);
                   type: "-Enum.conditions.currency-",
                   value: `-Enum.currency.${currency}-`,
                 });
-              // opt.altCurrencyOptions = altCurrencyOptions[i];
-              // if (con_m == "m") {
-              //   opt.conditions = [
-              //     {
-              //       type: "-Enum.conditions.maternity-",
-              //       value: ["option-2", "option-3"],
-              //     },
-              //   ];
-              // }
-              // if (con_m == "n") {
-              //   opt.conditions = [
-              //     {
-              //       type: "-Enum.conditions.maternity-",
-              //       value: ["option-1"],
-              //     },
-              //   ];
-              // }
+
+              if (v !== "Nil") opt.altCurrencyOptions = altCurrencyOptions.slice((i-1) * 4, ((i-1) + 1) * 4);
+              
+              // let optionsArr = [];
+              // for (let m = (i-1) * 4; m < ((i-1) + 1) * 4; m++) {
+              //   optionsArr.push(altCurrencyOptions[m]);
+              // };
+
+              // if (v !== "Nil") opt.altCurrencyOptions = optionsArr
+              
+          console.log("altCurrencyOptions ", altCurrencyOptions)
+
+              console.log("opt ",opt)
+              
+
+              if (con_m == "m") {
+                opt.conditions = [
+                  {
+                    type: "-Enum.conditions.maternity-",
+                    value: ["option-2", "option-3"],
+                  },
+                ];
+              }
+              if (con_m == "n") {
+                opt.conditions = [
+                  {
+                    type: "-Enum.conditions.maternity-",
+                    value: ["option-1"],
+                  },
+                ];
+              }
 
               return opt;
             }),
