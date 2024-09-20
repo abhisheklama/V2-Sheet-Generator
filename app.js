@@ -755,9 +755,6 @@ let Arr = new Array(resCount).fill(null);
   //   console.log('d.residency >> ', d.residency);
   // })
 
-  console.log('GlobalDatas >> ', GlobalDatas.length);
-  console.log("resCount ", resCount)
-  console.log("str ", str)
   const rateSheets = new Array(resCount)
     .fill(null)
     .map((v, i) =>
@@ -1146,7 +1143,6 @@ let Arr = new Array(resCount).fill(null);
       "MA",
       "SO",
     ];
-    console.log('DATA[0].residency >> ', DATA[0].residency);
 
     let coverage_data = store.coverages.map((v) => {
 
@@ -1776,8 +1772,6 @@ let Arr = new Array(resCount).fill(null);
             "planCopay"
           ]
 
-          console.log("key ", key)
-
           if(notBenefits.includes(key)) continue;
 
           let str = {
@@ -1815,6 +1809,7 @@ let Arr = new Array(resCount).fill(null);
           if (!modifiers[key][0].value.toString().includes("$copay")) {
             str.options = [];
             let count = 1;
+            let optionValue = [0,8,16,24,32,40,48,56,64];
             modifiers[key].forEach((m) => {
               if (!m.value) console.log("m --> ", m, modifiers[key], key, n);
               if (
@@ -1839,6 +1834,12 @@ let Arr = new Array(resCount).fill(null);
                         value: [copay[0]],
                       },
                     ],
+                    // conditions: [
+                    //   {
+                    //     type: "-Enum.conditions.deductible-",
+                    //     value: [1,2,3,4,5,6,7,8].map((i) => `ip-option-${count + (1 * optionValue[i-1])}`),
+                    //   },
+                    // ],
                   };
                   str.hasOptions = true;
                   str.options.push(cc);
@@ -1848,6 +1849,7 @@ let Arr = new Array(resCount).fill(null);
                 m.value.toString().includes(" $ ") &&
                 modifiers[key].length > 1
               ) {
+                console.log("in that")
                 store.coPays.forEach((v) => {
                   let [copay, scope] = v;
                   if (!scope.includes("all") && scope.includes(m.plans)) return;
@@ -2303,60 +2305,10 @@ let Arr = new Array(resCount).fill(null);
 
         // [1,2].forEach((v) => {
           // if(v == 1) {
-            str.options.push({
-              id: `option-1`,
-              label: `10% Discount`,
-              premiumMod: {
-                type: "percentage",
-                price: [{ value: -10 }],
-              },
-              description: `10% Discount`,
-              conditions: [
-                {
-                  type: "-Enum.conditions.plans-",
-                  value: [`-${provider}.plans${n}.Silver-`],
-                },
-                {
-                  type: "-Enum.customer.min_age-",
-                  value: 60,
-                },
-                {
-                  type: "-Enum.customer.max_age-",
-                  value: 82,
-                },
-              ],
-            });
               // newArr.push(str);
 
           // } else {
-            str.options.push({
-              id: "option-2",
-              label: "10% Discount",
-              premiumMod: { type: "percentage", price: [{ value: -10 }] },
-              description: "10% Discount",
-              conditions: [
-                {
-                  type: "-Enum.customer.config-",
-                  value: [
-                    {
-                      type: "-Enum.customer.category-",
-                      value:  `-Enum.category.primary-`,
-                      count: "==1",
-                    },
-                    {
-                      type: "-Enum.customer.relation-",
-                      value:  `-Enum.relation.Spouse-`,
-                      count: "==1",
-                    },
-                    {
-                      type: "-Enum.customer.relation-",
-                      value: `-Enum.relation.Child-`,
-                      count: "==2",
-                    },
-                  ],
-                },
-              ],
-            })
+
               // newArr.push(str);
 
           // }
@@ -2876,7 +2828,7 @@ let Arr = new Array(resCount).fill(null);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "ip-option-" + (index+1),
+                    id: "ip-option-" + (count),
                     label: copay,
                     conditions: [
                       {
@@ -2929,7 +2881,7 @@ let Arr = new Array(resCount).fill(null);
                       n.planName == plan[0][1] &&
                       n.coverage == cc[1] &&
                       n.copay == copay &&
-                      // n.frequency == fr &&
+                      n.type == "IP" &&
                       n.network == net[1]
                     );
                   });
@@ -2974,6 +2926,14 @@ let Arr = new Array(resCount).fill(null);
                         {
                           value: parseFloat(t.rates / conversion),
                           currency: `-Enum.currency.${t.currency}-`,
+                        },
+                        {
+                          value: parseFloat(t.GBP / conversion),
+                          currency: `-Enum.currency.GBP-`,
+                        },
+                        {
+                          value: parseFloat(t.EUR / conversion),
+                          currency: `-Enum.currency.EUR-`,
                         },
                       ],
                     };
@@ -3064,7 +3024,7 @@ let Arr = new Array(resCount).fill(null);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "op-option-" + (index+1),
+                    id: "op-option-" + (count),
                     label: copay,
                     conditions: [
                       {
@@ -3080,7 +3040,117 @@ let Arr = new Array(resCount).fill(null);
                         value: [`-${provider}.plans${n}.${planName[0]}-`],
                       },
                     ],
+                    premiumMod: {
+                      type: "conditional-override",
+                      conditionalPrices: [],
+                    },
                   };
+                  let pricing = rateSheet.filter((n) => {
+                    // if (n.planName == "Limited") {
+                    //   console.log(
+                    //     n.planName == plan[0][1],
+                    //     n.coverage == cc[1],
+                    //     n.frequency == fr,
+                    //     n.network,
+                    //     " | ",
+                    //     net[1]
+                    //   );
+                    // }
+                    // if (DATA[0].planCopay == "-Enum.maritalStatus.single-")
+                    //   return (
+                    //     n.planName == plan[0][1] &&
+                    //     n.coverage == cc[1] &&
+                    //     n.frequency == fr &&
+                    //     n.network == net[1]
+                    //   );
+                    // let n_check;
+                    // if (n.network != net[1]) {
+                    //   n_check = DATA.find((dd) => dd.PlanName == plan[0][1])[
+                    //     "Network Details"
+                    //   ];
+                    //   n_check = n_check.includes("/")
+                    //     ? n_check.split("/")
+                    //     : [n_check];
+                    //   n_check = n_check.includes(net[1]);
+                    // } else n_check = true;
+                    return (
+                      n.planName == plan[0][1] &&
+                      n.coverage == cc[1] &&
+                      n.copay == copay &&
+                      n.type == "OP" &&
+                      n.network == net[1]
+                    );
+                  });
+                  if (DATA[0].planCopay == "single" && pricing.length == 0)
+                    return;
+                  if (pricing.length == 0) {
+                    throw new Error(
+                      n +
+                        " | '" +
+                        plan[0][1] +
+                        "' | '" +
+                        cc[1] +
+                        "' | '" +
+                        copay +
+                        "' | '" +
+                        fr +
+                        "' | '" +
+                        net[1] +
+                        "' | '" +
+                        DATA[0].planCopay
+                    );
+                  }
+                  if (!pricing[0].currency)
+                    throw new Error("Currecny is not included in rateSheet", n);
+                  let table = pricing.map((t) => {
+                    let str = {
+                      conditions: [
+                        {
+                          type: "-Enum.customer.min_age-",
+                          value: t.ageStart,
+                        },
+                        {
+                          type: "-Enum.customer.max_age-",
+                          value: t.ageEnd,
+                        },
+                        {
+                          type: "-Enum.customer.gender-",
+                          value: `-Enum.gender.${t.gender}-`,
+                        },
+                      ],
+                      price: [
+                        {
+                          value: parseFloat(t.rates / conversion),
+                          currency: `-Enum.currency.${t.currency}-`,
+                        },
+                        {
+                          value: parseFloat(t.GBP / conversion),
+                          currency: `-Enum.currency.GBP-`,
+                        },
+                        {
+                          value: parseFloat(t.EUR / conversion),
+                          currency: `-Enum.currency.EUR-`,
+                        },
+                      ],
+                    };
+                    if (t.married === 0) {
+                      str.conditions.push({
+                        type: "CUSTOMER_MARITAL_STATUS",
+                        value: "-Enum.maritalStatus.married-",
+                      });
+                    }
+                    if (t.married === 1) {
+                      str.conditions.push({
+                        type: "CUSTOMER_MARITAL_STATUS",
+                        value: "-Enum.maritalStatus.single-",
+                      });
+                    }
+                    if (t.category)
+                      str.category = `-Enum.category.${t.category}-`;
+
+                    return { ...str };
+                  });
+                  clone.premiumMod.conditionalPrices = table;
                   clonearray.push(clone);
                   count++;
                   addUp2[1]++;
