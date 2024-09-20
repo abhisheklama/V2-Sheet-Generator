@@ -451,8 +451,29 @@ const fetchAddons = (
         obj.addonCost = {
           type: v.type,
           conditionalPrices: addonRates
-            .filter((r) => r.flag == v.flag)
+            .filter((r) => r.flag == v.flag && r.currency == "USD")
             .map((rate) => {
+              let mutliCurrency = addonRates.filter((v) => {
+                if (
+                  v.currency == "USD" ||
+                  !v.currency ||
+                  Object.keys(v).length != Object.keys(rate).length
+                )
+                  return false;
+                let bool = true;
+                for (let f in rate) {
+                  if (f == "rates" || f == "currency") continue;
+                  if (rate[f] != v[f]) {
+                    bool = false;
+                    break;
+                  }
+                }
+                return bool;
+              });
+              if (mutliCurrency.length == 0 || mutliCurrency.length > 3) {
+                console.log("rate >>", rate, mutliCurrency);
+                throw `error with mutliCurrency addon`;
+              }
               let res = {
                 conditions: [],
                 price: [
@@ -462,12 +483,19 @@ const fetchAddons = (
                   },
                 ],
               };
+              mutliCurrency.map((v) => {
+                res.price.push({
+                  value: v.rates / conversion,
+                  currency: `-Enum.currency.${v.currency}-`,
+                });
+              });
               for (let col in rate) {
+                if (rate[col] !== 0 && !rate[col]) continue;
                 let con = { type: Enums[col], value: [] };
                 if (col == "ageStart" || col == "ageEnd") con.value = rate[col];
                 else if (col == "gender")
                   con.value = `-Enum.gender.${rate[col].toLowerCase()}-`;
-                else if (col == "copay" || col == "network")
+                else if (col == "copay" || col == "networkss")
                   con.value = [rate[col]];
                 else if (col == "married") {
                   if (rate[col] == 0)
@@ -483,12 +511,13 @@ const fetchAddons = (
                   }${num}.${remove(rate[col])[0]}-`;
                 else if (col == "singleChild")
                   con = singleChild[`_${rate[col]}`];
-                else if (col == "frequency") {
-                  if (rate[col] == "Annually")
-                    con.value = ["annual-payment-surcharge"];
-                  else if (rate[col] == "Quarterly")
-                    con.value = ["quarterly-payment-surcharge"];
-                } else continue;
+                // else if (col == "frequency") {
+                //   if (rate[col] == "Annually")
+                //     con.value = ["annual-payment-surcharge"];
+                //   else if (rate[col] == "Quarterly")
+                //     con.value = ["quarterly-payment-surcharge"];
+                // } 
+                else continue;
                 res.conditions.push(con);
               }
               return res;

@@ -816,28 +816,50 @@ let Arr = new Array(resCount).fill(null);
           let table;
           if (store.filters.networkType == "single") {
             table = ["male", "female"].reduce((acc, gender) => {
-              let data = pricing.map((t) => {
-                let str = {
-                  fromAge: t.ageStart,
-                  toAge: t.ageEnd,
-                  gender: `-Enum.gender.${gender}-`,
-                  price: [
-                    {
-                      value: parseFloat(t.rates / conversion),
-                      currency: `-Enum.currency.${t.currency}-`,
-                    },
-                  ],
-                };
-                if (t.married === 0) {
-                  str.maritalStatus = "-Enum.maritalStatus.married-";
-                }
-                if (t.married === 1) {
-                  str.maritalStatus = "-Enum.maritalStatus.single-";
-                }
-                if (t.category) str.category = `-Enum.category.${t.category}-`;
-                if (t.relation) str.relation = `-Enum.relation.${t.relation}-`;
-                return { ...str };
-              });
+              let data = pricing
+                .filter((p) => p.currency == "USD")
+                .map((t) => {
+                  let currencyRates = pricing.filter(
+                    (p) =>
+                      p.currency != "USD" &&
+                      p.planName == t.planName &&
+                      p.ageStart == t.ageStart &&
+                      p.copay == t.copay &&
+                      p.coverage == t.coverage &&
+                      p.frequency == t.frequency
+                  );
+                  if (currencyRates.length > 3) {
+                    throw `getting currencyRates more than expected`;
+                  }
+                  let str = {
+                    fromAge: t.ageStart,
+                    toAge: t.ageEnd,
+                    gender: `-Enum.gender.${gender}-`,
+                    price: [
+                      {
+                        value: parseFloat(t.rates / conversion),
+                        currency: `-Enum.currency.${t.currency}-`,
+                      },
+                    ],
+                  };
+                  currencyRates.map((cur) => {
+                    str.price.push({
+                      value: parseFloat(cur.rates / conversion),
+                      currency: `-Enum.currency.${cur.currency}-`,
+                    });
+                  });
+                  if (t.married === 0) {
+                    str.maritalStatus = "-Enum.maritalStatus.married-";
+                  }
+                  if (t.married === 1) {
+                    str.maritalStatus = "-Enum.maritalStatus.single-";
+                  }
+                  if (t.category)
+                    str.category = `-Enum.category.${t.category}-`;
+                  if (t.relation)
+                    str.relation = `-Enum.relation.${t.relation}-`;
+                  return { ...str };
+                });
               return [...acc, ...data];
             }, []);
           } else {
@@ -1075,7 +1097,10 @@ let Arr = new Array(resCount).fill(null);
               : modifiers[key][0].value;
           str.isOptional = false;
           str.hasOptions = modifiers[key].length > 1;
-          if (false && !modifiers[key][0].value.toString().includes("$copay")) {
+          if (
+            key == "Accommodation Type" &&
+            !modifiers[key][0].value.toString().includes("$copay")
+          ) {
             str.options = [];
             let count = 1;
             modifiers[key].forEach((m) => {
@@ -1358,10 +1383,47 @@ let Arr = new Array(resCount).fill(null);
           "USD 4,050-35/n",
           "USD 8,100-50/n",
           "USD 13,500-60/n",
+          "GBP 374-2.5",
+          "GBP 625-5",
+          "GBP 1,245-10",
+          "GBP 2,490-17.5",
+          "GBP 4,980-25",
+          "GBP 8,300-30",
+          "GBP 374-5/n",
+          "GBP 625-10/n",
+          "GBP 1,245-20/n",
+          "GBP 2,490-35/n",
+          "GBP 4,980-50/n",
+          "GBP 8,300-60/n",
+          "EUR 450-2.5",
+          "EUR 750-5",
+          "EUR 1,500-10",
+          "EUR 3,000-17.5",
+          "EUR 6,000-25",
+          "EUR 10,000-30",
+          "EUR 450-5/n",
+          "EUR 750-10/n",
+          "EUR 1,500-20/n",
+          "EUR 3,000-35/n",
+          "EUR 6,000-50/n",
+          "EUR 10,000-60/n",
+          "CHF 585-2.5",
+          "CHF 975-5",
+          "CHF 1,950-10",
+          "CHF 3,900-17.5",
+          "CHF 7,800-25",
+          "CHF 13,000-30",
+          "CHF 585-5/n",
+          "CHF 975-10/n",
+          "CHF 1,950-20/n",
+          "CHF 3,900-35/n",
+          "CHF 7,800-50/n",
+          "CHF 13,000-60/n",
         ];
 
         IPDiscount.forEach((v1, i) => {
           let [desc, percentage] = v1.split("-");
+          const currency = desc.split(" ")[0];
           let m;
           if (percentage.includes("/")) {
             m = true;
@@ -1388,6 +1450,10 @@ let Arr = new Array(resCount).fill(null);
               value: ["Bloom", "Bloom Plus"],
             });
           }
+          opt.conditions.push({
+            type: "-Enum.conditions.currency-",
+            value: `-Enum.currency.${currency}-`,
+          });
           str1.options.push(opt);
         });
         newArr.push(str1);
@@ -1430,10 +1496,17 @@ let Arr = new Array(resCount).fill(null);
           "0%-0/n",
           "10% up to max USD 2,000-12/n",
           "20% up to max USD 4,000-24/n",
+          "10% up to max GBP 1,225-12/n",
+          "20% up to max GBP 2,461-24/n",
+          "10% up to max EUR 1,480-12/n",
+          "20% up to max EUR 2,962-24/n",
+          "10% up to max CHF 1,925-12/n",
+          "20% up to max CHF 3,861-24/n",
         ];
 
         OPDiscount.forEach((v1, i) => {
           let [desc, percentage] = v1.split("-");
+          const currency = desc.split(" ")[4];
           let m;
           if (percentage.includes("/")) {
             m = true;
@@ -1460,6 +1533,10 @@ let Arr = new Array(resCount).fill(null);
               value: ["Bloom", "Bloom Plus"],
             });
           }
+          opt.conditions.push({
+            type: "-Enum.conditions.currency-",
+            value: `-Enum.currency.${currency}-`,
+          });
           str2.options.push(opt);
         });
         newArr.push(str2);
@@ -1477,19 +1554,53 @@ let Arr = new Array(resCount).fill(null);
               "USD 4,050",
               "USD 8,100",
               "USD 13,500",
-              // "USD 610-5/n",
-              // "USD 1,015-10/n",
-              // "USD 2,025-20/n",
-              // "USD 4,050-35/n",
-              // "USD 8,100-50/n",
-              // "USD 13,500-60/n",
+              "GBP 374",
+              "GBP 625",
+              "GBP 1,245",
+              "GBP 2,490",
+              "GBP 4,980",
+              "GBP 8,300",
+              "EUR 450",
+              "EUR 750",
+              "EUR 1,500",
+              "EUR 3,000",
+              "EUR 6,000",
+              "EUR 10,000",
+              "CHF 585",
+              "CHF 975",
+              "CHF 1,950",
+              "CHF 3,900",
+              "CHF 7,800",
+              "CHF 13,000",
             ],
           ],
           [
             "OP Co/pay",
-            ["0%", "10% up to max USD 2,000", "20% up to max USD 4,000"],
+            [
+              "0%",
+              "10% up to max USD 2,000",
+              "20% up to max USD 4,000",
+              "10% up to max GBP 1,225",
+              "20% up to max GBP 2,461",
+              "10% up to max EUR 1,480",
+              "20% up to max EUR 2,962",
+              "10% up to max CHF 1,925",
+              "20% up to max CHF 3,861",
+            ],
           ],
         ].forEach(([copayType, copays]) => {
+          // let usd_count = copays.reduce(
+          //   (acc, v) => (v.includes("USD") ? acc + 1 : acc),
+          //   0
+          // );
+          // let altCurrencyOptions = new Array(usd_count).fill(0).map((v, i) => {
+          //   ["USD", "GBP", "EUR", "CHF"].map((currency, j) => ({
+          //     id: `${copayType.split(" ")[0].toLowerCase()}-option-${
+          //       i + 1 + j * usd_count
+          //     }`,
+          //     currency,
+          //   }));
+          // });
           str = {
             _id: `-${provider}.modifiers${n}.deductible.${
               copayType.split(" ")[0]
@@ -1508,6 +1619,13 @@ let Arr = new Array(resCount).fill(null);
             conditions: [],
             hasOptions: true,
             options: copays.map((v, i) => {
+              let currency = v.includes("GBP")
+                ? "GBP"
+                : v.includes("EUR")
+                ? "EUR"
+                : v.includes("CHF")
+                ? "CHF"
+                : "USD";
               let value = v.includes("-") ? v.split("-")[1] : v;
               let con_m = "";
               if (value.includes("/")) {
@@ -1517,6 +1635,7 @@ let Arr = new Array(resCount).fill(null);
               let opt = {
                 id: `${copayType.split(" ")[0].toLowerCase()}-option-${i + 1}`,
                 label: v.includes("-") ? v.split("-")[0] : v,
+                conditions: [],
               };
               if (v.includes("-")) {
                 opt.premiumMod = {
@@ -1524,6 +1643,12 @@ let Arr = new Array(resCount).fill(null);
                   price: [{ value: -parseFloat(value) }],
                 };
               }
+              if (v !== "Nil")
+                opt.conditions.push({
+                  type: "-Enum.conditions.currency-",
+                  value: `-Enum.currency.${currency}-`,
+                });
+              // opt.altCurrencyOptions = altCurrencyOptions[i];
               // if (con_m == "m") {
               //   opt.conditions = [
               //     {
@@ -1908,11 +2033,35 @@ let Arr = new Array(resCount).fill(null);
         "USD 4,050-USD 4,050/",
         "USD 8,100-USD 8,100/",
         "USD 13,500-USD 13,500/",
+        "GBP 374-GBP 374/",
+        "GBP 625-GBP 625/",
+        "GBP 1,245-GBP 1,245/",
+        "GBP 2,490-GBP 2,490/",
+        "GBP 4,980-GBP 4,980/",
+        "GBP 8,300-GBP 8,300/",
+        "EUR 450-EUR 450/",
+        "EUR 750-EUR 750/",
+        "EUR 1,500-EUR 1,500/",
+        "EUR 3,000-EUR 3,000/",
+        "EUR 6,000-EUR 6,000/",
+        "EUR 10,000-EUR 10,000/",
+        "CHF 585-CHF 585/",
+        "CHF 975-CHF 975/",
+        "CHF 1,950-CHF 1,950/",
+        "CHF 3,900-CHF 3,900/",
+        "CHF 7,800-CHF 7,800/",
+        "CHF 13,000-CHF 13,000/",
       ];
       const copayOP = [
         "0%-0%/0%/0%",
         "10% up to max USD 2,000-10%/10%/10%",
         "20% up to max USD 4,000-20%/20%/20%",
+        "10% up to max GBP 1,225-10%/10%/10%",
+        "20% up to max GBP 2,461-20%/20%/20%",
+        "10% up to max EUR 1,480-10%/10%/10%",
+        "20% up to max EUR 2,962-20%/20%/20%",
+        "10% up to max CHF 1,925-10%/10%/10%",
+        "20% up to max CHF 3,861-20%/20%/20%",
       ];
 
       if (
@@ -1963,6 +2112,13 @@ function modify(modifier, copays) {
   modifier.hasOptions = true;
   if (modifier.description.includes("$")) {
     modifier.options = copays.map((copay, i) => {
+      let currency = copay.includes("GBP")
+        ? "GBP"
+        : copay.includes("EUR")
+        ? "EUR"
+        : copay.includes("CHF")
+        ? "CHF"
+        : "USD";
       let desc = modifier.description;
       let c = 0;
       let d_copays = copay.split("-")[1].split("/");
@@ -1979,6 +2135,10 @@ function modify(modifier, copays) {
             type: "-Enum.conditions.deductible-",
             value: [copay.split("-")[0]],
           },
+          {
+            type: "-Enum.conditions.currency-",
+            value: `-Enum.currency.${currency}-`,
+          },
         ],
       };
     });
@@ -1987,6 +2147,13 @@ function modify(modifier, copays) {
     modifier.options = modifier.options.reduce((acc, option) => {
       // console.log("option inti", option);
       let opts = copays.map((copay, i) => {
+        let currency = copay.includes("GBP")
+          ? "GBP"
+          : copay.includes("EUR")
+          ? "EUR"
+          : copay.includes("CHF")
+          ? "CHF"
+          : "USD";
         let newOption = { ...option };
         let c = 0;
         let desc = newOption.description;
@@ -2014,6 +2181,10 @@ function modify(modifier, copays) {
             },
           ];
         }
+        newOption.conditions.push({
+          type: "-Enum.conditions.currency-",
+          value: `-Enum.currency.${currency}-`,
+        });
         // console.log("option", option);
         return { ...newOption };
       });

@@ -109,8 +109,7 @@ const generateCodeIndex = (data, benefits, DATA, n = false) => {
     let check = DATA[0].extra == "Healthy Connect Module";
     if (check)
       struc.modifiers.benefits[
-        "Healthy Connect Module"r
-        "repatriationBenefits"
+        ("Healthy Connect Module", "repatriationBenefits")
       ] = `-generateMongoIdFromString('${data.Provider} Repatriation ${n}')-`;
     return struc;
   } catch (error) {
