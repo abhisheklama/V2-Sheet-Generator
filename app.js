@@ -245,7 +245,7 @@ let Arr = new Array(resCount).fill(null);
           {
             from: "-Enum.currency.USD-",
             to: "-Enum.currency.AED-",
-            rate: 3.6725,
+            rate: 36.69,
             type: "-Enum.conversionRateType.premium-",
           },
         ],
@@ -257,7 +257,7 @@ let Arr = new Array(resCount).fill(null);
     //   str[0].exchangeRates.push({
     //     from: "-Enum.currency.USD-",
     //     to: "-Enum.currency.AED-",
-    //     rate: 3.6725,
+    //     rate: 36.69,
     //     type: "-Enum.conversionRateType.premium-",
     //   });
     createFile("provider", "index", str, provider, false, true);
@@ -734,7 +734,7 @@ let Arr = new Array(resCount).fill(null);
           ? 1
           : DATAs[0][0].conversionRate
           ? DATAs[0][0].conversionRate
-          : 3.6725;
+          : 36.69;
       let PricingTable = [];
       let tableCount = 1;
       for (const key in Id.pricingTables) {
@@ -826,7 +826,7 @@ let Arr = new Array(resCount).fill(null);
               let str = {
                 fromAge: t.ageStart,
                 toAge: t.ageEnd,
-                gender: `-Enum.gender.${t.gender.toLowerCase()}-`,
+                // gender: `-Enum.gender.${t.gender.toLowerCase()}-`,
                 price: [
                   {
                     value: parseFloat(t.rates / conversion),
@@ -989,7 +989,7 @@ let Arr = new Array(resCount).fill(null);
         ? 1
         : DATAs[0][0].conversionRate
         ? DATAs[0][0].conversionRate
-        : 3.6725;
+        : 36.69;
     let benefitsKeys = DATA[0];
     let modifiers = {};
     for (let key in benefitsKeys) {
@@ -1072,7 +1072,8 @@ let Arr = new Array(resCount).fill(null);
             );
           }
 
-          // console.log('Benefits >> ', Benefits);
+          console.log('Benefits >> ', Benefits);
+          console.log("key ", key)
 
           let str = {
             _id: `-${provider}.modifiers${n}.benefits.${
