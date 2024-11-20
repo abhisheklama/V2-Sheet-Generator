@@ -673,6 +673,44 @@ const countryCodes = [
   },
 ];
 
+const countriesByArea = {
+  2: ["HK"],
+  3: ["AD", "GT", "HN", "MX"],
+  4: ["SG"],
+  5: ["BR", "MC", "ES", "GB"],
+  7: [
+    "AI", "AG", "AR", "AW", "BS", "BD", "BB", "BZ", "BM", "BO", "VG", "KY",
+    "CL", "CO", "CR", "CY", "DM", "DO", "EC", "SV", "GR", "GD", "GP", "GG",
+    "GY", "HT", "IM", "JM", "JE", "LI", "MQ", "MS", "MN", "NI", "MN", "PA",
+    "PY", "PE", "RU", "SH", "KN", "LC", "MF", "VC", "SR", "CH", "TR", "TC",
+    "TT", "UY", "VE", "YE"
+  ],
+  8: ["MO", "KR", "VN"],
+  9: [
+    "AM", "AU", "AT", "BY", "BT", "BG", "BF", "MM", "BI", "CF", "CX", "CC",
+    "CK", "CD", "TL", "GQ", "EE", "FJ", "FI", "PF", "GA", "GE", "DE", "GI",
+    "HU", "IT", "KI", "XK", "KG", "LA", "LV", "LS", "LY", "LT", "MV", "MH",
+    "MD", "ME", "NA", "NR", "NP", "NC", "NZ", "NE", "PW", "PS", "PT", "CG",
+    "RW", "WS", "SM", "ST", "SN", "RS", "SB", "SZ", "SE", "TJ", "TO", "TM",
+    "TV", "UA", "UZ", "VU"
+  ],
+  10: ["KH", "JP", "MY", "TH"],
+  11: [
+    "AF", "AL", "AZ", "BE", "BJ", "BA", "BW", "BN", "CM", "CV", "TD", "HR",
+    "CZ", "DK", "DJ", "FO", "FM", "FR", "GM", "GL", "GN", "GW", "IS", "IN",
+    "KZ", "LU", "MK", "MG", "MR", "PG", "RO", "SK", "SI", "TG"
+  ],
+  12: ["BH", "OM", "QA", "AE"],
+  13: ["MT", "NL", "NO"],
+  14: ["TW"],
+  15: ["DZ", "AO", "ET", "ML", "PH", "PL"],
+  16: [
+    "KM", "CI", "EG", "ER", "GH", "IQ", "JO", "KE", "KW", "LB", "LR", "MW",
+    "MU", "MA", "MZ", "NG", "SC", "SL", "ZA", "LK", "TZ", "TN", "UG", "ZM", "ZW"
+  ],
+  17: ["CN"]
+}
+
 const aprilROWIncludedCountries = ["AL", "DZ", "AO", "AI", "AG", "AM", "AW", "BS", "BH", "BD", "BB", "BJ", "BM", "BO", "BW", "IO", "BF", "BI", "KH", "CM", "KY", "TD", "CL", "DM", "DO", "DO", "EG", "SV", "GQ", "GQ", "FK", "GA", "GM", "GE", "GI", "GD", "GG", "GN", "GW", "GW", "GY", "HN", "IN", "ID", "IQ", "IM", "IL", "JM", "JE", "JO", "KZ", "KE", "KW", "LB", "LR", "LY", "MG", "MW", "MV", "ML", "MU", "MN", "MS", "MA", "MZ", "NC", "NZ", "NE", "NG", "NG", "OM", "PK", "PG", "PY", "PE", "PH", "QA", "LC", "VC", "SM", "SA", "SN", "CS", "CS", "SG", "SO", "ZA", "GS", "LK", "SR", "TW", "TZ", "TH", "TG", "TO", "TR", "UG", "GB", "VU", "YE", "ZW", "AT", "BE", "BG", "HR", "CZ", "DK", "EE", "FI", "FR", "GF", "PF", "DE", "GR", "GP", "HU", "IS", "IT", "LV", "LI", "LT", "LU", "MT", "MQ", "MC", "NL", "AN", "NO", "PL", "PT", "RE", "RO", "SK", "SI", "ES", "SE"]
 
 let resCount = process.argv.find((v) => v.includes("res"));
@@ -1744,10 +1782,10 @@ let Arr = new Array(resCount).fill(null);
           ) {
             key = key.slice(0, -1);
           }
-          !Benefits.find((v) => v.benefits[1] == key) &&
-            console.log("k ", n, key, Benefits);
-          !benefitCore.find((v) => v[0] == key) &&
-            console.log("core-", n, key, benefitCore);
+          // !Benefits.find((v) => v.benefits[1] == key) &&
+          //   console.log("k ", n, key, Benefits);
+          // !benefitCore.find((v) => v[0] == key) &&
+          //   console.log("core-", n, key, benefitCore);
           let benefits_plans_ids = [...planIds];
           if (store.filters.notIncludedBenefits.length > 0) {
             let benefit_plans = modifiers[key].reduce((acc, v) => {
@@ -1849,7 +1887,6 @@ let Arr = new Array(resCount).fill(null);
                 m.value.toString().includes(" $ ") &&
                 modifiers[key].length > 1
               ) {
-                console.log("in that")
                 store.coPays.forEach((v) => {
                   let [copay, scope] = v;
                   if (!scope.includes("all") && scope.includes(m.plans)) return;
@@ -2877,6 +2914,9 @@ let Arr = new Array(resCount).fill(null);
                     //     : [n_check];
                     //   n_check = n_check.includes(net[1]);
                     // } else n_check = true;
+
+                    console.log("n ", n)
+                    console.log(plan[0][1], cc[1], copay, net[1])
                     return (
                       n.planName == plan[0][1] &&
                       n.coverage == cc[1] &&
@@ -2885,6 +2925,9 @@ let Arr = new Array(resCount).fill(null);
                       n.network == net[1]
                     );
                   });
+                  
+
+                  console.log("pricing ", pricing)
                   if (DATA[0].planCopay == "single" && pricing.length == 0)
                     return;
                   if (pricing.length == 0) {
@@ -2921,20 +2964,24 @@ let Arr = new Array(resCount).fill(null);
                           type: "-Enum.customer.gender-",
                           value: `-Enum.gender.${t.gender}-`,
                         },
+                        {
+                          type: "RESIDENCY_EQUALS_TO",
+                          value: countriesByArea[t.area],
+                        }
                       ],
                       price: [
                         {
                           value: parseFloat(t.rates / conversion),
                           currency: `-Enum.currency.${t.currency}-`,
                         },
-                        {
-                          value: parseFloat(t.GBP / conversion),
-                          currency: `-Enum.currency.GBP-`,
-                        },
-                        {
-                          value: parseFloat(t.EUR / conversion),
-                          currency: `-Enum.currency.EUR-`,
-                        },
+                        // {
+                        //   value: parseFloat(t.GBP / conversion),
+                        //   currency: `-Enum.currency.GBP-`,
+                        // },
+                        // {
+                        //   value: parseFloat(t.EUR / conversion),
+                        //   currency: `-Enum.currency.EUR-`,
+                        // },
                       ],
                     };
                     if (t.married === 0) {
@@ -2954,6 +3001,7 @@ let Arr = new Array(resCount).fill(null);
 
                     return { ...str };
                   });
+                  console.log("table ", table)
                   clone.premiumMod.conditionalPrices = table;
                   clonearray.push(clone);
                   count++;
