@@ -738,6 +738,18 @@ splitFile = splitFile
     : false
   : false;
 
+  function percentageCalc(value, p) {
+    value = parseFloat(value);
+    p = p.toString();
+    if (p == "0.00%" || p == 0) return value;
+    if (p.includes("%")) p = p.replace("%", "");
+    if (p.includes("-")) {
+      p = p.replace("-", "");
+      return value - (parseFloat(p) / 100) * value;
+    }
+    return value + (parseFloat(p) / 100) * value;
+  }
+
 // rate in usd
 let rateUSD = process.argv.find((v) => v.includes("rate"));
 rateUSD = rateUSD ? (rateUSD.split(":")[1] == "USD" ? true : false) : false;
@@ -1181,6 +1193,8 @@ let Arr = new Array(resCount).fill(null);
       "MA",
       "SO",
     ];
+
+    
 
     let coverage_data = store.coverages.map((v) => {
 
@@ -2915,8 +2929,6 @@ let Arr = new Array(resCount).fill(null);
                     //   n_check = n_check.includes(net[1]);
                     // } else n_check = true;
 
-                    console.log("n ", n)
-                    console.log(plan[0][1], cc[1], copay, net[1])
                     return (
                       n.planName == plan[0][1] &&
                       n.coverage == cc[1] &&
@@ -2927,7 +2939,6 @@ let Arr = new Array(resCount).fill(null);
                   });
                   
 
-                  console.log("pricing ", pricing)
                   if (DATA[0].planCopay == "single" && pricing.length == 0)
                     return;
                   if (pricing.length == 0) {
@@ -2971,7 +2982,7 @@ let Arr = new Array(resCount).fill(null);
                       ],
                       price: [
                         {
-                          value: parseFloat(t.rates / conversion),
+                          value: percentageCalc(parseFloat(t.rates / conversion), -(t.per)),
                           currency: `-Enum.currency.${t.currency}-`,
                         },
                         // {
@@ -3001,7 +3012,6 @@ let Arr = new Array(resCount).fill(null);
 
                     return { ...str };
                   });
-                  console.log("table ", table)
                   clone.premiumMod.conditionalPrices = table;
                   clonearray.push(clone);
                   count++;
