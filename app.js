@@ -705,7 +705,7 @@ const countriesByArea = {
   14: ["TW"],
   15: ["DZ", "AO", "ET", "ML", "PH", "PL"],
   16: [
-    "KM", "CI", "EG", "ER", "GH", "IQ", "JO", "KE", "KW", "LB", "LR", "MW",
+    "KM", "CI", "EG", "ER", "GH", "IQ", "JO", "KE", "KW", "LB", "LR", "MW", "PK",
     "MU", "MA", "MZ", "NG", "SC", "SL", "ZA", "LK", "TZ", "TN", "UG", "ZM", "ZW"
   ],
   17: ["CN"]
