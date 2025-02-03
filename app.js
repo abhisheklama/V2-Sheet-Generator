@@ -3340,10 +3340,10 @@ let Arr = new Array(resCount).fill(null);
                         ],
                         price: [
                           {
-                            value: percentageCalc(
+                            value: /* percentageCalc( */
                               parseFloat(t.rates / conversion),
-                              -t.per
-                            ),
+                            //   -t.per
+                            // ),
                             currency: `-Enum.currency.${t.currency}-`,
                           },
                           // {
