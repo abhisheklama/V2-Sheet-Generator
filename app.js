@@ -2915,8 +2915,6 @@ let Arr = new Array(resCount).fill(null);
                     //   n_check = n_check.includes(net[1]);
                     // } else n_check = true;
 
-                    console.log("n ", n)
-                    console.log(plan[0][1], cc[1], copay, net[1])
                     return (
                       n.planName == plan[0][1] &&
                       n.coverage == cc[1] &&
@@ -2964,24 +2962,24 @@ let Arr = new Array(resCount).fill(null);
                           type: "-Enum.customer.gender-",
                           value: `-Enum.gender.${t.gender}-`,
                         },
-                        {
-                          type: "RESIDENCY_EQUALS_TO",
-                          value: countriesByArea[t.area],
-                        }
+                        // {
+                        //   type: "RESIDENCY_EQUALS_TO",
+                        //   value: countriesByArea[t.area],
+                        // }
                       ],
                       price: [
                         {
                           value: parseFloat(t.rates / conversion),
                           currency: `-Enum.currency.${t.currency}-`,
                         },
-                        // {
-                        //   value: parseFloat(t.GBP / conversion),
-                        //   currency: `-Enum.currency.GBP-`,
-                        // },
-                        // {
-                        //   value: parseFloat(t.EUR / conversion),
-                        //   currency: `-Enum.currency.EUR-`,
-                        // },
+                        {
+                          value: parseFloat(t.GBP / conversion),
+                          currency: `-Enum.currency.GBP-`,
+                        },
+                        {
+                          value: parseFloat(t.EUR / conversion),
+                          currency: `-Enum.currency.EUR-`,
+                        },
                       ],
                     };
                     if (t.married === 0) {
