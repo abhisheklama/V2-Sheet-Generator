@@ -1787,10 +1787,14 @@ let Arr = new Array(resCount).fill(null);
           : DATAs[0][0].conversionRate
           ? DATAs[0][0].conversionRate
           : 3.6725;
+
+          console.log("Id ", Id)
       let PricingTable = [];
       let tableCount = 1;
       for (const key in Id.pricingTables) {
         let plan = Id.pricingTables[key];
+        console.log("plan >>>>>>> ",plan);
+        
         addUp[1] = 1;
         let originalName = (z) => {
           return store.plans.find((v) => v[0] == z)[1];
@@ -1809,8 +1813,11 @@ let Arr = new Array(resCount).fill(null);
         let plan_network = rateSheet.find(
           (r) => r.planName == originalName(key)
         )?.network;
+        console.log("plan --- ",plan);
+        
         for (let v in plan) {
           // console.log("key --> ", v, key, n);
+          
           let pricing = rateSheet.filter((n) => {
             // if (
             //   n.planName == "Extensive (IP) / Essential (OP)" &&
@@ -1941,12 +1948,14 @@ let Arr = new Array(resCount).fill(null);
             );
             addUp[0] += `const ${key}_${short_coverageName} = require("./${key}/${key}_${short_coverageName}.js"); `;
           }
+
           let res = store.coverages.find((vv) => vv.coverageName == v);
           let check =
             planValue.toString().includes("AED") ||
             planValue.toString().includes("USD")
               ? true
               : false;
+              
           let clone = {
             _id: `-${provider}.pricingTables${n}.${key}.${v}-`,
             plan: `-${provider}.plans${n}.${key}-`,
@@ -2008,10 +2017,15 @@ let Arr = new Array(resCount).fill(null);
           PricingTable.push({ ...clone });
         }
       }
+
+      console.log("PricingTable ", PricingTable)
+      console.log("store.plans ", store.plans)
+
       if (PricingTable.length < store.plans.length)
         throw new Error(
           `Plan mising in pricingTable, PricingTable.length - ${PricingTable.length}, store.plans.length - ${store.plans.length}  ${n}`
         );
+
       return PricingTable;
     } catch (error) {
       console.log("error --> ", { msg: error.message, stack: error.stack });
